@@ -37,10 +37,10 @@
 <body>
 
         <div class="page-wrapper">
-            {% include 'include/header/header.html' %}
+            {% include 'includes/header/header.html' %}
             
             {% if message %}
-            {% include 'include/message/message.html' %}
+            {% include 'includes/message/message.html' %}
             {% endif %}
             
             <main class="main">
@@ -48,10 +48,10 @@
                 {% endblock %}
             </main><!-- End .main -->
 
-            {% include 'include/footer/footer.html' %}
+            {% include 'includes/footer/footer.html' %}
         </div>
         <button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
-        {% include 'include/mobile_menu/mobile_menu.html' %}
+        {% include 'includes/mobile_menu/mobile_menu.html' %}
 
         <!-- Plugins JS File -->
         <script src="assets/js/jquery.min.js"></script>
