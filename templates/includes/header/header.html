@@ -1,27 +1,9 @@
+{% load static %}
 <header class="header">
     <div class="header-top">
         <div class="container">
             <div class="header-left">
-                <div class="header-dropdown">
-                    <a href="#">Usd</a>
-                    <div class="header-menu">
-                        <ul>
-                            <li><a href="#">Eur</a></li>
-                            <li><a href="#">Usd</a></li>
-                        </ul>
-                    </div><!-- End .header-menu -->
-                </div><!-- End .header-dropdown -->
-
-                <div class="header-dropdown">
-                    <a href="#">Eng</a>
-                    <div class="header-menu">
-                        <ul>
-                            <li><a href="#">English</a></li>
-                            <li><a href="#">French</a></li>
-                            <li><a href="#">Spanish</a></li>
-                        </ul>
-                    </div><!-- End .header-menu -->
-                </div><!-- End .header-dropdown -->
+                
             </div><!-- End .header-left -->
 
             <div class="header-right">
@@ -30,10 +12,8 @@
                         <a href="#">Links</a>
                         <ul>
                             <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                            <li><a href="wishlist.html"><i class="icon-heart-o"></i>My Wishlist <span>(3)</span></a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#signin-modal" data-toggle="modal"><i class="icon-user"></i>Login</a></li>
+                            <li><a href="#signin-modal" data-toggle="modal">Login</a></li>
+                             {% comment%} TODO // user name {% endcomment %}
                         </ul>
                     </li>
                 </ul><!-- End .top-menu -->
@@ -50,16 +30,16 @@
                 </button>
 
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Molla Logo" width="105" height="25">
+                    <img src="{% static 'images/logo.png' %}" alt="Molla Logo" width="105" height="25">
                 </a>
 
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
                         <li class="megamenu-container active">
-                            <a href="index.html" class="sf-with-ul">Home</a>
+                            <a href="index.html" class="">Home</a>
                         </li>
                         <li>
-                            <a href="category.html" class="sf-with-ul">About Us</a>
+                            <a href="category.html" class="">About Us</a>
                         </li>
                         <li>
                             <a href="product.html" class="sf-with-ul">Products</a>
@@ -81,7 +61,7 @@
                                     <div class="col-md-6">
                                         <div class="banner banner-overlay">
                                             <a href="category.html">
-                                                <img src="assets/images/menu/banner-2.jpg" alt="Banner">
+                                                <img src="{% static 'images/menu/banner-2.jpg' %}" alt="Banner">
 
                                                 <div class="banner-content banner-content-bottom">
                                                     <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
@@ -93,7 +73,7 @@
                             </div><!-- End .megamenu megamenu-sm -->
                         </li>
                         <li>
-                            <a href="#" class="sf-with-ul">Contact Us</a>
+                            <a href="#" class="">Contact Us</a>
                         </li>
                         
                     </ul><!-- End .menu -->
@@ -172,6 +152,21 @@
                         </div><!-- End .dropdown-cart-total -->
                     </div><!-- End .dropdown-menu -->
                 </div><!-- End .cart-dropdown -->
+
+                <ul class="d-flex mb-0 align-items-center justify-content-between w-100 h-100">
+                    <li class="wishlist-icon ml-2 mr-2"><a href="wishlist.html"><i class="icon-heart-o"></i><span>(3)</span></a></li>
+                    <li class="user-icon dropdown">
+                        <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"><i class="icon-user"></i></a>
+
+                        <div class="dropdown-menu p-1 px-5" aria-labelledby="userDropdown">
+                            <ul>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Whishlist</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li> 
+                </ul>
             </div><!-- End .header-right -->
         </div><!-- End .container -->
     </div><!-- End .header-middle -->

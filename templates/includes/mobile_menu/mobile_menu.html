@@ -1,4 +1,5 @@
-    <!-- Mobile Menu -->
+   {% load static %}
+   <!-- Mobile Menu -->
     <div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->
 
     <div class="mobile-menu-container">
@@ -26,7 +27,6 @@
                             <div class="row no-gutters">
                                 <div class="col-md-6">
                                     <div class="menu-col">
-                                        <div class="menu-title">Product Details</div><!-- End .menu-title -->
                                         <ul>
                                             <li><a href="product.html">All Products</a></li>
                                             <li><a href="product-centered.html">Category 1</a></li>
@@ -39,7 +39,7 @@
                                 <div class="col-md-6">
                                     <div class="banner banner-overlay">
                                         <a href="category.html">
-                                            <img src="assets/images/menu/banner-2.jpg" alt="Banner">
+                                            <img src="{% static 'images/menu/banner-2.jpg' %}" alt="Banner">
 
                                             <div class="banner-content banner-content-bottom">
                                                 <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
@@ -49,6 +49,7 @@
                                 </div><!-- End .col-md-6 -->
                             </div><!-- End .row -->
                         </div><!-- End .megamenu megamenu-sm -->
+                        
                     </li>
                     <li>
                         <a href="#" class="sf-with-ul">Contact Us</a>
