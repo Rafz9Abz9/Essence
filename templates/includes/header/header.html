@@ -12,7 +12,8 @@
                         <a href="#">Links</a>
                         <ul>
                             <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                            <li><a href="#signin-modal" data-toggle="modal">Login</a></li>
+                            <li><a href="{% url 'user_auth' %}">Login</a></li>
+                            <li><a href="{% url 'user_auth' %}">Logout</a></li>
                              {% comment%} TODO // user name {% endcomment %}
                         </ul>
                     </li>
@@ -29,14 +30,14 @@
                     <i class="icon-bars"></i>
                 </button>
 
-                <a href="index.html" class="logo">
+                <a href="{% url 'home' %}" class="logo">
                     <img src="{% static 'images/logo.png' %}" alt="Molla Logo" width="105" height="25">
                 </a>
 
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
                         <li class="megamenu-container active">
-                            <a href="index.html" class="">Home</a>
+                            <a href="{% url 'home' %}" class="">Home</a>
                         </li>
                         <li>
                             <a href="category.html" class="">About Us</a>
@@ -91,8 +92,8 @@
                     </form>
                 </div><!-- End .header-search -->
 
-                <div class="dropdown cart-dropdown">
-                    <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                <div class="dropdown cart-dropdown mr-3">
+                    <a href="#" class="dropdown-toggle cart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         <i class="icon-shopping-cart"></i>
                         <span class="cart-count">2</span>
                     </a>
@@ -154,7 +155,7 @@
                 </div><!-- End .cart-dropdown -->
 
                 <ul class="d-flex mb-0 align-items-center justify-content-between w-100 h-100">
-                    <li class="wishlist-icon ml-2 mr-2"><a href="wishlist.html"><i class="icon-heart-o"></i><span>(3)</span></a></li>
+                    <li class="wishlist-icon ml-2 mr-3"><a href="wishlist.html"><i class="icon-heart-o"></i><span>3</span></a></li>
                     <li class="user-icon dropdown">
                         <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"><i class="icon-user"></i></a>
 
