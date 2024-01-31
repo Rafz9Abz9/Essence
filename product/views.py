@@ -6,4 +6,4 @@ def product_list(request):
 
 
 def product_details(request, product_id):
-    return render(request, 'product_list/product_list.html')
+    return render(request, 'product_details/product_details.html')

@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import custom_404_view
+from django.conf.urls import handler404 
 
 urlpatterns = [
-    path('user/auth/', include('user_auth.urls')),
     path('', include('core.urls')),
+    path('user/', include('user.urls')),
     path('products/', include('product.urls')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = custom_404_view

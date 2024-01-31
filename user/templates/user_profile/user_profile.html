@@ -1,0 +1,116 @@
+{% extends 'base/base.html' %}
+{% block title%}username{% endblock %}
+{% load static %}
+
+{% block main %}
+<div class="page-header text-center" style="background-image: url({% static 'images/page-header-bg.jpg'%})">
+    <div class="container">
+        <h1 class="page-title">Profile<span>Username here</span></h1>
+    </div><!-- End .container -->
+</div><!-- End .page-header -->
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">username here</li>
+        </ol>
+    </div><!-- End .container -->
+</nav><!-- End .breadcrumb-nav -->
+
+<div class="page-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="row tab-content">
+                    <div id="accountInfo" class="col-lg-12 tab-pane fade in active show">
+                        <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:450px">Account Information</h2>
+                        <hr class="mt-0 mb-3" />
+                        <div class="row mb-3">
+                             <div class="col-12 col-sm-6">
+                                 <h4>User Information </h4>
+                                 <span class="mr-2">Username: Rafah Ramoni</span>
+                                 <span>Fullname: Rafah Ramoni</span>
+                                 <p>Email: Raf@example.com</p>
+                                 <div class="mt-2">
+                                     <button class="btn btn-outline" data-toggle="modal" data-target="#editUserInfoModal">Edit Info</button>
+                                     <button class="btn btn-outline" data-toggle="modal" data-target="#changePassword">Change Password</button>
+                                 </div>
+                                 {% include 'includes/modals/edit_user_info_modal.html' %}
+                                 {% include 'includes/modals/change_password_modal.html' %}.
+                             </div><!-- End .col-6 -->
+                         
+                             <div class="col-12 col-sm-6">
+                                 <h4>Newsletter</h4>
+         
+                                 <p>You aren't subscribe to the newsletter</p>
+                                 <p>You are subscribeed to the newsletter</p>
+                                 <div class="mt-2">
+                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">Subscribe</button>
+                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">UnSubscribe</button>
+                                 </div>
+                                 {% include 'includes/modals/newsletter_modal.html' %}.
+                             </div><!-- End .co -->
+                        </div> <!-- End .row -->
+                        <div class="row mb-3">
+                             <div class="col-12 col-sm-6">
+                                 <h4>Default Billing Address </h4>
+                                 <p>You havent set a default billing address</p>
+                                 <p>Account: 09084847393, Bank: GTB</p>
+                                 <div class="mt-2">
+                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#editBillingAddress">Edit Info</button>
+                                 </div>
+                                 {% include 'includes/modals/edit_billing_address_modal.html' %}
+                             </div><!-- End .col-6 -->
+                         
+                             <div class="col-12 col-sm-6">
+                                 <h4>Default Shipping Address</h4>
+         
+                                 <p>You haven't set a default shipping address</p>
+                                 <p>1, cliford house, New York City, USA</p>
+                                 <div class="mt-2">
+                                     <button class="btn btn-outline" data-toggle="modal" data-target="#editShippingAddress">Edit Info</button>
+                                 </div>
+                                 {% include 'includes/modals/edit_shipping_address_modal.html' %}
+                             </div><!-- End .co -->
+                        </div> <!-- End .row -->
+                    </div><!-- End .col-lg-9 -->
+                    <div id="myorders" class="col-lg-12 tab-pane fade in">
+                    <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:350px">My Orders</h2>
+                    <hr class="mt-0 mb-3" />
+                    <div class="row mb-3">
+                        {% include 'includes/order/order.html' %}
+                    </div> <!-- End .row -->
+                    </div><!-- End .col-lg-9 -->
+                    <div id="myreviews" class="col-lg-12 tab-pane fade in">
+                    <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:350px">My Reviews</h2>
+                    <hr class="mt-0 mb-3" />
+                    <div class="row mb-3">
+                        {% include 'includes/reviews/reviews.html' %}
+                    </div> <!-- End .row -->
+                    </div><!-- End .col-lg-9 -->
+                </div>
+            </div>
+            
+            <aside class="col-lg-3 order-lg-first m-0">
+                <div class="sidebar sidebar-shop">
+                    <ul class="nav nav-tabs flex-column w-100 shadow-sm p-5">
+                        <li class="active">
+                            <a  data-toggle="tab" href="#accountInfo">My Account Info</a>
+                            <hr class="my-2" />
+                        </li><!-- End .tabx -->
+                        <li class="">
+                            <a  data-toggle="tab" href="#myorders">My Orders</a>
+                            <hr class="my-2" />
+                        </li><!-- End .tab -->
+                        <li class="">
+                            <a  data-toggle="tab" href="#myreviews">My Reviews</a>
+                        </li><!-- End .tab -->
+                    </ul><!-- End .nav nav-tabs -->
+                </div><!-- End .sidebar sidebar-shop -->
+            </aside><!-- End .col-lg-3 -->
+        </div><!-- End .row -->
+    </div>
+</div>
+{% endblock %}
+
