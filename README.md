@@ -85,8 +85,15 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 # Technology Used 
 
+## Language
+
+
+## Tools
 
 # Testing
+
+
+## Manual Testing 
 
 
 ## Validator Testing
