@@ -65,8 +65,9 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 ## Existing Features
 
 
-## Features Left to Implement
+## Future Features
 
+- **Live Chat Functionality:** in my upcoming developments, I’d like to introduce a live chat feature that will allow users to receive immediate assistance while navigating our website, ensuring a smoother shopping experience. 
 
 ## Custom 404 Error Page
 
