@@ -1,7 +1,7 @@
 # Essence
 
 # Project Overview
-
+Essence is your go-to destination for top-quality self-care essentials. From women’s care and hair care to baby-care, skin care, and men’s care products, Essence has got you covered. The site’s mission is to simplify your self-care routine by offering a curated selection of products tailored to your needs. Whether you’re a woman, a parent, or a man focused on grooming, find what you need for a healthier, more confident lifestyle on Essence. Shop on the site for a convenient, reliable, and satisfying self-care experience. 
 
 # Deployed Site
 
@@ -20,6 +20,32 @@
 # Agile Methodology
 
 ## User Stories
+
+1.	As a first-time user, I want to:
+•	Understand the main purpose of the website immediately.
+•	Easily navigate through the pages.
+•	Effortlessly search for products available.
+•	Purchase for products without creating an account.
+•	View the reviews submitted by other users.
+•	Access the pages on any devices or screen sizes. 
+•	Have the option to login or create a user account.
+•	Contact the company regarding any questions I may have.
+
+2.	As a registered user, I want to:
+•	Access my account information/profile page.
+•	View my order history.
+•	View my product reviews.
+•	View my wish list.
+•	Have the option to opt-in and opt-out of newsletter subscription. 
+•	Update and save my personal information.
+•	Make purchases with my delivery information pre-filled. 
+•	Leave reviews for products.
+
+3.	As an admin, I want to:
+•	Easily create, read, update, and delete products.
+•	Manage customer reviews efficiently.
+•	Delete any inappropriate customer reviews.
+•	Ensure efficient access and security measures for admin controls and functions.
 
 
 # UX
