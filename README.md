@@ -5,21 +5,13 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 # Deployed Site
 
+# Table Content
 
-# Model View Template (MVT)
+# UX & Website Design
 
+## Strategy
 
-# E-Commerce Business Model & Marketing
-
-## Business Model
-
-
-## SEO & Marketing
-
-
-# Agile Methodology
-
-## User Stories
+### User Stories
 
 1.	As a first-time user, I want to:
 - Understand the main purpose of the website immediately.
@@ -47,13 +39,28 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 - Delete any inappropriate customer reviews.
 - Ensure efficient access and security measures for admin controls and functions.
 
+## Structure
+The website is set up with different pages, and each page is made for a specific type of user. The flow diagram below shows how these pages are organized and gives details about what you can find on each of them. This was created using Lucidchart.
 
-# UX
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4b945d31-ace4-40b9-9da0-ec90972a344a)
 
-## Layout
+## Skeleton
+
+1. Database Schema
 
 
-## Wireframes
+2. Wireframes: the wireframes were created using Balsamiq.
+
+
+## Surface
+
+### Colour
+
+
+### Typography
+
+
+### Images and Icons
 
 
 ## Typography & Color
@@ -89,6 +96,13 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 ### Forgot Password Page
 
+
+### Error Page
+
+
+## Authentication
+
+
 ## Future Features
 
 - **Live Chat Functionality:** in my upcoming developments, I’d like to introduce a live chat feature that will allow users to receive immediate assistance while navigating our website, ensuring a smoother shopping experience.
@@ -99,14 +113,6 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 - **Ability to add reviews exclusively for purchased products:** I’d also like to work on a feature that allows customers to share their experiences by adding reviews exclusively for products that they’ve purchased, fostering a more genuine and reliable feedback system.
 
-## Custom 404 Error Page
-
-
-# Data Model
-
-## Entity Relationship Diagram (ERD)
-
-
 # Technology Used 
 
 ## Language
@@ -115,12 +121,6 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 ## Tools
 
 # Testing
-
-
-## Manual Testing 
-
-
-## Validator Testing
 
 
 # Deployment
