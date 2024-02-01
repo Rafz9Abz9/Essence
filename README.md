@@ -42,7 +42,7 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 ## Structure
 The website is set up with different pages, and each page is made for a specific type of user. The flow diagram below shows how these pages are organized and gives details about what you can find on each of them. This was created using Lucidchart.
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4b945d31-ace4-40b9-9da0-ec90972a344a)
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/02b5919b-9c5d-4a17-a37c-5a6493320dce)
 
 ## Skeleton
 
