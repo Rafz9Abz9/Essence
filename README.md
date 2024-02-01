@@ -62,10 +62,6 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Images and Icons
 
-
-## Typography & Color
-
-
 # Features
 
 ## Existing Features
