@@ -6,20 +6,11 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 # Table Content
 1. [Project Overview](#project-overview)
 2. [UX & Website Design](#UX-&-website-design)
-3. [Strategy](##strategy)
-4. [Structure](##structure)
-5. [Skeleton](##skeleton)
-6. [Surface](##surface)
-7. [Features](#features)
-8. [Existing Features](##existing-features)
-9. [Authentication](##authentication)
-10. [Future Features](##future-features)
-11. [Technologies Used](#technologies-used)
-12. [Language](##language)
-13. [Tools](##tools)
-14. [Testing](#testing)
-15. [Deployment](#deployment)
-16. [Credits](#credits)
+3. [Features](#features)
+4. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
+6. [Deployment](#deployment)
+7. [Credits](#credits)
 
 # UX & Website Design
 
