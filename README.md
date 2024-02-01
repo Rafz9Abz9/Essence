@@ -61,8 +61,24 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 # Features
 
-
 ## Existing Features
+
+### Home Page
+
+
+### Products Page
+
+
+### Shopping Cart Page
+
+
+### Checkout Page
+
+
+### Account Information/Profile Page
+
+
+### Contact Form Page
 
 
 ## Future Features
