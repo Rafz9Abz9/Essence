@@ -69,11 +69,11 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 
 - **Live Chat Functionality:** in my upcoming developments, I’d like to introduce a live chat feature that will allow users to receive immediate assistance while navigating our website, ensuring a smoother shopping experience.
 
-- **•	Create an order tracking system:** I’d also like to craft an order tracking system that empowers customers to effortlessly track the real-time status and location of their orders, providing transparency and peace of mind.
+- **Create an order tracking system:** I’d also like to craft an order tracking system that empowers customers to effortlessly track the real-time status and location of their orders, providing transparency and peace of mind.
 
-- **•	Discount vouchers capability:** I’d also like my platform to boast the capability to apply discount vouchers during checkout, giving our users the advantage of unlocking potential savings on their purchases.
+- **Discount vouchers capability:** I’d also like my platform to boast the capability to apply discount vouchers during checkout, giving our users the advantage of unlocking potential savings on their purchases.
 
-- **•	Ability to add reviews exclusively for purchased products:** I’d also like to work on a feature that allows customers to share their experiences by adding reviews exclusively for products that they’ve purchased, fostering a more genuine and reliable feedback system.
+- **Ability to add reviews exclusively for purchased products:** I’d also like to work on a feature that allows customers to share their experiences by adding reviews exclusively for products that they’ve purchased, fostering a more genuine and reliable feedback system.
 
 ## Custom 404 Error Page
 
