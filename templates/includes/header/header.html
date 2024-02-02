@@ -36,14 +36,14 @@
 
                 <nav class="main-nav">
                     <ul class="menu sf-arrows">
-                        <li class="megamenu-container active">
+                        <li class="megamenu-container {% if request.path == '/'%} active {% endif %}">
                             <a href="{% url 'home' %}" class="">Home</a>
                         </li>
-                        <li>
+                        <li class="{% if request.path == '/about-us'%} active {% endif %}">
                             <a href="{% url 'about' %}" class="">About Us</a>
                         </li>
-                        <li>
-                            <a href="product.html" class="sf-with-ul">Products</a>
+                        <li  class="{% if request.path == '/products' %} active {% endif %}">
+                            <a href="#" class="sf-with-ul">Products</a>
 
                             <div class="megamenu megamenu-sm">
                                 <div class="row no-gutters">
@@ -73,7 +73,7 @@
                                 </div><!-- End .row -->
                             </div><!-- End .megamenu megamenu-sm -->
                         </li>
-                        <li>
+                        <li  class="{% if request.path == '/contact-us'%} active {% endif %}">
                             <a href="{% url 'contact' %}" class="">Contact Us</a>
                         </li>
                         
