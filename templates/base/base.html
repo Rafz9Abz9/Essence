@@ -40,10 +40,22 @@
         <div class="page-wrapper">
             {% include 'includes/header/header.html' %}
             
-            {% if message %}
-            {% include 'includes/message/message.html' %}
-            {% endif %}
-            
+            {% if messages %}
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'includes/messages/error_message.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/messages/warning_message.html' %}
+                        {% elif level == 30 %}
+                            {% include 'includes/messages/success_message.html' %}
+                        {% else %}
+                            {% include 'includes/messages/info_message.html' %}
+                        {%  endif  %}
+                    {% endwith %}
+                {% endfor %}
+            {%  endif  %}
+     
             <main class="main">
                 {% block main %}
                 {% endblock %}
@@ -64,6 +76,16 @@
         <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <!-- Main JS File -->
         <script src="{% static 'js/main.js' %}"></script>
+
+        <script>
+            const options = {
+                delay: 3000, 
+                autohide: true,
+            }
+
+            $('.toast').toast(options);
+            $('.toast').toast('show');
+        </script>
 </body>
 
 </html>
