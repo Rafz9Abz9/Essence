@@ -52,7 +52,6 @@ The website is set up with different pages, and each page is made for a specific
 ## Skeleton
 
 1. Database Schema
-
 - I created a clear and organized layout for the database in order to make building the website easier for me.
 - I used [DrawSQL](https://drawsql.app/) to draw the database which uses a database called Postgres.
 
