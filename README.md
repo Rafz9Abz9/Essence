@@ -45,7 +45,7 @@ Essence is your go-to destination for top-quality self-care essentials. From wom
 - Ensure efficient access and security measures for admin controls and functions.
 
 ## Structure
-The website is set up with different pages, and each page is made for a specific type of user. The flow diagram below shows how these pages are organized and gives details about what you can find on each of them. This was created using Lucidchart.
+The website is set up with different pages, and each page is made for a specific type of user. The flow diagram below shows how these pages are organized and gives details about what you can find on each of them. This was created using [Lucidchart](https://lucid.co/)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/02b5919b-9c5d-4a17-a37c-5a6493320dce)
 
