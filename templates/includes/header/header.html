@@ -12,8 +12,12 @@
                         <a href="#">Links</a>
                         <ul>
                             <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
-                            <li><a href="{% url 'user_auth' %}">Login</a></li>
-                            <li><a href="{% url 'user_auth' %}">Logout</a></li>
+
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else  %}
+                                <li><a href="{% url 'user_auth' %}">Login</a></li>
+                            {% endif %}
                              {% comment%} TODO // user name {% endcomment %}
                         </ul>
                     </li>
@@ -162,8 +166,11 @@
                         <div class="dropdown-menu p-1 px-5" aria-labelledby="userDropdown">
                             <ul>
                                 <li><a href="{% url 'user_profile' %}">Profile</a></li>
-                                <li><a href="{% url 'user_auth' %}">login</a></li>
-                                <li><a href="#">Logout</a></li>
+                                {% if user.is_authenticated %}
+                                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else  %}
+                                    <li><a href="{% url 'user_auth' %}">Login</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </li> 

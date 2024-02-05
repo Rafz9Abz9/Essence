@@ -19,12 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from core.views import custom_404_view
 from django.conf.urls import handler404 
+from user.views import VerificationView
 
 urlpatterns = [
     path('', include('core.urls')),
     path('user/', include('user.urls')),
     path('products/', include('product.urls')),
-    path('admin/', admin.site.urls),
+    path('activate/<uidb64>/<token>', VerificationView.as_view(), name='activate'),
+    path('admin/', admin.site.urls), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = custom_404_view

@@ -7,7 +7,7 @@
 <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Login</li>
         </ol>
     </div><!-- End .container -->
@@ -54,18 +54,33 @@
                         </form>
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane fade show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
-                        <form action="#">
-                            <div class="form-group">
+                        <form action="{% url 'register' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-group text-danger">
                                 <label for="register-email-2">Your Email Address *</label>
-                                <input type="email" class="form-control" id="register-email-2" name="register-email" required>
+                                {{ reg_form.email }}
+                                <p class="text-danger">
+                                    {{ reg_form.errors.email }}
+                                 </p>
                             </div><!-- End .form-group -->
 
-                            <div class="form-group">
+                            <div class="form-group text-danger">
                                 <label for="register-password-2">Password *</label>
-                                <input type="password" class="form-control" id="register-password-2" name="register-password" required>
+                                {{ reg_form.password1 }}
+                                <p class="text-danger">
+                                    {{ reg_form.errors.password1 }}
+                                 </p>
                             </div><!-- End .form-group -->
 
-                            <div class="form-footer">
+                            <div class="form-group text-danger">
+                                <label for="register-password-2">Confirm Password *</label>
+                                {{ reg_form.password2 }}
+                                <p class="text-danger">
+                                    {{ reg_form.errors.password2 }}
+                                 </p>
+                            </div><!-- End .form-group -->
+
+                            <div class="form-footer text-danger">
                                 <button type="submit" class="btn btn-outline-primary-2">
                                     <span>SIGN UP</span>
                                     <i class="icon-long-arrow-right"></i>
