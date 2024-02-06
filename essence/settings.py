@@ -143,3 +143,4 @@ EMAIL_HOST_USER = 'abzrecipe@gmail.com'
 EMAIL_HOST_PASSWORD = 'izlzpfazfwszmtox'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+

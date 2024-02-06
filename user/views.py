@@ -5,7 +5,7 @@ from django.utils.http import urlsafe_base64_encode,  urlsafe_base64_decode
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.encoding import force_bytes, force_str
 from django.urls import reverse
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.views.generic.base import View
 
 from .utils import token_generator
@@ -18,7 +18,8 @@ def user_auth_view(request):
     login_form = LoginForm
 
     context = {
-        "reg_form": reg_form
+        "reg_form": reg_form,
+        "login_form": login_form
     }
 
     return render(request, 'user_auth/user_auth.html', context)
@@ -69,21 +70,30 @@ def register(request):
                 messages.error(request, f"Error sending email: {e}")
                 print(f"Error sending email: {e}")
                 return redirect('user_auth')
-    form = RegistrationForm(request.POST)
-    context ={
-        'reg_form': form
+    form = LoginForm(request.POST)
+    reg_form = RegistrationForm(request.POST)
+    context = {
+        "reg_form": reg_form,
+        "login_form": form
     }
+
 
 
     return render(request, 'user_auth/user_auth.html', context)
 
 def login_view(request):
     if request.method == 'POST':
-        form = LoginForm(request, request.POST)
-        if form.is_valid():
-            user = form.get_user()
+        email = request.POST['email']
+        password = request.POST['password']
+        user = authenticate(request, email=email, password=password)
+        remember_me = request.POST.get('remember_me')
+        if user is not None:
             login(request, user)
-            greetings = "You're Welcome "+user.username
+
+            if not remember_me:
+                # Set session to expire when the browser is closed
+                request.session.set_expiry(0)
+            greetings = "You're Welcome!"
             messages.success(request, greetings)
             # redirect to home
             return redirect('home')
@@ -91,8 +101,10 @@ def login_view(request):
             messages.error(request, "Invalid Credentials")
     
     form = LoginForm(request.POST)
-    context ={
-        'login_form': form
+    reg_form = RegistrationForm(request.POST)
+    context = {
+        "reg_form": reg_form,
+        "login_form": form
     }
 
     return render(request, 'user_auth/user_auth.html', context)

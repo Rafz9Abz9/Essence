@@ -27,15 +27,22 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
-                        <form action="#">
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
                             <div class="form-group">
-                                <label for="singin-email-2">Username or Email Address *</label>
-                                <input type="text" class="form-control" id="singin-email-2" name="singin-email" required>
+                                <label for="login-email">Email Address *</label>
+                                {{ login_form.email }}
+                                <p class="text-danger">
+                                    {{ login_form.errors.email }}
+                                 </p>
                             </div><!-- End .form-group -->
 
                             <div class="form-group">
-                                <label for="singin-password-2">Password *</label>
-                                <input type="password" class="form-control" id="singin-password-2" name="singin-password" required>
+                                <label for="login-password">Password *</label>
+                                {{ login_form.password }}
+                                <p class="text-danger">
+                                    {{ login_form.errors.password }}
+                                 </p>
                             </div><!-- End .form-group -->
 
                             <div class="form-footer">
@@ -45,8 +52,8 @@
                                 </button>
 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="signin-remember-2">
-                                    <label class="custom-control-label" for="signin-remember-2">Remember Me</label>
+                                    <input type="checkbox" class="custom-control-input" id="signin-remember-2" name="remember_me">
+                                    <label class="custom-control-label" for="signin-remember-2" >Remember Me</label>
                                 </div><!-- End .custom-checkbox -->
 
                                 <a href="#" class="forgot-link">Forgot Your Password?</a>
@@ -81,14 +88,15 @@
                             </div><!-- End .form-group -->
 
                             <div class="form-footer text-danger">
-                                <button type="submit" class="btn btn-outline-primary-2">
+                                <button id="submitBtn" type="submit" class="btn btn-outline-primary-2" disabled >
                                     <span>SIGN UP</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </button>
 
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="register-policy-2" required>
-                                    <label class="custom-control-label" for="register-policy-2">I agree to the <a href="#">privacy policy</a> *</label>
+                                    <input type="checkbox" class="custom-control-input" id="agreeCheckbox" required name="agree_checkbox">
+                                    <label class="custom-control-label" for="agreeCheckbox">I agree to the <a href="#" data-toggle="modal" data-target="#privacyPolicy">privacy policy</a> *</label>
+                                    {% include 'includes/modals/privacy_policy_modal.html' %}
                                 </div><!-- End .custom-checkbox -->
                             </div><!-- End .form-footer -->
                         </form>
@@ -98,4 +106,17 @@
         </div><!-- End .form-box -->
     </div><!-- End .container -->
 </div><!-- End .login-page section-bg -->
+{% endblock %}
+
+{% block extrascripts %}
+<script>
+    
+    console.log('agreeCheckbox')
+    var agreeCheckbox = document.getElementById('agreeCheckbox');
+    var submitButton = document.getElementById('submitBtn');
+    agreeCheckbox.addEventListener('change', function () {
+      submitButton.disabled = !agreeCheckbox.checked;
+    });
+   
+</script>
 {% endblock %}
