@@ -165,8 +165,8 @@
 
                         <div class="dropdown-menu p-1 px-5" aria-labelledby="userDropdown">
                             <ul>
-                                <li><a href="{% url 'user_profile' %}">Profile</a></li>
                                 {% if user.is_authenticated %}
+                                    <li><a href="{% url 'user_profile' %}">Profile</a></li>
                                     <li><a href="{% url 'logout' %}">Logout</a></li>
                                 {% else  %}
                                     <li><a href="{% url 'user_auth' %}">Login</a></li>

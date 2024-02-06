@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'user.guard.AuthenticatedRedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'essence.urls'
@@ -144,3 +145,5 @@ EMAIL_HOST_PASSWORD = 'izlzpfazfwszmtox'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+# Login url
+LOGIN_URL = '/user/auth-page'
