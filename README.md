@@ -63,10 +63,16 @@ The website is set up with different pages, and each page is made for a specific
 
 ## Surface
 
-### Colour
+### Colour & Typography
+- I used [Logo](https://logo.com/) for the website logo and font.
+- Typography: Alex Brush Regular
+- The colours used are: Hex #101010 (Primary), Hex #000000 (Secondary), Hex #cc9966 (Accent), and Hex #fdfefe (Background).
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f9aa1e3b-de6f-4bee-9fa7-76fa643703ad)
+  
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7f9d154b-cf95-4bff-9528-fcdd6ef7b78e)
 
-### Typography
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a14e38c8-a5ed-4d00-8570-fc05de2c8e19)
 
 
 ### Images and Icons
