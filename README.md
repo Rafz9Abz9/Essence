@@ -127,9 +127,42 @@ The website is set up with different pages, and each page is made for a specific
 # Technology Used 
 
 ## Language
-
+- HTML & CSS (Bootstrap template): **HTML** structures the web pages, while **CSS** styles them. **Bootstrap** provides ready-made templates and components for faster website development. 
+- JavaScript: for the interactivity and dynamic features to web pages.
+- Python: used for creation of the back-end function of the website.
 
 ## Tools
+1. Version Control
+      - GitHub: hosting the site and managing version control.
+2. Development Tools
+      - Visual Studio Code: utilized as the primary integrated development environment (IDE).
+      - Django: python web framework used for building web applications.
+3. Deployment
+      - Heroku: deployment platform for the site.
+4. Design & Planning
+      - Balsamiq: creating the wireframes for the website.
+      - Lucidchart: generating the flowchart for the website's structure.
+      - DrawSQL: designing the database schema.
+5. Graphics & Styling
+      - Logo: creating the website's logo and typography.
+      - Bootstrap: used template for front-end development.
+6. Code Validation & Testing
+      - W3C HTML Validator: validating HTML.
+      - W3C CSS Validator: validating CSS.
+      - JSHint: validating JavaScript code.
+      - CI Python Linter: validating Python code.
+      - Chrome DevTools: debugging and testing with Lighthouse.
+7. Data Management
+      - AWS: storing media and static data.
+      - PostgreSQL (Postgres): used for storing and managing structured data.
+8. Payment Processing
+      - Stripe: handling online payments and managing transactions.
+9. Content Generation
+      - [ChatGPT](https://chat.openai.com/): used for creating descriptions for website's introductions.
+      - [Boots](https://www.boots.ie/): product images and details sourced from here.
+10. Testing & Performance
+      - Lighthouse: testing performance of website.
+
 
 # Testing
 
