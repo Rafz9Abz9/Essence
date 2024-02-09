@@ -135,7 +135,7 @@ The website is set up with different pages, and each page is made for a specific
 
 
 # Deployment
-This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, and [**Heroku**](https://www.heroku.com/) as the deployment site.
+This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, [**Heroku**](https://www.heroku.com/) as the deployment site, and [**Stripe**](https://stripe.com/en-se) for processing online payments.
 
 **Set Up AWS to Store Static & Media Files**
 - Create an account on [AWS](https://aws.amazon.com/).
