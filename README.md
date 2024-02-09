@@ -135,7 +135,7 @@ The website is set up with different pages, and each page is made for a specific
 
 
 # Deployment
-This project was developed using **Visual Studio Code** as the IDE, **GitHub** as the remote repository, **AWS** to store static and media files, and **Heroku** as the deployment site.
+This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, and [**Heroku**](https://www.heroku.com/) as the deployment site.
 
 **Set Up AWS to Store Static & Media Files**
 - Create an account on [AWS](https://aws.amazon.com/).
@@ -209,6 +209,17 @@ Example:
 - Select the group with the attached policy, click ‘Next’ > Tags, ‘Next’ > ‘Review’, and ‘Create user’.
 - On the next page, download the CSV file containing the user’s access key and secret access key for future use.
 
+**Connecting AWS to Django**
+- Sign Up for AWS: Create an AWS account if you haven't already.
+- Install Boto3: Use pip to install the Boto3 library, the official AWS SDK for Python.
+- Set Up AWS IAM User: Create an IAM user in the AWS Management Console with appropriate permissions and note down the Access Key ID and Secret Access Key.
+- Configure AWS Credentials: Add your AWS credentials to your Django project's settings using environment variables or a configuration file.
+- Install Django Storages: Use pip to install Django Storages, a library that provides custom storage backends for Django applications.
+- Configure Django Settings: Set up Django to use AWS S3 for static and media file storage by specifying the bucket name and AWS credentials in your settings.py file.
+- Upload Files to S3: Use the AWS Management Console or Boto3 to upload your static and media files to your S3 bucket.
+- Test Integration: Start your Django server and verify that static and media files are being served from AWS S3.
+- By following these steps, you'll be able to connect AWS to your Django project and use S3 for storing static and media files.
+
 **Heroku**
 - Go to the Heroku website.
 - Register or login.
@@ -243,13 +254,14 @@ Example:
 
 By following these steps, you'll have successfully set up Stripe payments for the website.
 
-# Credits
 
+# Credits
 
 ## Content
 - Bootstrap template was used for the front-end development and customised.
 - Boutique Ado Walkthrough from [Code Institute](https://codeinstitute.net/) was used as an inspiration. It allowed me to have an idea of how to go about my website. It was very helpful and made it less stressful.
 - [Django Documentation](https://www.djangoproject.com/) was used for examples of code solutions and Django functionality.
+- [Stripe](https://stripe.com/en-se) used for processing online payments and managing transactions for businesses, allowing them to accept payments securely over the internet.
 
 ## Media
 - [Logo](https://logo.com/) was used for the website's logo.
