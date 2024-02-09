@@ -135,6 +135,75 @@ The website is set up with different pages, and each page is made for a specific
 
 
 # Deployment
+This project was developed using **Visual Studio Code** as the IDE, **GitHub** as the remote repository, **AWS** to store static and media files, and **Heroku** as the deployment site.
+
+**Set Up AWS to Store Static & Media Files**
+- Create an account on [AWS](https://aws.amazon.com/).
+- Login and go to All Services > Storage > S3
+- Create a new bucket by clicking the orange ‘Create Bucket’ button on the S3 page.
+- Name the bucket and choose the nearest region.
+- Under ‘Object Ownership’, select ‘ACLs enabled’, keeping Object Ownership as ‘Bucket owner preferred’.
+- Uncheck ‘Block all public assess’, acknowledge the warning to make the bucket public, and click ‘create bucket’.
+- Click the created bucket’s name, go to the properties tab, and under ‘Static website hosting’, click ‘edit’.
+- Enable Static website hosting, copy default index and error document values, and click ‘save changes’.
+- Go to the permissions tab, find the Cross-origin resource sharing (CORS) section, click edit, and paste in the following code:
+[
+    {
+        "AllowedHeaders": [
+        "Authorization"
+        ],
+        "AllowedMethods": [
+        "GET"
+        ],
+        "AllowedOrigins": [
+        "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+- Go to the ‘Bucket Policy’ section, click ‘edit’, and then choose ‘Policy generator’ to open the AWS policy generator page.
+- In the ‘Select type of policy’ dropdown, pick ‘S3 Bucket Policy’, and in the ‘Principle’, allow all by typing ‘*’.
+- Choose ‘Get object’ from the ‘Actions’ dropdown.
+- Go back to the previous tab, find the Bucket ARN number and copy it.
+- Return to the policy generator, paste the ARN in the ‘Amazon Resource Name (ARN)’ field, click ‘Add statement’, then ‘Generate Policy’.
+- Copy the generated policy and paste it into the bucket policy editor.
+- Before saving, add ‘/*’ at the end of your resource key to allow access to all resources in the bucket.
+- Save the changes and scroll down to the ‘Access control list (ACL)’ section, then click ‘edit’.
+- Check the ‘list’ checkbox next to ‘Everyone (public access)’, acknowledge the warning, and click ‘save’.
+
+**IAM**
+- Open the window and search for IAM, then select it.
+- On the IAM page, go to the sidebar and click ‘User Groups’ followed by ‘Create group’.
+- Name the group ‘manage-your-project-name’ and click ‘Create group’.
+- From the sidebar, click ‘Policies’, then ‘Create policy’.
+- Go to the JSON tab, click ‘import policy’, search for ‘S3’, and select ‘AmazonS3FullAccess’. Click import.
+- After importing, update the Resource key in the policy by copying your bucket’s ARN. Add two lines with your ARN and your ARN followed by a ‘/*’.
+	Example:
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": [
+                "YOUR-ARN-NO-HERE",
+                "YOUR-ARN-NO-HERE/*"
+            ]
+        }
+    ]
+}
+
+-  Click ‘Next’ > Tags, ‘Next’ > ‘Review’.
+- Provide a name and description, then click on ‘Create policy’.
+- Return to the policy page, find your newly created policy, and attach it to the group.
+    - Click ‘User groups’, select your group, go to the permissions tab, click ‘Add permission’, and choose ‘Attach policies’.
+    - Find and select the policy, then click ‘Add permissions’.
+- Create a user by selecting ‘Users’ from the sidebar, clicking ‘Add user’, giving a username, checking ‘Programmatic Access’, and clicking ‘Next’ > Permissions.
+- Select the group with the attached policy, click ‘Next’ > Tags, ‘Next’ > ‘Review’, and ‘Create user’.
+- On the next page, download the CSV file containing the user’s access key and secret access key for future use.
 
 
 # Credits
