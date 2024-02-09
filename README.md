@@ -232,6 +232,7 @@ Example:
 1.	Sign Up and Get Keys: Log in to your Stripe account, go to the "Developers" tab, and copy your API keys. Then, in your Heroku dashboard, add these keys as config variables:
 
 •	STRIPE_PUBLIC_KEY: Copy your Stripe publishable key here.
+
 •	STRIPE_SECRET_KEY: Paste your Stripe secret key here.
 
 2.	Set Up Webhook: In Stripe, create a new webhook for your live site. Navigate to the "Webhooks" section, click "Add Endpoint," and paste your live site's URL followed by /checkout/wh/. Make sure it's set to listen for all events.
