@@ -141,6 +141,24 @@ The website is set up with different pages, and each page is made for a specific
 
 
 ## Content
-
+- Bootstrap template was used for the front-end development and customised.
+- Boutique Ado Walkthrough from [Code Institute](https://codeinstitute.net/) was used as an inspiration. It allowed me to have an idea of how to go about my website. It was very helpful and made it less stressful.
+- [Django Documentation](https://www.djangoproject.com/) was used for examples of code solutions and Django functionality.
 
 ## Media
+- [Logo](https://logo.com/) was used for the website's logo.
+- [Unsplash](https://unsplash.com/) was used for some of the images used on the website.
+- [Freepik](https://www.freepik.com/) was used for some of the images used on the website.
+- [Google](https://www.google.com/): some images were also taken from Google.
+- [Boots](https://www.boots.ie/) was used for some of the product images  used on the website. The details of the products were also taken from this website.
+- [Lucidchart](https://lucid.co/) was used to create the structure of the website.
+- [DrawSQL](https://drawsql.app/) was used to create the database schema of the website.
+- Slack: watched videos and notes of plans and guides on how to start and complete the project.
+- Code Institute README template was used as an inspiration for my README.md file. 
+- Bootstrap was used as a template for the front-end development of the website.
+- [Bootstrap](https://getbootstrap.com/): this documentation was used for examples of Bootstrap functionality.
+
+## Acknowledgements
+- Slack Community for the helpful materials.
+- Code Institute for their helpful materials.
+- My mentor Antonio Rodriguez for his advice and support.
