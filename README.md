@@ -209,6 +209,25 @@ Example:
 - Select the group with the attached policy, click ‘Next’ > Tags, ‘Next’ > ‘Review’, and ‘Create user’.
 - On the next page, download the CSV file containing the user’s access key and secret access key for future use.
 
+**Heroku**
+- Go to the Heroku website.
+- Register or login.
+- Click on the 'New' button and 'Create New App'.
+- Name your app and select your region.
+- Go to the 'Settings' and click on 'Reveal Config Vars' then add the following keys and their respective values:
+
+| Key                    | Value                                               |
+|------------------------|-----------------------------------------------------|
+| AWS_ACCESS_KEY_ID      | your AWS bucket ID                                  |
+| AWS_SECRET_ACCESS_KEY  | your AWS secret key                                 |
+| DATABASE_URL           | add ElephantSQL database URL here                   |
+| SECRET_KEY             | used for the Django project                         |
+| USE_AWS                | True                                                |
+| STRIPE_SECRET_KEY      | Stripe account                                      |
+| STRIPE_PUBLIC_KEY      | from Stripe account                                 |
+| STRIPE_WH_SECRET       | from Stripe account                                 |
+
+
 
 # Credits
 
