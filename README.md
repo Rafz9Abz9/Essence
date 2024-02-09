@@ -228,6 +228,17 @@ Example:
 | STRIPE_WH_SECRET       | from Stripe account                                 |
 
 
+**Stripe Payment**
+1.	Sign Up and Get Keys: Log in to your Stripe account, go to the "Developers" tab, and copy your API keys. Then, in your Heroku dashboard, add these keys as config variables:
+•	STRIPE_PUBLIC_KEY: Copy your Stripe publishable key here.
+•	STRIPE_SECRET_KEY: Paste your Stripe secret key here.
+
+2.	Set Up Webhook: In Stripe, create a new webhook for your live site. Navigate to the "Webhooks" section, click "Add Endpoint," and paste your live site's URL followed by /checkout/wh/. Make sure it's set to listen for all events.
+   
+3.	Get Webhook Secret: After setting up the webhook, click on it, and at the top, you'll see "Signing Secret." Click to reveal the secret value. Copy this secret and set it as a new config variable in Heroku:
+•	STRIPE_WH_SECRET: Paste the signing secret from your new webhook here.
+
+By following these steps, you'll have successfully set up Stripe payments for the website.
 
 # Credits
 
