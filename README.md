@@ -147,6 +147,7 @@ This project was developed using **Visual Studio Code** as the IDE, **GitHub** a
 - Click the created bucket’s name, go to the properties tab, and under ‘Static website hosting’, click ‘edit’.
 - Enable Static website hosting, copy default index and error document values, and click ‘save changes’.
 - Go to the permissions tab, find the Cross-origin resource sharing (CORS) section, click edit, and paste in the following code:
+
 [
     {
         "AllowedHeaders": [
@@ -161,6 +162,7 @@ This project was developed using **Visual Studio Code** as the IDE, **GitHub** a
         "ExposeHeaders": []
     }
 ]
+
 - Go to the ‘Bucket Policy’ section, click ‘edit’, and then choose ‘Policy generator’ to open the AWS policy generator page.
 - In the ‘Select type of policy’ dropdown, pick ‘S3 Bucket Policy’, and in the ‘Principle’, allow all by typing ‘*’.
 - Choose ‘Get object’ from the ‘Actions’ dropdown.
@@ -178,7 +180,9 @@ This project was developed using **Visual Studio Code** as the IDE, **GitHub** a
 - From the sidebar, click ‘Policies’, then ‘Create policy’.
 - Go to the JSON tab, click ‘import policy’, search for ‘S3’, and select ‘AmazonS3FullAccess’. Click import.
 - After importing, update the Resource key in the policy by copying your bucket’s ARN. Add two lines with your ARN and your ARN followed by a ‘/*’.
-	Example:
+
+Example:
+
 {
     "Version": "2012-10-17",
     "Statement": [
