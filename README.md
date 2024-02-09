@@ -112,6 +112,15 @@ The website is set up with different pages, and each page is made for a specific
 
 
 ## Authentication
+- **Register**: easily sign up for an account using the ‘Register’ option in the account navbar. Once registered, user will receive a confirmation email. User can register with their email address and password. 
+
+- **Login**: if user already has an account, they can select the ‘Login’ option in the account navbar. User can login with their email address and password. 
+
+- **Log out**: if user wants to log out, they can click on the ‘Log out’ option in the account navbar. 
+
+- **Forgot Password**: if a user forgets their password, they can click on the ‘Forgot Password’ on the Login page. Provide the email address used when registering an account, and an email with a password reset link.
+
+- **Change Password**: if a user wants to change their password, they can go to their profile page and select the ‘Change Password’. User will have to put in their ‘Old Password’ then enter in their ‘New Password’ and select ‘Save Changes’ to save the details. 
 
 
 ## Future Features
