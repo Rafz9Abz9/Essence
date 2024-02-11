@@ -81,13 +81,6 @@ The website is set up with different pages, and each page is made for a specific
 
 ## Existing Features
 
-| PAGE        | FEATURE      | OUTCOME                                                                                                     |
-|-------------|--------------|-------------------------------------------------------------------------------------------------------------|
-| CONTACT US  | User can view the company’s contact information such as their address, phone number, email address, and office opening days and hours. | PASS |
-| CONTACT US  | User can view and have access to a contact us form which includes fields for name, email address, phone number, subject of email, and message. | PASS |
-| CONTACT US  | There is a 'Submit' button for users to send their message to the company. | PASS |
-| CONTACT US  | Users receive a confirmation message after submitting, assuring their message has been sent. | PASS |
-
 ### Home Page
 
 
