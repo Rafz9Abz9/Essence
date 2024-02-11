@@ -168,7 +168,6 @@ The website is set up with different pages, and each page is made for a specific
       - Stripe: handling online payments and managing transactions.
 9. Content Generation
       - [ChatGPT](https://chat.openai.com/): used for creating descriptions for website's introductions.
-      - [Boots](https://www.boots.ie/): product images and details sourced from here.
 10. Testing & Performance
       - Lighthouse: testing performance of website.
 
@@ -311,6 +310,7 @@ By following these steps, you'll have successfully set up Stripe payments for th
 - [Freepik](https://www.freepik.com/) was used for some of the images used on the website.
 - [Google](https://www.google.com/): some images were also taken from Google.
 - [Boots](https://www.boots.ie/) was used for some of the product images  used on the website. The details of the products were also taken from this website.
+- [iStock](https://www.istockphoto.com/): some images were taken from here.
 - [Lucidchart](https://lucid.co/) was used to create the structure of the website.
 - [DrawSQL](https://drawsql.app/) was used to create the database schema of the website.
 - Slack: watched videos and notes of plans and guides on how to start and complete the project.
