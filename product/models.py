@@ -1,19 +1,20 @@
 from django.db import models
-from PIL import Image as PilImage
-from django.core.exceptions import ValidationError
-from django.core.validators import validate_image_file_extension
+from django.core.validators import validate_image_file_extension,MinValueValidator, MaxValueValidator
+from user.models import CustomUser
+from .utils import validate_image_content
+from babel.numbers import format_currency
+from django.utils import timezone
 
 # Create your models here.
-def validate_image_content(value):
-    try:
-        img = PilImage.open(value)
-    except PilImage.UnidentifiedImageError:
-        raise ValidationError("File is not a valid image.")
+
     
     
 class Category(models.Model):
     name = models.CharField(max_length=25, null=False)
     friendly_name = models.CharField(max_length=50, null=False, default=" ")
+
+    class Meta:
+        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name
@@ -22,13 +23,31 @@ class Image(models.Model):
     # Fields to store information about each image
     image_file = models.ImageField(
         upload_to='product_images/',
-        validators=[validate_image_file_extension, validate_image_content]
+        validators=[validate_image_file_extension, validate_image_content],
+        default="images/products/default.jpeg"
     )
     caption = models.CharField(max_length=255, blank=True)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.caption 
+
+
+class Review(models.Model):
+    # Fields to store information about each image
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
+    title = models.CharField(max_length=255)
+    full_name = models.CharField(max_length=255, default="")
+    content = models.TextField(max_length=1025)
+    ratings = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+        default=0
+    )
+    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='reviews')
+    created_at = models.DateTimeField(default=timezone.now, blank=True)
+
+    def __str__(self):
+        return f"Review for {self.product.name}"
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
@@ -41,7 +60,15 @@ class Product(models.Model):
     sold = models.BigIntegerField(default=0, null=False)
     is_featured = models.BooleanField(default=False)
     images = models.ManyToManyField('Image', related_name='products', blank=True)
+    ratings = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)],
+        default=0
+    )
+    review = models.ManyToManyField('Review', related_name='products', blank=True)
+    created_at = models.DateTimeField(default=timezone.now, blank=True)
 
-
+    def formatted_price(self):
+        return format_currency(self.price, 'EUR', locale='en_US')
+    
     def __str__(self):
         return self.name

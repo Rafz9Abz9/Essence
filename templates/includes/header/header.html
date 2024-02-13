@@ -55,10 +55,12 @@
                                         <div class="menu-col">
                                             <div class="menu-title">Product Details</div><!-- End .menu-title -->
                                             <ul>
-                                                <li><a href="product.html">All Products</a></li>
-                                                <li><a href="product-centered.html">Category 1</a></li>
-                                                <li><a href="product-centered.html">Category 2</a></li>
-                                                <li><a href="product-centered.html">Category 3</a></li>
+                                                <li><a href="{% url 'products' %}">All Products</a></li>
+                                                {% if categories %}
+                                                    {% for category in  categories %}
+                                                        <li><a href="/products/?category={{category.name}}">{{category.friendly_name}}</a></li>
+                                                    {% endfor %}
+                                                {% endif %}
                                             </ul>
                                         </div><!-- End .menu-col -->
                                     </div><!-- End .col-md-6 -->
@@ -85,15 +87,17 @@
                 </nav><!-- End .main-nav -->
             </div><!-- End .header-left -->
 
-            <div class="header-right">
-                <div class="header-search">
-                    <a href="#" class="search-toggle" role="button" title="Search"><i class="icon-search"></i></a>
-                    <form action="#" method="get">
+            <div class="header-right  position-relative">
+                <div class="header-search dropdown">
+                    <a href="#" class="search-toggle " role="button" title="Search"><i class="icon-search"></i></a>
+                    <form id="search-form" action="{% url 'products' %}" method="get">
                         <div class="header-search-wrapper">
                             <label for="q" class="sr-only">Search</label>
-                            <input type="search" class="form-control" name="q" id="q" placeholder="Search in..." required>
+                            <input type="search" class="form-control" name="q" id="q" placeholder="Search in...">
                         </div><!-- End .header-search-wrapper -->
                     </form>
+
+                    
                 </div><!-- End .header-search -->
 
                 <div class="dropdown cart-dropdown mr-3">
@@ -179,3 +183,24 @@
         </div><!-- End .container -->
     </div><!-- End .header-middle -->
 </header><!-- End .header -->
+
+
+
+{% block extrascripts %}  
+
+<script>
+    $('#q').keypress(function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            // Get the current page address
+            var currentUrl = window.location.href;
+
+            $('#search-form').action = currentUrl;
+            console.log($('#search-form').action)
+            $('#search-form').submit();
+        }
+    });
+
+</script>
+
+{% endblock %}

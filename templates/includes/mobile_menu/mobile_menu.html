@@ -28,10 +28,12 @@
                                 <div class="col-md-6">
                                     <div class="menu-col">
                                         <ul>
-                                            <li><a href="product.html">All Products</a></li>
-                                            <li><a href="product-centered.html">Category 1</a></li>
-                                            <li><a href="product-centered.html">Category 2</a></li>
-                                            <li><a href="product-centered.html">Category 3</a></li>
+                                            <li><a href="{% url 'products' %}">All Products</a></li>
+                                            {% if categories %}
+                                                {% for category in  categories %}
+                                                    <li><a href="/products/?category={{category.name}}">{{category.friendly_name}}</a></li>
+                                                {% endfor %}
+                                            {% endif %}
                                         </ul>
                                     </div><!-- End .menu-col -->
                                 </div><!-- End .col-md-6 -->

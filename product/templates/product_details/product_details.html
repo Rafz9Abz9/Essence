@@ -35,7 +35,7 @@
                             <div class="product-gallery">
                                 <figure class="product-main-image">
                                     <span class="product-label label-sale">Sale</span>
-                                    <img id="product-zoom" src="{% static 'images/products/single/fullwidth/3.jpg' %}" data-zoom-image="{% static 'images/products/single/fullwidth/3-big.jpg' %}" alt="product image" />
+                                    <img id="product-zoom" src="{{ product.images.all|access_list:0|image_url }}" data-zoom-image="{{ product.images.all|access_list:0|image_url }}" alt="{{product.images.all|access_list:0|image_caption}}" />
 
                                     <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                         <i class="icon-arrows"></i>
@@ -43,21 +43,11 @@
                                 </figure><!-- End .product-main-image -->
 
                                 <div id="product-zoom-gallery" class="product-image-gallery max-col-6">
-                                    <a class="product-gallery-item" href="#" data-image="images/products/single/fullwidth/1.jpg" data-zoom-image="images/products/single/fullwidth/1-big.jpg">
-                                        <img src="{% static 'images/products/single/fullwidth/1-small.jpg' %}" alt="product side" />
-                                    </a>
-
-                                    <a class="product-gallery-item" href="#" data-image="images/products/single/fullwidth/2.jpg" data-zoom-image="{% static 'images/products/single/fullwidth/2-big.jpg' %}">
-                                        <img src="{% static 'images/products/single/fullwidth/2-small.jpg' %}" alt="product cross" />
-                                    </a>
-
-                                    <a class="product-gallery-item active" href="#" data-image="{% static 'images/products/single/fullwidth/3.jpg' %}" data-zoom-image="{% static 'images/products/single/fullwidth/3-big.jpg' %}">
-                                        <img src="images/products/single/fullwidth/3-small.jpg" alt="product with model" />
-                                    </a>
-
-                                    <a class="product-gallery-item" href="#" data-image="{% static 'images/products/single/fullwidth/4.jpg' %}" data-zoom-image="{% static 'images/products/single/fullwidth/4-big.jpg' %}">
-                                        <img src="{% static 'images/products/single/fullwidth/4-small.jpg' %}" alt="product back">
-                                    </a>
+                                    {% for image in product.images.all%}
+                                        <a href="{{image|image_url}}" class="product-gallery-item" target="blank">
+                                            <img src="{{image|image_url}}" alt="product desc">
+                                        </a>
+                                    {% endfor %}
 
                                 </div><!-- End .product-image-gallery -->
                             </div><!-- End .product-gallery -->
@@ -65,55 +55,42 @@
 
                         <div class="col-md-6 col-lg-5">
                             <div class="product-details">
-                                <h1 class="product-title">Beige ring handle circle cross body bag</h1><!-- End .product-title -->
-
+                                <h1 class="product-title"> {{product.name}}</h1><!-- End .product-title -->
+                                    
                                 <div class="ratings-container">
                                     <div class="ratings">
-                                        <div class="ratings-val" style="width: 50%;"></div><!-- End .ratings-val -->
+                                        <div class="ratings-val" style="width: {{product.ratings|divide_by:5|multiply_by:100}}%;"></div><!-- End .ratings-val -->
                                     </div><!-- End .ratings -->
-                                    <a class="ratings-text" href="#product-accordion" id="review-link">( 2 Reviews )</a>
+                                    <a class="ratings-text" href="#product-accordion" id="review-link">
+                                        {% if product.reviews.all|length > 0 %}
+                                            <span class="ratings-text">( {{ product.reviews.all|length}} Reviews )</span>
+                                        {% else %}
+                                            <span class="ratings-text">( 0 Review )</span>
+                                        {% endif %}
+                                    </a>
                                 </div><!-- End .rating-container -->
 
                                 <div class="product-price">
-                                    <span class="new-price">$56.00</span>
-                                    <span class="old-price">$110.00</span>
+                                    <span class="new-price">{{product.formatted_price}}</span>
+                                    {% comment %} <span class="old-price">$110.00</span> {% endcomment %}
                                 </div><!-- End .product-price -->
 
-                                <div class="product-content">
-                                    <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing. Sed lectus. </p>
-                                </div><!-- End .product-content -->
+                                <div class="row"> 
+                                    <div class="col-3 details-filter-row details-row-size">
+                                        <label for="qty" class="w-100">In Stock:</label>
+                                        <div class="product-details-quantity">
+                                            {{ product.stock}}
+                                        </div><!-- End .product-details-quantity -->
+                                    </div><!-- End .details-filter-row -->
+    
+                                    <div class="col-3 details-filter-row details-row-size">
+                                        <label for="qty" class="w-100">Total Sold:</label>
+                                        <div class="product-details-quantity">
+                                            {{product.sold}}
+                                        </div><!-- End .product-details-quantity -->
+                                    </div><!-- End .details-filter-row -->
 
-                                <div class="details-filter-row details-row-size">
-                                    <label>Color:</label>
-
-                                    <div class="product-nav product-nav-thumbs">
-                                        <a href="#" class="active">
-                                            <img src="{% static 'images/products/single/fullwidth/1-thumb.jpg' %}" alt="product desc" />
-                                        </a>
-                                        <a href="#">
-                                            <img src="{% static 'images/products/single/fullwidth/2-thumb.jpg' %}" alt="product desc" />
-                                        </a>
-                                        <a href="#">
-                                            <img src="{% static 'images/products/single/fullwidth/3-thumb.jpg' %}" alt="product desc" />
-                                        </a>
-                                        <a href="#">
-                                            <img src="{% static 'images/products/single/fullwidth/4-thumb.jpg' %}" alt="product desc" />
-                                        </a>
-                                    </div><!-- End .product-nav -->
-                                </div><!-- End .details-filter-row -->
-
-                                <div class="details-filter-row details-row-size">
-                                    <label for="size">Size:</label>
-                                    <div class="select-custom">
-                                        <select name="size" id="size" class="form-control">
-                                            <option value="#" selected="selected">Select a size</option>
-                                            <option value="s">Small</option>
-                                            <option value="m">Medium</option>
-                                            <option value="l">Large</option>
-                                            <option value="xl">Extra Large</option>
-                                        </select>
-                                    </div><!-- End .select-custom -->
-                                </div><!-- End .details-filter-row -->
+                                </div>
 
                                 <div class="details-filter-row details-row-size">
                                     <label for="qty">Qty:</label>
@@ -126,17 +103,14 @@
                                     <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
 
                                     <div class="details-action-wrapper">
-                                        <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
-                                        <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
+                                        <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
                                     </div><!-- End .details-action-wrapper -->
                                 </div><!-- End .product-details-action -->
 
                                 <div class="product-details-footer">
                                     <div class="product-cat">
                                         <span>Category:</span>
-                                        <a href="#">Women</a>,
-                                        <a href="#">Dresses</a>,
-                                        <a href="#">Yellow</a>
+                                        <a href="#">{{product.category.friendly_name}}</a>,
                                     </div><!-- End .product-cat -->
 
                                     <div class="social-icons social-icons-sm">
@@ -160,14 +134,7 @@
                                         <div id="product-accordion-desc" class="collapse" aria-labelledby="product-desc-heading" data-parent="#product-accordion">
                                             <div class="card-body">
                                                 <div class="product-desc-content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.</p>
-                                                    <ul>
-                                                        <li>Nunc nec porttitor turpis. In eu risus enim. In vitae mollis elit. </li>
-                                                        <li>Vivamus finibus vel mauris ut vehicula.</li>
-                                                        <li>Nullam a magna porttitor, dictum risus nec, faucibus sapien.</li>
-                                                    </ul>
-
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede.</p>
+                                                    {{product.description}}
                                                 </div><!-- End .product-desc-content -->
                                             </div><!-- End .card-body -->
                                         </div><!-- End .collapse -->
@@ -184,20 +151,7 @@
                                         <div id="product-accordion-info" class="collapse" aria-labelledby="product-info-heading" data-parent="#product-accordion">
                                             <div class="card-body">
                                                 <div class="product-desc-content">
-                                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. </p>
-
-                                                    <h3>Fabric & care</h3>
-                                                    <ul>
-                                                        <li>100% Polyester</li>
-                                                        <li>Do not iron</li>
-                                                        <li>Do not wash</li>
-                                                        <li>Do not bleach</li>
-                                                        <li>Do not tumble dry</li>
-                                                        <li>Professional dry clean only</li>
-                                                    </ul>
-
-                                                    <h3>Size</h3>
-                                                    <p>S, M, L, XL</p>
+                                                    {{product.ingredients}}
                                                 </div><!-- End .product-desc-content -->
                                             </div><!-- End .card-body -->
                                         </div><!-- End .collapse -->
@@ -225,64 +179,44 @@
                                         <div class="card-header" id="product-review-heading">
                                             <h2 class="card-title">
                                                 <a role="button" data-toggle="collapse" href="#product-accordion-review" aria-expanded="true" aria-controls="product-accordion-review">
-                                                    Reviews (2)
+                                                    Reviews ({{ product.reviews.all|length}})
                                                 </a>
                                             </h2>
                                         </div><!-- End .card-header -->
                                         <div id="product-accordion-review" class="collapse show" aria-labelledby="product-review-heading" data-parent="#product-accordion">
                                             <div class="card-body">
                                                 <div class="reviews">
-                                                    <div class="review">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-auto">
-                                                                <h4><a href="#">Samanta J.</a></h4>
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                </div><!-- End .rating-container -->
-                                                                <span class="review-date">6 days ago</span>
-                                                            </div><!-- End .col -->
-                                                            <div class="col">
-                                                                <h4>Good, perfect size</h4>
+                                                    {% if product.reviews.all%}
+                                                        {% for review in product.reviews.all %}       
+                                                            <div class="review">
+                                                                <div class="row no-gutters">
+                                                                    <div class="col-auto">
+                                                                        <h4><a href="#">{{review.full_name}}</a></h4>
+                                                                        <div class="ratings-container">
+                                                                            <div class="ratings">
+                                                                                <div class="ratings-val" style="width: {{review.ratings|divide_by:5|multiply_by:100}}%;"></div><!-- End .ratings-val -->
+                                                                            </div><!-- End .ratings -->
+                                                                        </div><!-- End .rating-container -->
+                                                                        <span class="review-date">{{review.created_at}}</span>
+                                                                    </div><!-- End .col -->
+                                                                    <div class="col">
+                                                                        <h4>{{ review.title}}</h4>
 
-                                                                <div class="review-content">
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus cum dolores assumenda asperiores facilis porro reprehenderit animi culpa atque blanditiis commodi perspiciatis doloremque, possimus, explicabo, autem fugit beatae quae voluptas!</p>
-                                                                </div><!-- End .review-content -->
+                                                                        <div class="review-content">
+                                                                            <p>{{review.content}}</p>
+                                                                        </div><!-- End .review-content -->
 
-                                                                <div class="review-action">
-                                                                    <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
-                                                                    <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                                                </div><!-- End .review-action -->
-                                                            </div><!-- End .col-auto -->
-                                                        </div><!-- End .row -->
-                                                    </div><!-- End .review -->
-
-                                                    <div class="review">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-auto">
-                                                                <h4><a href="#">John Doe</a></h4>
-                                                                <div class="ratings-container">
-                                                                    <div class="ratings">
-                                                                        <div class="ratings-val" style="width: 100%;"></div><!-- End .ratings-val -->
-                                                                    </div><!-- End .ratings -->
-                                                                </div><!-- End .rating-container -->
-                                                                <span class="review-date">5 days ago</span>
-                                                            </div><!-- End .col -->
-                                                            <div class="col">
-                                                                <h4>Very good</h4>
-
-                                                                <div class="review-content">
-                                                                    <p>Sed, molestias, tempore? Ex dolor esse iure hic veniam laborum blanditiis laudantium iste amet. Cum non voluptate eos enim, ab cumque nam, modi, quas iure illum repellendus, blanditiis perspiciatis beatae!</p>
-                                                                </div><!-- End .review-content -->
-
-                                                                <div class="review-action">
-                                                                    <a href="#"><i class="icon-thumbs-up"></i>Helpful (0)</a>
-                                                                    <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                                                </div><!-- End .review-action -->
-                                                            </div><!-- End .col-auto -->
-                                                        </div><!-- End .row -->
-                                                    </div><!-- End .review -->
+                                                                        <div class="review-action">
+                                                                            <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
+                                                                            <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
+                                                                        </div><!-- End .review-action -->
+                                                                    </div><!-- End .col-auto -->
+                                                                </div><!-- End .row -->
+                                                            </div><!-- End .review -->
+                                                        {% endfor %}
+                                                    {% else %}
+                                                        <div class="review">No Reviews Yet</div>
+                                                    {% endif %}
                                                 </div><!-- End .reviews -->
                                             </div><!-- End .card-body -->
                                         </div><!-- End .collapse -->
@@ -298,71 +232,29 @@
                 <div class="sidebar sidebar-product">
                     <div class="widget widget-products">
                         <h4 class="widget-title">Related Product</h4><!-- End .widget-title -->
+                        {% if related_product|length > 0 %}
+                            {% for product in related_product %}
+                                <div class="products">
+                                    <div class="product product-sm">
+                                        <figure class="product-media">
+                                            <a href="{% url 'product_details' product_id=product.id%}">
+                                                <img src="{{ product.images.all|access_list:0|image_url }} " alt="Product image" class="product-image" />
+                                            </a>
+                                        </figure>
 
-                        <div class="products">
-                            <div class="product product-sm">
-                                <figure class="product-media">
-                                    <a href="product.html">
-                                        <img src="images/products/single/sidebar/1.jpg" alt="Product image" class="product-image" />
-                                    </a>
-                                </figure>
+                                        <div class="product-body">
+                                            <h5 class="product-title"><a href="{% url 'product_details' product_id=product.id%}">{{ product.name }}</h5><!-- End .product-title -->
+                                            <div class="product-price">
+                                                <span class="new-price">{{product.formatted_price}}</span>
+                                                
+                                            </div><!-- End .product-price -->
+                                        </div><!-- End .product-body -->
+                                    </div><!-- End .product product-sm -->
+                                </div><!-- End .products -->
+                            {% endfor %}
+                        {% endif %}
 
-                                <div class="product-body">
-                                    <h5 class="product-title"><a href="product.html">Light brown studded <br>Wide fit wedges</a></h5><!-- End .product-title -->
-                                    <div class="product-price">
-                                        <span class="new-price">$50.00</span>
-                                        <span class="old-price">$110.00</span>
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product product-sm -->
-
-                            <div class="product product-sm">
-                                <figure class="product-media">
-                                    <a href="product.html">
-                                        <img src="images/products/single/sidebar/2.jpg" alt="Product image" class="product-image" />
-                                    </a>
-                                </figure>
-
-                                <div class="product-body">
-                                    <h5 class="product-title"><a href="product.html">Yellow button front tea top</a></h5><!-- End .product-title -->
-                                    <div class="product-price">
-                                        $56.00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product product-sm -->
-
-                            <div class="product product-sm">
-                                <figure class="product-media">
-                                    <a href="product.html">
-                                        <img src="images/products/single/sidebar/3.jpg" alt="Product image" class="product-image" />
-                                    </a>
-                                </figure>
-
-                                <div class="product-body">
-                                    <h5 class="product-title"><a href="product.html">Beige metal hoop tote bag</a></h5><!-- End .product-title -->
-                                    <div class="product-price">
-                                        $50.00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product product-sm -->
-
-                            <div class="product product-sm">
-                                <figure class="product-media">
-                                    <a href="product.html">
-                                        <img src="images/products/single/sidebar/4.jpg" alt="Product image" class="product-image" />
-                                    </a>
-                                </figure>
-
-                                <div class="product-body">
-                                    <h5 class="product-title"><a href="product.html">Black soft RI weekend <br>travel bag</a></h5><!-- End .product-title -->
-                                    <div class="product-price">
-                                        $75.00
-                                    </div><!-- End .product-price -->
-                                </div><!-- End .product-body -->
-                            </div><!-- End .product product-sm -->
-                        </div><!-- End .products -->
-
-                        <a href="category.html" class="btn btn-outline-dark-3"><span>View More Products</span><i class="icon-long-arrow-right"></i></a>
+                        <a href="/products/?category={{product.category.name}}" class="btn btn-outline-dark-3"><span>View More Related Products</span><i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .widget widget-products -->
 
                     <div class="widget widget-banner-sidebar">
