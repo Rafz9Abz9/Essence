@@ -189,9 +189,18 @@ The website is set up with different pages, and each page is made for a specific
 | ABOUT US  | - Includes information about the company: company’s vision, mission, and who they are.                               |
 | ABOUT US  | - This page includes testimonies from customers in a slideshow format. User can click on 'next' and 'previous' symbols. |
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2356e505-a039-4266-b310-3af9a0413252)
 
 ### Contact Us Page
 
+| PAGE        | FEATURE                                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------------------|
+| CONTACT US  | - User can view the company’s contact information such as their address, phone number, email address, and office opening days and hours. |
+| CONTACT US  | - User can view and have access to a contact us form which includes fields for name, email address, phone number, subject of email, and message. |
+| CONTACT US  | - There is a ‘Submit’ button for users to send their message to the company. |
+| CONTACT US  | - Users receive a confirmation message after submitting, assuring their message has been sent and the company will get back to them. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c22b393-6e79-4163-ab40-8980cd8db03d)
 
 ### Register Page
 
