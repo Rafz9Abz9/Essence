@@ -260,6 +260,54 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Products Page
 
+| PAGE     | FEATURE                                                                                                                              |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------|
+| PRODUCTS | - The products are all present in a list format.                                                                                    |
+| PRODUCTS | - Each product consists of a visible image, name, category, description, price, rating, review quantity, heart icon to save product to Wishlist page, quantity feature that allows user to increase or decrease amount needed, and ‘ADD TO CART’ button. |
+| PRODUCTS | - The ‘ADD TO CART’ button is functional.                                                                                           |
+| PRODUCTS | - If user clicks on the button, the product chosen will be added to their shopping cart.                                            |
+| PRODUCTS | - On the left side of the page, there is a Filter feature which allows user to filter the products based on their categories. For example, if user selects ‘baby care’, then all the baby care products will be visible. |
+| PRODUCTS | - There is a ‘Sort by’ feature that consists of the following options: Name (A-Z), Name (Z-A), Rating (Low to High), Rating (High to Low), Price (Low to High), Price (High to Low), Date (A-Z), and Date (Z-A). If user selects Price (Low to High), then the products will be arranged from the lowest price to the highest price, etc. |
+| PRODUCTS | - The quantity of the products is shown on top. For example.                                                                        |
+| PRODUCTS | - User can click on each product. If user clicks on the image, they’ll be taken to another page that displays an image of the product separately. If user clicks on the name of the product, they’ll be taken to the product details for that product. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/669a47fc-6acc-44ca-b1ec-a052d37da38d)
+
+- On the left is the 'Category' display that filters the products based on their categories. If user selects 'All', they will be shown all the products available on the website.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/29511e53-0633-4f03-a404-406bcdabf2a9)
+
+- If user selects 'Baby Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/78c51c90-85b2-4c7a-ad86-e6969d41f0d4)
+
+- If user selects 'Hair Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c9def583-4183-44f2-bb94-6c45ce342608)
+
+- If user selects 'Men's Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4e6242cf-acb4-40cc-a58a-50970141d5a9)
+
+- If user selects 'Skin Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/64b528c2-28c2-49d2-bb87-fcb0eeddd836)
+
+### Product Detail Page
+
+| PAGE            | FEATURE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PRODUCTS DETAILS | - User can view the product image. If user clicks on the image of the product, they will be taken to another page that shows the image of the product separately.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PRODUCTS DETAILS | - Name and Price of product is present and visible.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PRODUCTS DETAILS | - Quantity feature is present which allows user to increase or decrease the quantity of product they want to purchase.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| PRODUCTS DETAILS | - ‘ADD TO CART’ button is visible underneath the quantity feature. When user clicks on the button, the product will be added to their cart.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| PRODUCTS DETAILS | - ‘Add to Wishlist’ feature is present beside the ‘ADD TO CART’ button. When user clicks on the ‘Add to Wishlist’, the product will be added to their Wishlist page. Only users that are registered can add the product to their Wishlist. Users that are not registered will be taken to the ‘Register’ page.                                                                                                                                                                                                                                                      |
+| PRODUCTS DETAILS | - Category of the product is visible and present.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| PRODUCTS DETAILS | - There are four boxes consisting of the following options: Description, Additional Information, Shipping & Returns, and Reviews. These options are enclosed in a box that has the feature to be opened and closed. If user selects the ‘description’ option, the box will open, and they’ll be able to read the descriptions of the product. When user selects another option, the ‘description’ box will close, and the other box will open.                                                                                                                                                     |
+| PRODUCTS DETAILS | - Users can view the reviews written by other users, but only registered users can leave a review. For future implementation, only users who have purchased a product can leave a review for that specific product they purchased. At the moment, only registered users can leave a review for the product even if they haven’t purchased the product.                                                                                                                                                                                                                   |
+| PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| PRODUCTS DETAILS | - There's a ‘VIEW MORE PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
+
 
 ### Shopping Cart Page
 
