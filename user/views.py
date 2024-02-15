@@ -7,6 +7,7 @@ from django.utils.encoding import force_bytes, force_str
 from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.views.generic.base import View
+from django.http import HttpResponseRedirect
 
 from .utils import token_generator
 from .forms import RegistrationForm, LoginForm
@@ -65,11 +66,11 @@ def register(request):
                 email.send(fail_silently=False)
                 
                 messages.success(request, "Your Registration is Successful, check your mailbox to activate your account before login")
-                return redirect('user_auth')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
             except Exception as e:
                 messages.error(request, f"Error sending email: {e}")
                 print(f"Error sending email: {e}")
-                return redirect('user_auth')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     form = LoginForm(request.POST)
     reg_form = RegistrationForm(request.POST)
     context = {
@@ -99,6 +100,7 @@ def login_view(request):
             return redirect('home')
         else:
             messages.error(request, "Invalid Credentials")
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     
     form = LoginForm(request.POST)
     reg_form = RegistrationForm(request.POST)
