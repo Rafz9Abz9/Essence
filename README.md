@@ -81,7 +81,106 @@ The website is set up with different pages, and each page is made for a specific
 
 ## Existing Features
 
+### Header Page
+
+*Navigation Bar*
+
+- The navigation bar is visible at the top of every page along with links to other pages.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e6913daf-001f-4685-909f-5264ad16a14c)
+
+*Logo*
+
+- The logo was created using the website [Logo](https://logo.com/).
+- The logo is placed on the top left side of the navigation bar.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7f4fbd54-ce63-4145-b0f6-3c76f2076ac3)
+
+*Search Bar*
+
+- The search bar icon is included in the navigation bar. When a user clicks on the icon, the search bar will open.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47de5769-48e8-4397-adfa-da276bda1983)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8361ef98-05f3-4f0e-8319-04cad24c1e9c)
+
+*Other Features*
+
+- Other icons present are the shopping cart, heart icon (acts as the wishlist icon which if clicked will take the user to their wishlist page), profile icon, number and phone icon present, and 'Login' (if user is not logged in), or 'Logout' (if user is logged in).
+- Cart Icon: if user clicks on the icon, it will show them what is in their shopping cart (includes name, price, quantity, and image of the products they added. It also includes the 'Total' amount of the products added along with a 'View Cart' (takes user to shopping cart page) and 'Checkout' (takes user to checkout page) button.
+- Profile Icon: if user is logged in then if they click on the icon, they will see the following options; 'Profile' (will take them to their profile page) and 'Logout' (will log them out of their account. If user is not logged in, they will see an option to 'Login'
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6c7ff870-9a1a-417b-b8d0-157e49135b42)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/14104249-fadf-47c6-9ec7-56a34bb36309)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2c6c725a-aeef-4857-9a62-806863768540)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/1ad6bb9f-dc41-40dd-8e8e-28bb0029ba68)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7843a5e8-e793-4dbf-b712-61d8b896125f)
+
+### Footer Page
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9b2e7627-d882-428b-84bc-ef1816f5899c)
+
+- Includes: message from the 'Essence' company along with the logo. If logo is clicked, will take the user to the home page.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/66a5c180-f13c-4f37-9431-a5b33be05c62)
+
+- Includes the following 'Useful Links': 'About Essence', FAQ', and 'Contact Us'.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b5d89943-8fcf-489a-ae2b-ce4bad11ea3e)
+
+- Includes 'My Account' links: 'View Cart', 'My Wishlist', and 'Help'.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8256fb41-2e9c-442e-8279-4ff5d1ae429c)
+
+- There are also 'Social Media' icons on the right side that takes the user to their respective pages.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/839aa2a7-54c4-47e7-bd7f-db0d0395c13c)
+
+- There's also a copyright sentence displayed at the bottom and on the right side, there are card payment icons which are just there for beauty purposes, nothing will happen if they are selected.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/51b59e98-35a8-4502-a4df-329bc4a8afbb)
+
 ### Home Page
+
+- This page consists of a slideshow that introduces the categories that are present on the website. There are also two images on the right side of the slideshow.
+- 'Shop Now' and 'Discover Now' buttons are included on the images. These buttons if clicked will take the users to their respective pages. For example, if the 'Shop Now' button which is on the 'Hair Care' image is clicked by the user, it will take them to the Hair Care products page.
+- The 'Gift Sets' image has a 'Discover Now' button. It has not been implemented yet, this is just for visual purposes. For future implementation, the gift sets are products that will be 'Available From 5th March 2024' (visible on the page), if the user selects the button, it will take them to the products page for 'Gifts Sets'. But for now, this feature has not been implemented.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b5e06da3-45d8-4a07-97cf-2425820aca5c)
+
+*Featured Products*
+
+- Includes images, names, and prices of products that are featured.
+- The products are displayed as a 'slider' so they basically slide to the left on their own. If user hovers on each product, there will be an 'Add to Cart' that is displayed underneath each product.
+- If hovered on the products, user can also see the heart icon which if clicked (by a registered user), it will add the product to their wishlist.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8a9a1e4b-e2b1-449d-bd65-5d4493fb56ad)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/aeb951c3-c97f-4b43-bbac-c20b6aee6e78)
+
+*Shop by Categories*
+
+- This section consists of four images that include the names of each category.
+- If the image is clicked, the user will be taken to the specific categor page that they selected.
+- If user hovers on the images, there's a 'Shop Now' button present on each image.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e047ec79-853d-4ae8-8d80-9280cb328c91)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e6370efb-383d-428a-8cd3-d1bde034dbee)
+
+*Remaining Features For Home Page*
+
+- Payment & Delivery, Returns & Refund, and Quality Support.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f1618b8f-dfae-4d96-8ab0-f37122cc75fb)
+
+- Newsletter Subscription Sign Up: user can input their email address and they'll be sent a confirmation email.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
 
 
 ### Products Page
