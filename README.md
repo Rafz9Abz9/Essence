@@ -202,8 +202,36 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c22b393-6e79-4163-ab40-8980cd8db03d)
 
+### FAQ Page
+
+| PAGE  | FEATURE                                                                                         |
+|-------|-------------------------------------------------------------------------------------------------|
+| F.A.Q. | - Questions and answers regarding shipping information, orders & returns, and payments are visible here. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a86f079c-ce31-49b0-8ae8-c38d84d9a8e1)
+
 ### Register Page
 
+| PAGE      | FEATURE                                                                                         |
+|-----------|-------------------------------------------------------------------------------------------------|
+| REGISTER  | - Includes a Register form which consists of the following fields: email address, password, confirm password. |
+| REGISTER  | - If all fields are not filled in, there’ll be an alert stating 'Please fill out this field'. |
+| REGISTER  | - There is a ‘SIGN UP’ button present and functional. |
+| REGISTER  | - There is also a box that MUST be clicked saying that ‘I agree to the privacy policy’. If the box is not selected, the user won’t be able to click on the ‘SIGN UP’ button. |
+| REGISTER  | - If a user has already registered with an email address, they’ll be told ‘An account with this email already exists. Please use a different email address’. |
+| REGISTER  | - For password security, if a password a user uses is too common, they’ll be notified – ‘This password is too common’. They will need to choose another password before they can move forward. |
+| REGISTER  | - Once user can register, they’ll receive an email notification providing them with a link to activate their account. |
+| REGISTER  | - Once the account is activated, they’ll be able to access their account and will receive a welcome notification - ‘You’re Welcome (email address), Account activated successfully’. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/85665f68-88a7-4fcb-91eb-6403d10bc723)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4ed2c4f6-a66f-4d8c-bd16-8fa6bcace80c)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ae33f2d3-927b-4dfe-9b3b-6e14754ae77e)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/dcc0ed5f-e10c-4550-8de4-f3b3234ccab9)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6d0e3191-ce3f-48f3-8249-80de2eaad74f)
 
 ### Login Page
 
