@@ -318,6 +318,28 @@ The website is set up with different pages, and each page is made for a specific
 ### Account Information/Profile Page
 
 
+### Wishlist Page
+
+
+### My Reviews Page
+
+
+### My Orders Page
+
+
+### Management Site
+
+- This is the form created for admin to add products.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/dc1bbb3b-76e8-441f-91cc-3fb73efa3cfc)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a0cbbaa9-a681-423c-8c3f-f255b481097c)
+
+- This is the same form if admin wants to delete or edit a product but there will be a 'Delete' button present.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/188b230c-697e-4ffc-9b89-66c654cab04c)
+
+
 ### Error Page
 
 
