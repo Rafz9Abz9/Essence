@@ -365,6 +365,25 @@ The website is set up with different pages, and each page is made for a specific
 
 - **Ability to add reviews exclusively for purchased products:** I’d also like to work on a feature that allows customers to share their experiences by adding reviews exclusively for products that they’ve purchased, fostering a more genuine and reliable feedback system.
 
+# Business Model
+
+Essence's Business Model follows a Business to Consumer (B2C) model. We directly provide our range of essential care products and services to individuals who are looking for effective solutions to maintain their well-being. A typical customer of Essence could be anyone seeking high-quality and reliable hair care, skin care, baby care, or men's care products, catering to diverse needs and preferences across different age groups and lifestyles.
+
+# Marketing Strategy
+
+
+## SEO
+
+
+
+## Social Media Marketing
+
+A prototype Facebook business account was crafted, drawing inspiration from the resources offered by Code Institute. This enhances the potential to boost sales by seamlessly linking to the business website, providing users with convenient access. Leveraging Facebook's extensive user base further amplifies sales opportunities, making it an ideal platform for driving business growth.
+
+## Email Marketing
+
+Site users have the option to subscribe to the newsletter without requiring an account. This feature enables the business to keep customers and potential customers informed about the latest news, including new products/services and special offers. For registered users, they have the option to op-in and opt-out of newsletter subscription from their profile page.
+
 # Technology Used 
 
 ## Language
@@ -480,7 +499,7 @@ Example:
     - Find and select the policy, then click ‘Add permissions’.
 - Create a user by selecting ‘Users’ from the sidebar, clicking ‘Add user’, giving a username, checking ‘Programmatic Access’, and clicking ‘Next’ > Permissions.
 - Select the group with the attached policy, click ‘Next’ > Tags, ‘Next’ > ‘Review’, and ‘Create user’.
-- On the next page, download the CSV file containing the user’s access key and secret access key for future use.
+- On the next page, download the CSV file containing the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID for future use.
 
 **Connecting AWS to Django**
 - Sign Up for AWS: Create an AWS account if you haven't already.
