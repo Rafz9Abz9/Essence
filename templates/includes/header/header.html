@@ -11,7 +11,7 @@
                     <li>
                         <a href="#">Links</a>
                         <ul>
-                            <li><a href="tel:#"><i class="icon-phone"></i>Call: +0123 456 789</a></li>
+                            <li><a href="tel:#"><i class="icon-phone"></i>Call: +353 89 567 9745</a></li>
 
                             {% if user.is_authenticated %}
                                 <li><a href="{% url 'logout' %}">Logout</a></li>
@@ -103,67 +103,54 @@
                 <div class="dropdown cart-dropdown mr-3">
                     <a href="#" class="dropdown-toggle cart" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                         <i class="icon-shopping-cart"></i>
-                        <span class="cart-count">2</span>
+                        <span class="cart-count">{{cart_itmes_count}}</span>
                     </a>
-
+                    {%if cart_item%}
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-cart-products">
-                            <div class="product">
-                                <div class="product-cart-details">
-                                    <h4 class="product-title">
-                                        <a href="product.html">Beige knitted elastic runner shoes</a>
-                                    </h4>
+                            {%if cart_item%}
+                                {%for item in cart_item %}
+                                <div class="product">
+                                    <div class="product-cart-details">
+                                        <h4 class="product-title">
+                                            <a href="product.html">{{item.product.name}}</a>
+                                        </h4>
 
-                                    <span class="cart-product-info">
-                                        <span class="cart-product-qty">1</span>
-                                        x $84.00
-                                    </span>
-                                </div><!-- End .product-cart-details -->
+                                        <span class="cart-product-info">
+                                        {{item.quantity}} x {{item.product.formatted_price}}
+                                        </span>
+                                    </div><!-- End .product-cart-details -->
 
-                                <figure class="product-image-container">
-                                    <a href="product.html" class="product-image">
-                                        <img src="{% static 'images/products/cart/product-1.jpg'%}" alt="product">
-                                    </a>
-                                </figure>
-                                <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                            </div><!-- End .product -->
-
-                            <div class="product">
-                                <div class="product-cart-details">
-                                    <h4 class="product-title">
-                                        <a href="product.html">Blue utility pinafore denim dress</a>
-                                    </h4>
-
-                                    <span class="cart-product-info">
-                                        <span class="cart-product-qty">1</span>
-                                        x $76.00
-                                    </span>
-                                </div><!-- End .product-cart-details -->
-
-                                <figure class="product-image-container">
-                                    <a href="product.html" class="product-image">
-                                        <img src="{% static 'images/products/cart/product-2.jpg'%}" alt="product">
-                                    </a>
-                                </figure>
-                                <a href="#" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
-                            </div><!-- End .product -->
+                                    <figure class="product-image-container">
+                                        <a href="product.html" class="product-image">
+                                            <img src="{{ item.product.images.all|access_list:0|image_url }}" alt="product">
+                                        </a>
+                                    </figure>
+                                    <a href="{%url 'remove_from_cart' product_id=item.product.id%}" class="btn-remove" title="Remove Product"><i class="icon-close"></i></a>
+                                </div><!-- End .product -->
+                                {%endfor%}
+                            {%else%}
+                                <div class="product text-center">No Item in Cart</div>
+                            {% endif %}
                         </div><!-- End .cart-product -->
 
-                        <div class="dropdown-cart-total">
-                            <span>Total</span>
+                        {%if total_price%}
+                            <div class="dropdown-cart-total">
+                                <span>Total</span>
 
-                            <span class="cart-total-price">$160.00</span>
+                                <span class="cart-total-price">{{total_price}}</span>
                         </div><!-- End .dropdown-cart-total -->
-
+                        {% endif %}
                         <div class="dropdown-cart-action">
                             <a href="{% url 'cart' %}" class="btn btn-primary">View Cart</a>
                             <a href="checkout.html" class="btn btn-outline-primary-2"><span>Checkout</span><i class="icon-long-arrow-right"></i></a>
                         </div><!-- End .dropdown-cart-total -->
                     </div><!-- End .dropdown-menu -->
+                    {%endif%}
                 </div><!-- End .cart-dropdown -->
 
                 <ul class="d-flex mb-0 align-items-center justify-content-between w-100 h-100">
-                    <li class="wishlist-icon ml-2 mr-3"><a href="{% url 'wishlist' %}"><i class="icon-heart-o"></i><span>3</span></a></li>
+                    <li class="wishlist-icon ml-2 mr-3"><a href="{% url 'wishlist' %}"><i class="icon-heart-o"></i><span>{{wishlist_items_count}}</span></a></li>
                     <li class="user-icon dropdown">
                         <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"><i class="icon-user"></i></a>
 

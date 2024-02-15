@@ -3,11 +3,7 @@
 {% load static %}
 
 {% block main %}
-<div class="page-header text-center" style="background-image: url({% static 'images/page-header-bg.jpg' %})">
-    <div class="container">
-        <h1 class="page-title">Shopping Cart<span>Shop</span></h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->
+
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
         <ol class="breadcrumb">
@@ -35,69 +31,89 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td class="product-col">
-                                    <div class="product">
-                                        <figure class="product-media">
-                                            <a href="#">
-                                                <img src="{% static 'images/products/table/product-1.jpg'%}" alt="Product image">
-                                            </a>
-                                        </figure>
-
-                                        <h3 class="product-title">
-                                            <a href="#">Beige knitted elastic runner shoes</a>
-                                        </h3><!-- End .product-title -->
-                                    </div><!-- End .product -->
-                                </td>
-                                <td class="price-col">$84.00</td>
-                                <td class="quantity-col">
-                                    <div class="cart-product-quantity">
-                                        <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                    </div><!-- End .cart-product-quantity -->
-                                </td>
-                                <td class="total-col">$84.00</td>
-                                <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td class="product-col">
-                                    <div class="product">
-                                        <figure class="product-media">
-                                            <a href="#">
-                                                <img src="{% static 'images/products/table/product-2.jpg'%}" alt="Product image">
-                                            </a>
-                                        </figure>
-
-                                        <h3 class="product-title">
-                                            <a href="#">Blue utility pinafore denim dress</a>
-                                        </h3><!-- End .product-title -->
-                                    </div><!-- End .product -->
-                                </td>
-                                <td class="price-col">$76.00</td>
-                                <td class="quantity-col">
-                                    <div class="cart-product-quantity">
-                                        <input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                    </div><!-- End .cart-product-quantity -->                                 
-                                </td>
-                                <td class="total-col">$76.00</td>
-                                <td class="remove-col"><button class="btn-remove"><i class="icon-close"></i></button></td>
-                            </tr>
+                        {% if cart_items|length > 0 %}
+                            {% for item in cart_items %}
+                                <tr>
+                                    <td class="product-col">
+                                        <div class="product">
+                                            <figure class="product-media">
+                                                <a href="{{ item.product.images.all|access_list:0|image_url }}" target="_blank">
+                                                    <img src="{{ item.product.images.all|access_list:0|image_url }}"  alt="{{item.product.images.all|access_list:0|image_caption}}">
+                                                </a>
+                                            </figure>
+        
+                                            <h3 class="product-title">
+                                                <a href="{% url 'product_details' product_id=item.product.id%}">{{item.product.name}}</a>
+                                            </h3><!-- End .product-title -->
+                                        </div><!-- End .product -->
+                                    </td>
+                                    <td class="price-col">{{item.product.formatted_price}}</td>
+                                    {% if item.product.stock > 0 %}
+                                        <td class="stock-col"><span class="in-stock text-success">In stock</span></td>
+                                    {% else %}
+                                        <td class="stock-col"><span class="out-stock text-danger">Out of Stock</span></td>
+                                    {% endif %}
+                                    <td class="quantity-col">
+                                        <div class="cart-product-quantity">
+                                            <input type="number" class="form-control" value="{{item.quantity}}" min="1" max="10" step="1" data-decimals="0" required>
+                                        </div><!-- End .cart-product-quantity -->                                 
+                                    </td>
+                                    <td class="remove-col"><a href="{%url 'remove_from_cart' product_id=item.product.id%}" class="btn-remove" title="Remove from cart"><i class="icon-close"></i></a></td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                        <td class="text-center">No items in your cart yet.</td>
+                        {% endif %}
                         </tbody>
                     </table><!-- End .table table-wishlist -->
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            {% if cart_items.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link page-link-prev" href="?page=1{% if category %}&category={{ category }}{% endif %}" aria-label="last" >
+                                        <span aria-hidden="true"><i class="icon-long-arrow-left"></i></span>First
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link page-link-prev" href="?page={{ wishlist_items.previous_page_number }}{% if category %}&category={{ category }}{% endif %}" aria-label="Previous" >
+                                        Prev
+                                    </a>
+                                </li>
+                            {% endif%}
+                            {% for page in cart_items.paginator.page_range %}
+                                <li class="page-item{% if page == recipes.number %}active{% endif %}" aria-current="page"><a class="page-link" href="?page={{ page }}{% if category %}&category={{ category }}{% endif %}">{{ page|add:0 }}</a></li>
+                            {% endfor %}
+                            <li class="page-item-total">of {{ cart_items.paginator.num_pages }}</li>
+                            {% if cart_items.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link page-link-next" href="?page={{ cart_items.next_page_number }}{% if category %}&category={{ category }}{% endif %}" aria-label="Next">
+                                        Next 
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link page-link-next" href="?page={{ cart_items.paginator.num_pages }}{% if category %}&category={{ category }}{% endif %}" aria-label="last">
+                                        Last <span aria-hidden="true"><i class="icon-long-arrow-right"></i></span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                    {% if cart_items|length > 0 %}
+                        <div class="cart-bottom">
+                            <div class="cart-discount">
+                                <form action="#">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" required placeholder="coupon code">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
+                                        </div><!-- .End .input-group-append -->
+                                    </div><!-- End .input-group -->
+                                </form>
+                            </div><!-- End .cart-discount -->
 
-                    <div class="cart-bottom">
-                        <div class="cart-discount">
-                            <form action="#">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" required placeholder="coupon code">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
-                                    </div><!-- .End .input-group-append -->
-                                </div><!-- End .input-group -->
-                            </form>
-                        </div><!-- End .cart-discount -->
-
-                        <a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
-                    </div><!-- End .cart-bottom -->
+                            <a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+                        </div><!-- End .cart-bottom -->
+                    {% endif %}
                 </div><!-- End .col-lg-9 -->
                 <aside class="col-lg-3">
                     <div class="summary summary-cart">

@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
 {% block title%}Products{% endblock %}
 {% load static %}
+{% load cart_tag %}
 
 {% block main %}
 
@@ -74,7 +75,7 @@
                                     <div class="col-6 col-lg-3 order-lg-last">
                                         <div class="product-list-action">
                                             <div class="product-price">
-                                                {{product.formatted_price}}
+                                                {{product.formatted_price}} 
                                             </div><!-- End .product-price -->
                                             <div class="ratings-container">
                                                 <div class="ratings">
@@ -86,14 +87,35 @@
                                                     <span class="ratings-text">( 0 Review )</span>
                                                 {% endif %}
                                             </div><!-- End .rating-container -->
-
-                                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                            {% if not product.is_in_cart%}
+                                                {% if not product|is_in_cart:request.session.carts%} 
+                                                    <form method="POST" action="{% url 'add_to_cart' %}">
+                                                        {% csrf_token %}
+                                                        <div class="product-details-quantity mb-1">
+                                                            <input type="hidden" id="product_id" name="product_id" class="form-control" value="{{product.id}}">
+                                                            Qty:<input type="number" id="qty" name="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                                        </div><!-- End .product-details-quantity -->
+                                                        <input type="submit" class="btn-product btn-cart px-5" value="Add to Cart" >
+                                                    </form>
+                                                {% else %}
+                                                    {{product|is_in_cart:request.session.carts}}
+                                                    <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                                {% endif %}     
+                                            {% else %}
+                                                <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                            {% endif %}    
                                         </div><!-- End .product-list-action -->
                                     </div><!-- End .col-sm-6 col-lg-3 -->
 
                                     <div class="col-lg-6">
                                         <div class="product-body product-action-inner">
-                                            <a href="{% url 'add_to_wishlist' product_id=product.id %}" class="btn-product btn-wishlist" title="Add to wishlist"><span>add to wishlist</span></a>
+                                            
+                                            {% if product.is_in_wishlist%}
+                                                <a href="{% url 'remove_from_wishlist' product_id=product.id%}" class="btn-product remove_wishlist" title="Remove from wishlist"></a>
+                                            
+                                            {% else %}
+                                                <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Add to wishlist"></a>
+                                            {% endif %}
                                             <div class="product-cat">
                                                 <a href="#">{{product.category.friendly_name}}</a>
                                             </div><!-- End .product-cat -->

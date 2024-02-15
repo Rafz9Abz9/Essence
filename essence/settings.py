@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'user.guard.AuthenticatedRedirectMiddleware',
+    'core.SetDefaultCartsMiddleware.SetDefaultCartsMiddleware',
+    'django_currentuser.middleware.ThreadLocalUserMiddleware',
 ]
 
 ROOT_URLCONF = 'essence.urls'
@@ -70,6 +72,9 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'product.context_processors.categories',
                 'product.context_processors.featured_product',
+                'core.context_processors.wishlists_count',
+                'core.context_processors.cart_count',
+                'core.context_processors.cart_item',
             ]
         },
     },

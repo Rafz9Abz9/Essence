@@ -1,6 +1,8 @@
 {% extends 'base/base.html' %}
 {% block title%}Products{% endblock %}
 {% load static %}
+{% load cart_tag %}
+
 
 {% block main %}
 <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
@@ -72,7 +74,7 @@
 
                                 <div class="product-price">
                                     <span class="new-price">{{product.formatted_price}}</span>
-                                    {% comment %} <span class="old-price">$110.00</span> {% endcomment %}
+                                    
                                 </div><!-- End .product-price -->
 
                                 <div class="row"> 
@@ -93,17 +95,36 @@
                                 </div>
 
                                 <div class="details-filter-row details-row-size">
-                                    <label for="qty">Qty:</label>
-                                    <div class="product-details-quantity">
-                                        <input type="number" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                    </div><!-- End .product-details-quantity -->
+                                    {% if not  product.is_in_cart %}  
+                                        {% if not product|is_in_cart:request.session.carts%}                                       
+                                        <form method="POST" action="{% url 'add_to_cart' %}" id="add_to_cart_form">
+                                            {% csrf_token %}
+                                            <label for="qty">Qty:</label>
+                                            <input type="hidden" id="product_id" name="product_id" class="form-control" value="{{product.id}}">
+                                            <input type="number" id="qty" name="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>                          
+                                        </form><!-- End .product-details-quantity -->
+                                        {% endif %}
+                                    {% endif %}
                                 </div><!-- End .details-filter-row -->
 
+                                
                                 <div class="product-details-action">
-                                    <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                    {% if not product.is_in_cart%}
+                                        {% if not product|is_in_cart:request.session.carts %} 
+                                        <input type="submit" class="btn-product btn-cart px-5" id="btn-add-cart" value="Add to Cart" >
+                                        {% else %}
+                                        <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                        {% endif %} 
+                                    {% else %}
+                                        <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                    {% endif %}   
 
                                     <div class="details-action-wrapper">
-                                        <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
+                                        {% if product.is_in_wishlist%}
+                                            <a href="{% url 'remove_from_wishlist' product_id=product.id%}" class="btn-product remove_wishlist" title="Wishlist"><span>Remove from Wishlist</span></a>
+                                        {% else %}
+                                            <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist {{ product.is_in_wishlist}}</span></a>
+                                        {% endif %}
                                     </div><!-- End .details-action-wrapper -->
                                 </div><!-- End .product-details-action -->
 
@@ -273,3 +294,15 @@
     </div><!-- End .container-fluid -->
 </div><!-- End .page-content -->
 {% endblock%}
+
+{% block extrascripts %}  
+
+<script>
+    $('#btn-add-cart').click(function (e) {
+            e.preventDefault();
+            $('#add_to_cart_form').submit();
+    });
+
+</script>
+
+{% endblock %}

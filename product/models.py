@@ -1,13 +1,14 @@
 from django.db import models
 from django.core.validators import validate_image_file_extension,MinValueValidator, MaxValueValidator
-from user.models import CustomUser
 from .utils import validate_image_content
 from babel.numbers import format_currency
 from django.utils import timezone
+from django_currentuser.middleware import (get_current_authenticated_user)
+
+from user.models import CustomUser
+
 
 # Create your models here.
-
-    
     
 class Category(models.Model):
     name = models.CharField(max_length=25, null=False)
@@ -70,5 +71,23 @@ class Product(models.Model):
     def formatted_price(self):
         return format_currency(self.price, 'EUR', locale='en_US')
     
+    def is_in_wishlist(self):
+         # Access request user using threading
+        from core.models import Wishlist
+        
+        user = get_current_authenticated_user()
+        
+        if user:
+            return Wishlist.objects.filter(user=user, product=self).exists()
+        
+    def is_in_cart(self, request):
+         # Access request user using threading
+        from core.models import Cart
+        
+        user = get_current_authenticated_user()
+        
+        if user:
+            return Cart.objects.filter(user=user, product=self).exists()         
+           
     def __str__(self):
         return self.name
