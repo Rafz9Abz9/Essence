@@ -233,8 +233,27 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6d0e3191-ce3f-48f3-8249-80de2eaad74f)
 
-### Login Page
+### Sign In Page
 
+| PAGE    | FEATURE                                                                                              |
+|---------|------------------------------------------------------------------------------------------------------|
+| SIGN IN | - There’s a ‘Sign In’ form visible.                                                                 |
+| SIGN IN | - Sign In form consists of the following fields: email address and password.                         |
+| SIGN IN | - The form also includes a ‘LOG IN’ button.                                                          |
+| SIGN IN | - When the ‘LOG IN’ button is clicked, user will be able to access their account.                    |
+| SIGN IN | - They’ll receive a welcome message when logged in – “You’re welcome (email address)’.               |
+| SIGN IN | - If user inputs incorrect details, they’ll be notified: ‘ERROR! Invalid Credentials’.               |
+| SIGN IN | - If user inputs their email address without the ‘@’, they’ll be notified: “Please include an ‘@’ in the email address, ‘…..’ is missing an ‘@’. Even if they input the ‘@’ but they didn’t complete their email address, they’ll be notified that their email address is ‘incomplete’. |
+| SIGN IN | - There’s a ‘Remember Me’ feature which contains a box that user can click if they want to opt-in for their login details to be remembered – for easier access. |
+| SIGN IN | - There’s a ‘Forgot Your Password?’ option included in the form. If user selects this option, they’ll be taken to a page where they’ll input their email address. When they input their email address, they’ll receive an email notification which contains a link for them to reset their password. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6602a2c2-48c5-4a28-b1cd-1d422ca35049)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/14e06076-aa0e-4c96-959d-483ea6abba29)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d9b62fdd-5d68-4e8c-ae43-2ac6c0e80707)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/55b645e5-1cd7-49d8-9dd2-8262de74bee6)
 
 ### Forgot Password Page
 
