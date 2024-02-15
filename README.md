@@ -229,7 +229,7 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ae33f2d3-927b-4dfe-9b3b-6e14754ae77e)
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/dcc0ed5f-e10c-4550-8de4-f3b3234ccab9)
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9fde713a-7c08-4aff-9218-ef2329d85c66)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6d0e3191-ce3f-48f3-8249-80de2eaad74f)
 
