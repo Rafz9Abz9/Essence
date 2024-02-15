@@ -182,6 +182,25 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
 
+### About Us Page
+
+| PAGE      | FEATURE                                                                                                               |
+|-----------|-----------------------------------------------------------------------------------------------------------------------|
+| ABOUT US  | - Includes information about the company: company’s vision, mission, and who they are.                               |
+| ABOUT US  | - This page includes testimonies from customers in a slideshow format. User can click on 'next' and 'previous' symbols. |
+
+
+### Contact Us Page
+
+
+### Register Page
+
+
+### Login Page
+
+
+### Forgot Password Page
+
 
 ### Products Page
 
@@ -193,18 +212,6 @@ The website is set up with different pages, and each page is made for a specific
 
 
 ### Account Information/Profile Page
-
-
-### Contact Form Page
-
-
-### Register Page
-
-
-### Login Page
-
-
-### Forgot Password Page
 
 
 ### Error Page
