@@ -81,10 +81,232 @@ The website is set up with different pages, and each page is made for a specific
 
 ## Existing Features
 
+### Header Page
+
+*Navigation Bar*
+
+- The navigation bar is visible at the top of every page along with links to other pages.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e6913daf-001f-4685-909f-5264ad16a14c)
+
+*Logo*
+
+- The logo was created using the website [Logo](https://logo.com/).
+- The logo is placed on the top left side of the navigation bar.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7f4fbd54-ce63-4145-b0f6-3c76f2076ac3)
+
+*Search Bar*
+
+- The search bar icon is included in the navigation bar. When a user clicks on the icon, the search bar will open.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47de5769-48e8-4397-adfa-da276bda1983)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8361ef98-05f3-4f0e-8319-04cad24c1e9c)
+
+*Other Features*
+
+- Other icons present are the shopping cart, heart icon (acts as the wishlist icon which if clicked will take the user to their wishlist page), profile icon, number and phone icon present, and 'Login' (if user is not logged in), or 'Logout' (if user is logged in).
+- Cart Icon: if user clicks on the icon, it will show them what is in their shopping cart (includes name, price, quantity, and image of the products they added. It also includes the 'Total' amount of the products added along with a 'View Cart' (takes user to shopping cart page) and 'Checkout' (takes user to checkout page) button.
+- Profile Icon: if user is logged in then if they click on the icon, they will see the following options; 'Profile' (will take them to their profile page) and 'Logout' (will log them out of their account. If user is not logged in, they will see an option to 'Login'
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6c7ff870-9a1a-417b-b8d0-157e49135b42)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/14104249-fadf-47c6-9ec7-56a34bb36309)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2c6c725a-aeef-4857-9a62-806863768540)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/1ad6bb9f-dc41-40dd-8e8e-28bb0029ba68)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7843a5e8-e793-4dbf-b712-61d8b896125f)
+
+### Footer Page
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9b2e7627-d882-428b-84bc-ef1816f5899c)
+
+- Includes: message from the 'Essence' company along with the logo. If logo is clicked, will take the user to the home page.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/66a5c180-f13c-4f37-9431-a5b33be05c62)
+
+- Includes the following 'Useful Links': 'About Essence', FAQ', and 'Contact Us'.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b5d89943-8fcf-489a-ae2b-ce4bad11ea3e)
+
+- Includes 'My Account' links: 'View Cart', 'My Wishlist', and 'Help'.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8256fb41-2e9c-442e-8279-4ff5d1ae429c)
+
+- There are also 'Social Media' icons on the right side that takes the user to their respective pages.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/839aa2a7-54c4-47e7-bd7f-db0d0395c13c)
+
+- There's also a copyright sentence displayed at the bottom and on the right side, there are card payment icons which are just there for beauty purposes, nothing will happen if they are selected.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/51b59e98-35a8-4502-a4df-329bc4a8afbb)
+
 ### Home Page
+
+- This page consists of a slideshow that introduces the categories that are present on the website. There are also two images on the right side of the slideshow.
+- 'Shop Now' and 'Discover Now' buttons are included on the images. These buttons if clicked will take the users to their respective pages. For example, if the 'Shop Now' button which is on the 'Hair Care' image is clicked by the user, it will take them to the Hair Care products page.
+- The 'Gift Sets' image has a 'Discover Now' button. It has not been implemented yet, this is just for visual purposes. For future implementation, the gift sets are products that will be 'Available From 5th March 2024' (visible on the page), if the user selects the button, it will take them to the products page for 'Gifts Sets'. But for now, this feature has not been implemented.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b5e06da3-45d8-4a07-97cf-2425820aca5c)
+
+*Featured Products*
+
+- Includes images, names, and prices of products that are featured.
+- The products are displayed as a 'slider' so they basically slide to the left on their own. If user hovers on each product, there will be an 'Add to Cart' that is displayed underneath each product.
+- If hovered on the products, user can also see the heart icon which if clicked (by a registered user), it will add the product to their wishlist.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8a9a1e4b-e2b1-449d-bd65-5d4493fb56ad)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/aeb951c3-c97f-4b43-bbac-c20b6aee6e78)
+
+*Shop by Categories*
+
+- This section consists of four images that include the names of each category.
+- If the image is clicked, the user will be taken to the specific categor page that they selected.
+- If user hovers on the images, there's a 'Shop Now' button present on each image.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e047ec79-853d-4ae8-8d80-9280cb328c91)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e6370efb-383d-428a-8cd3-d1bde034dbee)
+
+*Remaining Features For Home Page*
+
+- Payment & Delivery, Returns & Refund, and Quality Support.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f1618b8f-dfae-4d96-8ab0-f37122cc75fb)
+
+- Newsletter Subscription Sign Up: user can input their email address and they'll be sent a confirmation email.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
+
+### About Us Page
+
+| PAGE      | FEATURE                                                                                                               |
+|-----------|-----------------------------------------------------------------------------------------------------------------------|
+| ABOUT US  | - Includes information about the company: company’s vision, mission, and who they are.                               |
+| ABOUT US  | - This page includes testimonies from customers in a slideshow format. User can click on 'next' and 'previous' symbols. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2356e505-a039-4266-b310-3af9a0413252)
+
+### Contact Us Page
+
+| PAGE        | FEATURE                                                                                                               |
+|-------------|-----------------------------------------------------------------------------------------------------------------------|
+| CONTACT US  | - User can view the company’s contact information such as their address, phone number, email address, and office opening days and hours. |
+| CONTACT US  | - User can view and have access to a contact us form which includes fields for name, email address, phone number, subject of email, and message. |
+| CONTACT US  | - There is a ‘Submit’ button for users to send their message to the company. |
+| CONTACT US  | - Users receive a confirmation message after submitting, assuring their message has been sent and the company will get back to them. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c22b393-6e79-4163-ab40-8980cd8db03d)
+
+### FAQ Page
+
+| PAGE  | FEATURE                                                                                         |
+|-------|-------------------------------------------------------------------------------------------------|
+| F.A.Q. | - Questions and answers regarding shipping information, orders & returns, and payments are visible here. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a86f079c-ce31-49b0-8ae8-c38d84d9a8e1)
+
+### Register Page
+
+| PAGE      | FEATURE                                                                                         |
+|-----------|-------------------------------------------------------------------------------------------------|
+| REGISTER  | - Includes a Register form which consists of the following fields: email address, password, confirm password. |
+| REGISTER  | - If all fields are not filled in, there’ll be an alert stating 'Please fill out this field'. |
+| REGISTER  | - There is a ‘SIGN UP’ button present and functional. |
+| REGISTER  | - There is also a box that MUST be clicked saying that ‘I agree to the privacy policy’. If the box is not selected, the user won’t be able to click on the ‘SIGN UP’ button. |
+| REGISTER  | - If a user has already registered with an email address, they’ll be told ‘An account with this email already exists. Please use a different email address’. |
+| REGISTER  | - For password security, if a password a user uses is too common, they’ll be notified – ‘This password is too common’. They will need to choose another password before they can move forward. |
+| REGISTER  | - Once user can register, they’ll receive an email notification providing them with a link to activate their account. |
+| REGISTER  | - Once the account is activated, they’ll be able to access their account and will receive a welcome notification - ‘You’re Welcome (email address), Account activated successfully’. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/85665f68-88a7-4fcb-91eb-6403d10bc723)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4ed2c4f6-a66f-4d8c-bd16-8fa6bcace80c)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ae33f2d3-927b-4dfe-9b3b-6e14754ae77e)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9fde713a-7c08-4aff-9218-ef2329d85c66)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6d0e3191-ce3f-48f3-8249-80de2eaad74f)
+
+### Sign In Page
+
+| PAGE    | FEATURE                                                                                              |
+|---------|------------------------------------------------------------------------------------------------------|
+| SIGN IN | - There’s a ‘Sign In’ form visible.                                                                 |
+| SIGN IN | - Sign In form consists of the following fields: email address and password.                         |
+| SIGN IN | - The form also includes a ‘LOG IN’ button.                                                          |
+| SIGN IN | - When the ‘LOG IN’ button is clicked, user will be able to access their account.                    |
+| SIGN IN | - They’ll receive a welcome message when logged in – “You’re welcome (email address)’.               |
+| SIGN IN | - If user inputs incorrect details, they’ll be notified: ‘ERROR! Invalid Credentials’.               |
+| SIGN IN | - If user inputs their email address without the ‘@’, they’ll be notified: “Please include an ‘@’ in the email address, ‘…..’ is missing an ‘@’. Even if they input the ‘@’ but they didn’t complete their email address, they’ll be notified that their email address is ‘incomplete’. |
+| SIGN IN | - There’s a ‘Remember Me’ feature which contains a box that user can click if they want to opt-in for their login details to be remembered – for easier access. |
+| SIGN IN | - There’s a ‘Forgot Your Password?’ option included in the form. If user selects this option, they’ll be taken to a page where they’ll input their email address. When they input their email address, they’ll receive an email notification which contains a link for them to reset their password. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6602a2c2-48c5-4a28-b1cd-1d422ca35049)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/14e06076-aa0e-4c96-959d-483ea6abba29)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d9b62fdd-5d68-4e8c-ae43-2ac6c0e80707)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/55b645e5-1cd7-49d8-9dd2-8262de74bee6)
+
+### Forgot Password Page
 
 
 ### Products Page
+
+| PAGE     | FEATURE                                                                                                                              |
+|----------|--------------------------------------------------------------------------------------------------------------------------------------|
+| PRODUCTS | - The products are all present in a list format.                                                                                    |
+| PRODUCTS | - Each product consists of a visible image, name, category, description, price, rating, review quantity, heart icon to save product to Wishlist page, quantity feature that allows user to increase or decrease amount needed, and ‘ADD TO CART’ button. |
+| PRODUCTS | - The ‘ADD TO CART’ button is functional.                                                                                           |
+| PRODUCTS | - If user clicks on the button, the product chosen will be added to their shopping cart.                                            |
+| PRODUCTS | - On the left side of the page, there is a Filter feature which allows user to filter the products based on their categories. For example, if user selects ‘baby care’, then all the baby care products will be visible. |
+| PRODUCTS | - There is a ‘Sort by’ feature that consists of the following options: Name (A-Z), Name (Z-A), Rating (Low to High), Rating (High to Low), Price (Low to High), Price (High to Low), Date (A-Z), and Date (Z-A). If user selects Price (Low to High), then the products will be arranged from the lowest price to the highest price, etc. |
+| PRODUCTS | - The quantity of the products is shown on top. For example.                                                                        |
+| PRODUCTS | - User can click on each product. If user clicks on the image, they’ll be taken to another page that displays an image of the product separately. If user clicks on the name of the product, they’ll be taken to the product details for that product. |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/669a47fc-6acc-44ca-b1ec-a052d37da38d)
+
+- On the left is the 'Category' display that filters the products based on their categories. If user selects 'All', they will be shown all the products available on the website.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/29511e53-0633-4f03-a404-406bcdabf2a9)
+
+- If user selects 'Baby Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/78c51c90-85b2-4c7a-ad86-e6969d41f0d4)
+
+- If user selects 'Hair Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c9def583-4183-44f2-bb94-6c45ce342608)
+
+- If user selects 'Men's Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4e6242cf-acb4-40cc-a58a-50970141d5a9)
+
+- If user selects 'Skin Care' they will be shown all the products in that category.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/64b528c2-28c2-49d2-bb87-fcb0eeddd836)
+
+### Product Detail Page
+
+| PAGE            | FEATURE                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PRODUCTS DETAILS | - User can view the product image. If user clicks on the image of the product, they will be taken to another page that shows the image of the product separately.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PRODUCTS DETAILS | - Name and Price of product is present and visible.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| PRODUCTS DETAILS | - Quantity feature is present which allows user to increase or decrease the quantity of product they want to purchase.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| PRODUCTS DETAILS | - ‘ADD TO CART’ button is visible underneath the quantity feature. When user clicks on the button, the product will be added to their cart.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| PRODUCTS DETAILS | - ‘Add to Wishlist’ feature is present beside the ‘ADD TO CART’ button. When user clicks on the ‘Add to Wishlist’, the product will be added to their Wishlist page. Only users that are registered can add the product to their Wishlist. Users that are not registered will be taken to the ‘Register’ page.                                                                                                                                                                                                                                                      |
+| PRODUCTS DETAILS | - Category of the product is visible and present.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| PRODUCTS DETAILS | - There are four boxes consisting of the following options: Description, Additional Information, Shipping & Returns, and Reviews. These options are enclosed in a box that has the feature to be opened and closed. If user selects the ‘description’ option, the box will open, and they’ll be able to read the descriptions of the product. When user selects another option, the ‘description’ box will close, and the other box will open.                                                                                                                                                     |
+| PRODUCTS DETAILS | - Users can view the reviews written by other users, but only registered users can leave a review. For future implementation, only users who have purchased a product can leave a review for that specific product they purchased. At the moment, only registered users can leave a review for the product even if they haven’t purchased the product.                                                                                                                                                                                                                   |
+| PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| PRODUCTS DETAILS | - There's a ‘VIEW MORE PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
 
 
 ### Shopping Cart Page
@@ -96,16 +318,18 @@ The website is set up with different pages, and each page is made for a specific
 ### Account Information/Profile Page
 
 
-### Contact Form Page
+### Wishlist Page
 
 
-### Register Page
+### My Reviews Page
 
 
-### Login Page
+### My Orders Page
 
 
-### Forgot Password Page
+### Management Site
+
+- This is the form created for admin to add products.
 
 
 ### Error Page
@@ -132,6 +356,25 @@ The website is set up with different pages, and each page is made for a specific
 - **Discount vouchers capability:** I’d also like my platform to boast the capability to apply discount vouchers during checkout, giving our users the advantage of unlocking potential savings on their purchases.
 
 - **Ability to add reviews exclusively for purchased products:** I’d also like to work on a feature that allows customers to share their experiences by adding reviews exclusively for products that they’ve purchased, fostering a more genuine and reliable feedback system.
+
+# Business Model
+
+Essence's Business Model follows a Business to Consumer (B2C) model. We directly provide our range of essential care products and services to individuals who are looking for effective solutions to maintain their well-being. A typical customer of Essence could be anyone seeking high-quality and reliable hair care, skin care, baby care, or men's care products, catering to diverse needs and preferences across different age groups and lifestyles.
+
+# Marketing Strategy
+
+
+## SEO
+
+
+
+## Social Media Marketing
+
+A prototype Facebook business account was crafted, drawing inspiration from the resources offered by Code Institute. This enhances the potential to boost sales by seamlessly linking to the business website, providing users with convenient access. Leveraging Facebook's extensive user base further amplifies sales opportunities, making it an ideal platform for driving business growth.
+
+## Email Marketing
+
+Site users have the option to subscribe to the newsletter without requiring an account. This feature enables the business to keep customers and potential customers informed about the latest news, including new products/services and special offers. For registered users, they have the option to op-in and opt-out of newsletter subscription from their profile page.
 
 # Technology Used 
 
@@ -248,7 +491,7 @@ Example:
     - Find and select the policy, then click ‘Add permissions’.
 - Create a user by selecting ‘Users’ from the sidebar, clicking ‘Add user’, giving a username, checking ‘Programmatic Access’, and clicking ‘Next’ > Permissions.
 - Select the group with the attached policy, click ‘Next’ > Tags, ‘Next’ > ‘Review’, and ‘Create user’.
-- On the next page, download the CSV file containing the user’s access key and secret access key for future use.
+- On the next page, download the CSV file containing the AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID for future use.
 
 **Connecting AWS to Django**
 - Sign Up for AWS: Create an AWS account if you haven't already.
