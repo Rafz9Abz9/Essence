@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.db.models import Q
 
-from .models import Product, Category
+from .models import Product, Category, Review
 
 # Create your views here.
 def products(request):
@@ -71,6 +71,7 @@ def products(request):
 
 
 def product_details(request, product_id):
+    
     product = get_object_or_404(Product,  pk=product_id)
     related_product=None
     
@@ -86,3 +87,38 @@ def product_details(request, product_id):
         'related_product':related_product,
     }
     return render(request, 'product_details/product_details.html', context)
+
+def add_review(request):
+    try:
+        if request.method == "POST":
+            full_name = request.POST["full_name"]
+            title = request.POST["title"]
+            content = request.POST["content"]
+            rating = request.POST["rating"]
+            product_id = request.POST["product_id"]
+            
+            product = get_object_or_404(Product, pk=product_id)
+            
+            if request.user.is_authenticated:
+                Review.objects.create(
+                    user=request.user, 
+                    full_name=full_name, 
+                    title=title,
+                    content=content,
+                    ratings=rating,
+                    product=product
+                    )
+                messages.success(request, 'Thank you for reviewing this product!')
+            else:
+                Review.objects.create(
+                    full_name=full_name, 
+                    title=title,
+                    content=content,
+                    ratings=rating,
+                    product=product
+                    )
+                messages.success(request, 'Thank you for reviewing this product!')
+                
+    except Exception as e:
+        messages.error(request, f'Internal Server error {e}')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

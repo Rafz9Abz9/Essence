@@ -111,7 +111,7 @@
                                 <div class="product-details-action">
                                     {% if not product.is_in_cart%}
                                         {% if not product|is_in_cart:request.session.carts %} 
-                                        <input type="submit" class="btn-product btn-cart px-5" id="btn-add-cart" value="Add to Cart" >
+                                        <input type="submit" class="btn-product btn-cart px-4 mb-1" id="btn-add-cart" value="Add to Cart" >
                                         {% else %}
                                         <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
                                         {% endif %} 
@@ -123,15 +123,17 @@
                                         {% if product.is_in_wishlist%}
                                             <a href="{% url 'remove_from_wishlist' product_id=product.id%}" class="btn-product remove_wishlist" title="Wishlist"><span>Remove from Wishlist</span></a>
                                         {% else %}
-                                            <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist {{ product.is_in_wishlist}}</span></a>
+                                            <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist </span></a>
                                         {% endif %}
+                                        <a href="#" data-toggle="modal" data-target="#addReviewModal" class="btn-product btn-review" title="add review"><span>Add Review </span></a>
                                     </div><!-- End .details-action-wrapper -->
                                 </div><!-- End .product-details-action -->
+                                {% include 'includes/modals/add_review_modal.html' with product=product%}
 
                                 <div class="product-details-footer">
                                     <div class="product-cat">
                                         <span>Category:</span>
-                                        <a href="#">{{product.category.friendly_name}}</a>,
+                                        <a href="#">{{product.category.friendly_name}}</a>
                                     </div><!-- End .product-cat -->
 
                                     <div class="social-icons social-icons-sm">
@@ -301,6 +303,25 @@
     $('#btn-add-cart').click(function (e) {
             e.preventDefault();
             $('#add_to_cart_form').submit();
+    });
+
+    $('#add_review').click(function (e) {
+        e.preventDefault();
+        // Check form validity
+        if ($('#add_review_form')[0].checkValidity()) {
+            // If the form is valid, submit it
+            $('#add_review_form').submit();
+        } else {
+            $('#add_review_form :input').each(function () {
+                if (!this.validity.valid) {
+                    // Set custom validity message based on your requirements
+                    this.setCustomValidity('This field is required.');
+                }
+            });
+            
+            // Trigger form validation again to display custom messages
+            $('#add_review_form')[0].reportValidity();
+        }
     });
 
 </script>

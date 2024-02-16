@@ -58,7 +58,7 @@ def register(request):
                 email = EmailMessage(
                     email_subject,
                     email_body,
-                    "noreply@abzrecipe.com",
+                    "noreply@essence.com",
                     [user.email],
                     headers={"Message-ID": "@essence-hotdesk"},
                 )
