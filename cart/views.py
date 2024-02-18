@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Cart
 from product.models import Product
@@ -75,6 +76,16 @@ def cart(request):
             if isinstance(item, dict) and 'product_id' in item and 'quantity' in item:
                 product = get_object_or_404(Product, pk=item['product_id'])
                 cart_items.append({'product': product, 'quantity': item['quantity']})
+                
+    paginator = Paginator(cart_items, 10)
+    page = request.GET.get('page')
+    
+    try:
+        cart_items = paginator.page(page)
+    except PageNotAnInteger:
+        cart_items = paginator.page(1)
+    except EmptyPage:
+        cart_items = paginator.page(paginator.num_pages)  
         
     context = {
         'cart_items':cart_items,

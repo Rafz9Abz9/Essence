@@ -73,7 +73,7 @@ class Product(models.Model):
     
     def is_in_wishlist(self):
          # Access request user using threading
-        from core.models import Wishlist
+        from wishlist.models import Wishlist
         
         user = get_current_authenticated_user()
         
