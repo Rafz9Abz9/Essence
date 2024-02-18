@@ -40,9 +40,3 @@ class ShippingAddress(models.Model):
     def __str__(self):
         return f'Shipping Address for {self.user}'
     
-class Newsletter(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    email = models.EmailField()
-        
-    def __str__(self):
-        return f'Newsletter subscribed by {self.email}'

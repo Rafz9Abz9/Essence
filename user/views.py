@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from django.utils.http import urlsafe_base64_encode,  urlsafe_base64_decode
@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect
 
 from .utils import token_generator
 from .forms import RegistrationForm, LoginForm
-from .models import ShippingAddress, CustomUser, Newsletter
+from .models import ShippingAddress, CustomUser
 
 # Create your views here.
 def user_auth_view(request):
@@ -120,24 +120,6 @@ def logout_view(request):
 
 def user_profile(request):
     return render(request, 'user_profile/user_profile.html')
-
-def subscribe_newsletter(request):
-    try:
-        
-        if request.user.is_authenticated:
-            subscribe_action = request.GET["action"]
-            
-            if subscribe_action == "subscribe":
-                user = request.user
-                
-                Newsletter.objects.create(user=user, email=user.email)
-            
-    except Exception as e:
-        messages.error(request, 'Internal Server Error')
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    return render(request, 'user_profile/user_profile.html')
-
-
 
 class VerificationView(View):
     def get(self, request, uidb64, token):
