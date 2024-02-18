@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)9fifm_iesntfpix2@81e1wl4=m9t2gftg@qif=s4s$tnwpm_#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -75,8 +75,8 @@ TEMPLATES = [
                 'product.context_processors.categories',
                 'product.context_processors.featured_product',
                 'core.context_processors.wishlists_count',
-                'core.context_processors.cart_count',
-                'core.context_processors.cart_item',
+                'cart.context_processors.cart_count',
+                'cart.context_processors.cart_item',
             ],
         },
     },

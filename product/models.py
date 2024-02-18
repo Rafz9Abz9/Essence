@@ -80,14 +80,14 @@ class Product(models.Model):
         if user:
             return Wishlist.objects.filter(user=user, product=self).exists()
         
-    def is_in_cart(self, request):
+    def is_in_cart(self):
          # Access request user using threading
-        from core.models import Cart
+        from cart.models import Cart
         
         user = get_current_authenticated_user()
         
         if user:
-            return Cart.objects.filter(user=user, product=self).exists()         
+            return Cart.objects.filter(user=user, product=self).exists()       
            
     def __str__(self):
         return self.name
