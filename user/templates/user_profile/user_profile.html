@@ -3,11 +3,6 @@
 {% load static %}
 
 {% block main %}
-<div class="page-header text-center" style="background-image: url({% static 'images/page-header-bg.jpg'%})">
-    <div class="container">
-        <h1 class="page-title">Profile<span>Username here</span></h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
         <ol class="breadcrumb">
@@ -41,13 +36,20 @@
                              </div><!-- End .col-6 -->
                          
                              <div class="col-12 col-sm-6">
-                                 <h4>Newsletter</h4>
-         
-                                 <p>You aren't subscribe to the newsletter</p>
-                                 <p>You are subscribeed to the newsletter</p>
+                                <h4>Newsletter</h4>
+                                {% if user.is_subscribed_newsletter %}
+                                    <p>You are subscribeed to the newsletter</p>
+                                {% else %}
+                                    <p>You aren't subscribe to the newsletter </p>
+                                {% endif %}
                                  <div class="mt-2">
-                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">Subscribe</button>
-                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">UnSubscribe</button>
+                                    {% if user.is_subscribed_newsletter %}
+                                        <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">UnSubscribe Newsletter</button>
+                                    {% else %}
+                                        <button class="btn btn-outline"  data-toggle="modal" data-target="#newsletter">Subscribe Newsletter</button>
+                                    {% endif %}
+                                     
+                                     
                                  </div>
                                  {% include 'includes/modals/newsletter_modal.html' %}.
                              </div><!-- End .co -->

@@ -8,8 +8,12 @@
           </button>
         </div>
         <div class="modal-body">
-           <h3 class="text-center">Are you sure you want to subscribe for newsletter?</h3>
-           <h3 class="text-center">Are you sure you want to unsubscribe for newsletter?</h3>
+          {% if user.is_subscribed_newsletter %}
+            <h3 class="text-center py-5">Are you sure you want to unsubscribe for Newsletter?</h3>
+          {% else %}
+            <h3 class="text-center py-5">Are you sure you want to subscribe for Newsletter?</h3>
+          {% endif %}
+           
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>

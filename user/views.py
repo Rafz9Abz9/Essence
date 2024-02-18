@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect
 
 from .utils import token_generator
 from .forms import RegistrationForm, LoginForm
-from .models import ShippingAddress, CustomUser
+from .models import ShippingAddress, CustomUser, Newsletter
 
 # Create your views here.
 def user_auth_view(request):
@@ -119,6 +119,22 @@ def logout_view(request):
 
 
 def user_profile(request):
+    return render(request, 'user_profile/user_profile.html')
+
+def subscribe_newsletter(request):
+    try:
+        
+        if request.user.is_authenticated:
+            subscribe_action = request.GET["action"]
+            
+            if subscribe_action == "subscribe":
+                user = request.user
+                
+                Newsletter.objects.create(user=user, email=user.email)
+            
+    except Exception as e:
+        messages.error(request, 'Internal Server Error')
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return render(request, 'user_profile/user_profile.html')
 
 

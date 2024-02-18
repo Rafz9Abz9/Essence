@@ -75,7 +75,7 @@ TEMPLATES = [
                 'core.context_processors.wishlists_count',
                 'core.context_processors.cart_count',
                 'core.context_processors.cart_item',
-            ]
+            ],
         },
     },
 ]

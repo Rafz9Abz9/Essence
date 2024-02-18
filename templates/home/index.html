@@ -31,7 +31,7 @@
                                 <h3 class="intro-subtitle">Skin Care Products</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Upgrade your <br> skincare game.</h1><!-- End .intro-title -->
 
-                                <a href="{% url 'products' %}" class="btn btn-outline-white">
+                                <a href="products/?category={{categories|access_list:1|get_name}}" class="btn btn-outline-white">
                                     <span>SHOP NOW</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -50,7 +50,7 @@
                                 <h3 class="intro-subtitle">Hair Care</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Unlock your hair's potential.</h1><!-- End .intro-title -->
 
-                                <a href="{% url 'products' %}" class="btn btn-outline-white">
+                                <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white">
                                     <span>SHOP NOW</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -69,7 +69,7 @@
                                 <h3 class="intro-subtitle">Men's Care</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Elevate your grooming routine.</h1><!-- End .intro-title -->
 
-                                <a href="{% url 'products' %}" class="btn btn-outline-white">
+                                <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white">
                                     <span>SHOP NOW</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </a>
@@ -167,7 +167,7 @@
                             </a>
     
                             <div class="product-action-vertical">
-                                <a href="#" class="btn-product-icon btn-wishlist"><span>add to wishlist</span></a>
+                                <a href="wishlist.html" class="btn-product-icon btn-wishlist"><span>Add to Wishlist</span></a>
                             </div><!-- End .product-action-vertical -->
                         </figure><!-- End .product-media -->
     
@@ -177,13 +177,9 @@
                                 {{product.formatted_price}}
                             </div><!-- End .product-price -->
     
-                            <div class="product-nav product-nav-dots">
-                                <a href="#" class="active" style="background: #1f1e18;"><span class="sr-only">Color name</span></a>
-                                <a href="#" style="background: #e8e8e8;"><span class="sr-only">Color name</span></a>
-                            </div><!-- End .product-nav -->
                         </div><!-- End .product-body -->
                         <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                            <a href="cart.html" class="btn-product btn-cart"><span>Add to Cart</span></a>
                         </div><!-- End .product-action -->
                     </div><!-- End .product -->
                     {% endfor %}
