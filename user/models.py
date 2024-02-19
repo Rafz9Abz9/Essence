@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
+from django_countries.fields import CountryField
 
 from .managers import CustomUserManager
 
@@ -30,12 +31,13 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 class ShippingAddress(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    id_user = models.IntegerField()
+    email = models.EmailField(_("email address"), unique=True)
     phone = models.TextField(max_length=20)
     street_address = models.TextField(max_length=250)
     post_code = models.TextField(max_length=20, blank=True)
     city = models.TextField(max_length=80)
-    country = models.TextField(max_length=80)
+    state = models.TextField(max_length=80, default="")
+    country = models.CharField(max_length=200,  null=True, choices=CountryField().choices + [('', 'Select Country')])
     
     def __str__(self):
         return f'Shipping Address for {self.user}'

@@ -11,7 +11,7 @@ from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 
 from .utils import token_generator
-from .forms import RegistrationForm, LoginForm, PasswordChangeForm
+from .forms import RegistrationForm, LoginForm, PasswordChangeForm, ShippingAddressForm
 from .models import ShippingAddress, CustomUser
 
 
@@ -122,10 +122,16 @@ def logout_view(request):
 
 def user_profile(request):
     change_password_form = PasswordChangeForm(request.POST)
+    user_shipping_address = None
+    
+    if request.user.is_authenticated:
+        user_shipping_address, created = ShippingAddress.objects.get_or_create(user=request.user )
     
     context = {
-        "change_password_form": change_password_form
+        "user_shipping_address": user_shipping_address,
+        "change_password_form": change_password_form,
     }
+    
     return render(request, 'user_profile/user_profile.html', context)
 
 def update_user_info(request):
@@ -148,6 +154,38 @@ def update_user_info(request):
             raise PermissionDenied
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+
+def update_shipping_info(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            user_shipping_address  = get_object_or_404(ShippingAddress, user=request.user )
+            
+            email = request.POST['email']
+            phone = request.POST['phone']
+            street_address = request.POST['street_address']
+            post_code = request.POST['post_code']
+            city = request.POST['city']
+            state = request.POST['state']
+            country = request.POST['country']
+            
+            if user_shipping_address:
+                user_shipping_address.email = email
+                user_shipping_address.phone = phone
+                user_shipping_address.street_address = street_address
+                user_shipping_address.post_code = post_code
+                user_shipping_address.city = city
+                user_shipping_address.state = state
+                user_shipping_address.country = country
+                
+                user_shipping_address.save()
+                messages.success(request, "Updated Successfully!")
+                
+        else:
+            # Unauthenticated user
+            messages.warning(request, 'Only Authenticated User is Allowed')
+            raise PermissionDenied
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 def change_password(request):
     if request.method == 'POST':
         change_password_form = PasswordChangeForm(user=request.user, data=request.POST)
@@ -155,7 +193,6 @@ def change_password(request):
         if change_password_form.is_valid():
             change_password_form.save()
             messages.success(request, 'Your password was successfully updated!')
-            return redirect('profile')
         else:
             messages.error(request, 'Please correct the error below.')
 

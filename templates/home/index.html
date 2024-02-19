@@ -300,10 +300,11 @@
                         <p class="cta-desc text-white">Essence presents the best product news</p><!-- End .cta-desc -->
                     </div><!-- End .col -->
 
-                    <div class="col-6 d-flex">
-                        <input type="email" class="form-control  rounded-left" style="width:550px;" placeholder="Email Address">
-                        <a href="login.html" class="btn btn-outline-white p-0 h-0 w-0" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></a>
-                    </div><!-- End .col-auto -->
+                    <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 d-flex">
+                         {% csrf_token %}
+                        <input type="email" name="email" class="form-control  rounded-left" style="width:550px;" placeholder="Email Address">
+                        <button type="submit" class="btn btn-outline-white p-0 h-0 w-0" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></button>
+                    </form><!-- End .col-auto -->
                 </div><!-- End .row no-gutters -->
             </div><!-- End .col-md-10 col-lg-9 -->
         </div><!-- End .row -->

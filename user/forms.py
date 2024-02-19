@@ -3,12 +3,12 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import PasswordChangeForm
+from django_countries import countries
 
-from .models import CustomUser
+from .models import CustomUser, ShippingAddress
 
 
 class RegistrationForm(UserCreationForm):
-
     
     email = forms.EmailField(widget=forms.EmailInput(attrs={
             'placeholder': 'Email Address',
@@ -88,5 +88,53 @@ class PasswordChangeForm(PasswordChangeForm):
             raise forms.ValidationError("New password must be different from the old password.")
 
         return new_password1
+    
+class ShippingAddressForm(forms.ModelForm):
+    
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        'placeholder': 'Email Address',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+   
+    phone = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Phone Number',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+    
+    street_address = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'street address',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+    
+    post_code = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Post Code',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+    
+    city = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'city ',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+    
+    state = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'state/province ',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+    
+    
+
+    country= forms.ChoiceField(choices=countries,  widget=forms.Select(attrs={'class': 'form-control'}))
+    
+    class Meta:
+        model = ShippingAddress
+        fields = ('email',  'phone', 'street_address' , 'post_code', 'city', 'state', 'country')
+        
+        
 
     

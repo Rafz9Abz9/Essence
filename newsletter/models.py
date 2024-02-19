@@ -3,7 +3,7 @@ from user.models import CustomUser
 
 # Create your models here.
 class NewsletterSubscribers(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user_id = models.IntegerField( null=True)
     email = models.EmailField()
     
     class Meta:

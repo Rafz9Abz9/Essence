@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
 {% block title%}username{% endblock %}
 {% load static %}
+{% load countries %}
 
 {% block extracss %}
 <style>
@@ -78,24 +79,25 @@
                         </div> <!-- End .row -->
                         <div class="row mb-3">
                              <div class="col-12 col-sm-6">
-                                 <h4>Default Billing Address </h4>
-                                 <p>You haven't set a default billing address</p>
-                                 <p>1, Cliford House, Dublin, Ireland</p>
-                                 <div class="mt-2">
-                                     <button class="btn btn-outline"  data-toggle="modal" data-target="#editBillingAddress">Edit Info</button>
-                                 </div>
-                                 {% include 'includes/modals/edit_billing_address_modal.html' %}
-                             </div><!-- End .col-6 -->
-                         
-                             <div class="col-12 col-sm-6">
-                                 <h4>Default Shipping Address</h4>
-         
-                                 <p>You haven't set a default shipping address</p>
-                                 <p>1, Cliford House, Dublin, Ireland</p>
+                                <h4>Default Shipping Address</h4>
+                                {% if user_shipping_address.phone or user_shipping_address.street_address or user_shipping_address.post_code or user_shipping_address.city or user_shipping_address.country or user_shipping_address.state%}
+                                    <span>Email: {{user_shipping_address.email}} </span> 
+                                    <span class="ml-3">Phone: {{user_shipping_address.phone}} </span><br/>
+                                    <span>Street Address: {{user_shipping_address.street_address}}  </span><br/>
+                                    <span>Post Code: {{user_shipping_address.post_code}}</span>
+                                    <span class="ml-3">City: {{user_shipping_address.city}}</span><br/>
+                                    <span>State: {{user_shipping_address.state}}</span>
+                                    {% get_country user_shipping_address.country as country %}
+
+                                    <span class="ml-3">Country: {{ country.name }}</span>
+                                {% else %}
+                                    <p>Complete setting a default shipping address</span>
+                                {% endif %}
                                  <div class="mt-2">
                                      <button class="btn btn-outline" data-toggle="modal" data-target="#editShippingAddress">Edit Info</button>
                                  </div>
-                                 {% include 'includes/modals/edit_shipping_address_modal.html' %}
+                                 
+                                 {% include 'includes/modals/edit_shipping_address_modal.html' with shipping_address=user_shipping_address %}
                              </div><!-- End .co -->
                         </div> <!-- End .row -->
                     </div><!-- End .col-lg-9 -->
@@ -144,6 +146,12 @@
     $('#change_password_btn').click(function (e) {
         e.preventDefault();
         $('#change_password_form').submit();
+    });
+
+    {% comment %} To Trigger update shipping info Form {% endcomment %}
+    $('#update_shipping_info_btn').click(function (e) {
+        e.preventDefault();
+        $('#update_shipping_info_form').submit();
     });
 
     {% comment %} To Trigger Edit User Info Form {% endcomment %}
