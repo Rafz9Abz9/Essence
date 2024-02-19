@@ -8,10 +8,12 @@ from django.urls import reverse
 from django.contrib.auth import login, logout, authenticate
 from django.views.generic.base import View
 from django.http import HttpResponseRedirect
+from django.core.exceptions import PermissionDenied
 
 from .utils import token_generator
-from .forms import RegistrationForm, LoginForm
+from .forms import RegistrationForm, LoginForm, PasswordChangeForm
 from .models import ShippingAddress, CustomUser
+
 
 # Create your views here.
 def user_auth_view(request):
@@ -119,7 +121,47 @@ def logout_view(request):
 
 
 def user_profile(request):
-    return render(request, 'user_profile/user_profile.html')
+    change_password_form = PasswordChangeForm(request.POST)
+    
+    context = {
+        "change_password_form": change_password_form
+    }
+    return render(request, 'user_profile/user_profile.html', context)
+
+def update_user_info(request):
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            user  = get_object_or_404(CustomUser, pk = request.user.id)
+            email = request.POST['email']
+            first_name = request.POST['first_name']
+            last_name = request.POST['last_name']
+            
+            user.email= email
+            user.first_name=first_name
+            user.last_name=last_name
+            
+            user.save()
+            messages.success(request, "Updated successfully!")
+        else:
+            # Unauthenticated user
+            messages.warning(request, 'Only Authenticated User is Allowed')
+            raise PermissionDenied
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def change_password(request):
+    if request.method == 'POST':
+        change_password_form = PasswordChangeForm(user=request.user, data=request.POST)
+
+        if change_password_form.is_valid():
+            change_password_form.save()
+            messages.success(request, 'Your password was successfully updated!')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Please correct the error below.')
+
+    else:
+        change_password_form = PasswordChangeForm(user=request.user)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 class VerificationView(View):
     def get(self, request, uidb64, token):

@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
 {% block title%}Wishlist{% endblock %}
 {% load static %}
+{% load cart_tag %}
 
 {% block main %}
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
@@ -50,7 +51,23 @@
                                 <td class="stock-col"><span class="out-stock text-danger">Out of Stock</span></td>
                             {% endif %}
                             <td class="action-col">
-                                <a href="#" class="btn btn-product btn-cart"><span>add to cart</span></a>
+                                {% if not product.is_in_cart%}
+                                    {% if not product|is_in_cart:request.session.carts%} 
+                                        <form method="POST" action="{% url 'add_to_cart' %}">
+                                            {% csrf_token %}
+                                            <div class="product-details-quantity mb-1">
+                                                <input type="hidden" id="product_id" name="product_id" class="form-control" value="{{product.id}}">
+                                                Qty:<input type="number" id="qty" name="qty" class="form-control px-2" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                            </div><!-- End .product-details-quantity -->
+                                            <input type="submit" class="btn-product btn-cart py-2 px-3" value="Add to Cart" >
+                                        </form>
+                                    {% else %}
+                                        {{product|is_in_cart:request.session.carts}}
+                                        <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                    {% endif %}     
+                                {% else %}
+                                    <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                {% endif %}    
                             </td>
                             <td class="remove-col"><a href="{%url 'remove_from_wishlist' product_id=item.product.id%}" class="btn-remove" title="Remove from wishlist"><i class="icon-close"></i></a></td>
                         </tr>

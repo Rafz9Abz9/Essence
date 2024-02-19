@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError
+from django.contrib.auth.forms import PasswordChangeForm
+
 from .models import CustomUser
 
 
@@ -75,73 +77,16 @@ class LoginForm(AuthenticationForm):
     )
 
 
-# class ProfileUpdateForm(forms.ModelForm):
 
-#     # Additional fields from the Profile model
-#     username = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'User name',
-#         'class': 'form-control'
-#         }), required=False)
+class PasswordChangeForm(PasswordChangeForm):
+   
+    def cleaned_data(self):
+        old_password = self.cleaned_data.get('old_password')
+        new_password1 = self.cleaned_data.get('new_password1')
+
+        if old_password and old_password == new_password1:
+            raise forms.ValidationError("New password must be different from the old password.")
+
+        return new_password1
+
     
-#     first_name = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Firstname',
-#         'class': 'form-control',
-#     }), max_length=15, required=False)
-
-#     last_name = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Lastname',
-#         'class': 'form-control',
-#     }), max_length=15, required=False)
-
-#     email = forms.EmailField(widget=forms.EmailInput(attrs={
-#             'placeholder': 'Email Address',
-#             'class': 'form-control'
-#         }), required=False)
-    
-
-#     address = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Address',
-#         'class': 'form-control',
-#     }), max_length=250, required=False)
-
-#     phone = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Phone',
-#         'class': 'form-control',
-#     }), max_length=20, required=False)
-
-#     country = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Country',
-#         'class': 'form-control',
-#     }), max_length=20, required=False)
-
-#     class Meta:
-#         model = User  # Use the User model
-#         fields = ['username', 'first_name', 'last_name', 'email','address', 'phone', 'country']
-
-
-# class ContactForm(forms.ModelForm):
-
-#     name = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Enter your name',
-#         'class': 'form-control'
-#         }), required=True)
-    
-#     email = forms.EmailField(widget=forms.EmailInput(attrs={
-#             'placeholder': 'Enter your email address',
-#             'class': 'form-control'
-#         }), required=True)
-    
-#     subject = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Enter Subject',
-#         'class': 'form-control'
-#         }), required=True)
-        
-#     message = forms.CharField(widget=forms.Textarea(attrs={
-#         'placeholder': 'Enter Message',
-#         'class': 'form-control'
-#         }), required=True)
-            
-    
-#     class Meta:
-#         model = Contact
-#         fields = ('name', 'email',  'subject', 'message' )

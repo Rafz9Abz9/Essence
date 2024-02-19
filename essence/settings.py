@@ -147,12 +147,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Application Mail Setup Settings
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Essence Hot-DesK'
-EMAIL_HOST_USER = 'abzrecipe@gmail.com'
-EMAIL_HOST_PASSWORD = 'izlzpfazfwszmtox'
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 

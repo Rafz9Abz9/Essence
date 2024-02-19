@@ -2,6 +2,19 @@
 {% block title%}username{% endblock %}
 {% load static %}
 
+{% block extracss %}
+<style>
+    input[name="old_password"], input[name="new_password1"], input[name="new_password2"]  {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 20px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+</style>
+{% endblock %}
+
 {% block main %}
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
@@ -23,16 +36,25 @@
                         <hr class="mt-0 mb-3" />
                         <div class="row mb-3">
                              <div class="col-12 col-sm-6">
-                                 <h4>User Information </h4>
-                                 <span class="mr-2">Username: Rafah Ramoni</span>
-                                 <span>Fullname: Rafah Ramoni</span>
-                                 <p>Email: Raf@example.com</p>
+                                <h4>User Information </h4>
+                                {% if user.first_name|length > 0 or user.last_name|length > 0 %}
+                                    <span>First Name:{{ user.first_name}} </span><br />
+                                    <span>Last Name: {{user.last_name}}</span>
+                                {% else %}
+                                    <span>First and Last name fields are empty</span>
+                                {% endif %}  
+                                <br />
+                                {% if user.email|length > 0  %}
+                                    <span>Email: {{ user.email}}</span>
+                                {% else %}
+                                    <span>Email field is empty</span>
+                                {% endif %}  
                                  <div class="mt-2">
                                      <button class="btn btn-outline" data-toggle="modal" data-target="#editUserInfoModal">Edit Info</button>
                                      <button class="btn btn-outline" data-toggle="modal" data-target="#changePassword">Change Password</button>
                                  </div>
                                  {% include 'includes/modals/edit_user_info_modal.html' %}
-                                 {% include 'includes/modals/change_password_modal.html' %}.
+                                 {% include 'includes/modals/change_password_modal.html' with form=change_password_form %}.
                              </div><!-- End .col-6 -->
                          
                              <div class="col-12 col-sm-6">
@@ -116,3 +138,19 @@
 </div>
 {% endblock %}
 
+{% block extrascripts %}
+<script>
+    {% comment %} To Trigger Change Password Form {% endcomment %}
+    $('#change_password_btn').click(function (e) {
+        e.preventDefault();
+        $('#change_password_form').submit();
+    });
+
+    {% comment %} To Trigger Edit User Info Form {% endcomment %}
+    $('#edit_user_info_btn').click(function (e) {
+        e.preventDefault();
+        $('#edit_user_info_form').submit();
+    });
+
+</script>
+{% endblock %}

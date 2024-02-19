@@ -32,6 +32,8 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extracss %}
+    {% endblock %}
     <title>Essence | {% block title %}{% endblock %}</title>
 </head>
 

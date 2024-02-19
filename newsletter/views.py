@@ -17,7 +17,7 @@ def subscribe_newsletter(request):
             
             # set up email notification to user
             email_subject = '@essence-newsletter'
-            email_msg =  "Thank you for for subscribing to our newsletter, We keep you posted on our product and trends."      
+            email_msg =  "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."      
             email_body = f"Hi {newsletter.email}, {email_msg}"
             
             email = EmailMessage(
