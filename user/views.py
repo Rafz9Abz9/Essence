@@ -13,6 +13,7 @@ from django.core.exceptions import PermissionDenied
 from .utils import token_generator
 from .forms import RegistrationForm, LoginForm, PasswordChangeForm, ShippingAddressForm
 from .models import ShippingAddress, CustomUser
+from product.models import Review
 
 
 # Create your views here.
@@ -122,14 +123,17 @@ def logout_view(request):
 
 def user_profile(request):
     change_password_form = PasswordChangeForm(request.POST)
+    user_reviews = None
     user_shipping_address = None
     
     if request.user.is_authenticated:
         user_shipping_address, created = ShippingAddress.objects.get_or_create(user=request.user )
+        user_reviews = Review.objects.filter(user=request.user)
     
     context = {
         "user_shipping_address": user_shipping_address,
         "change_password_form": change_password_form,
+        "user_reviews": user_reviews,
     }
     
     return render(request, 'user_profile/user_profile.html', context)
@@ -184,6 +188,21 @@ def update_shipping_info(request):
             # Unauthenticated user
             messages.warning(request, 'Only Authenticated User is Allowed')
             raise PermissionDenied
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def delete_review(request, review_id):
+    user_review=None
+    if request.user.is_authenticated:
+        user_review = get_object_or_404(Review, user=request.user, pk=review_id)
+        user_review.delete()
+        
+        messages.success(request, "Deleted Successfully!")
+            
+    else:
+        # Unauthenticated user
+        messages.warning(request, 'Only Authenticated User is Allowed')
+        raise PermissionDenied
+    
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def change_password(request):

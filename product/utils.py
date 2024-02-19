@@ -3,6 +3,10 @@ from django.core.exceptions import ValidationError
 from django.template.defaulttags import register
 
 
+@register.filter(name='order_by_date')
+def order_by_date(list ):
+    return list.order_by('-created_at')
+
 @register.filter(name='remove_slashes')
 def remove_slashes(value):
     if value:

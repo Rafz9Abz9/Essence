@@ -210,7 +210,7 @@
                                             <div class="card-body">
                                                 <div class="reviews">
                                                     {% if product.reviews.all%}
-                                                        {% for review in product.reviews.all %}       
+                                                        {% for review in product.reviews.all|order_by_date %}       
                                                             <div class="review">
                                                                 <div class="row no-gutters">
                                                                     <div class="col-auto">
@@ -228,11 +228,6 @@
                                                                         <div class="review-content">
                                                                             <p>{{review.content}}</p>
                                                                         </div><!-- End .review-content -->
-
-                                                                        <div class="review-action">
-                                                                            <a href="#"><i class="icon-thumbs-up"></i>Helpful (2)</a>
-                                                                            <a href="#"><i class="icon-thumbs-down"></i>Unhelpful (0)</a>
-                                                                        </div><!-- End .review-action -->
                                                                     </div><!-- End .col-auto -->
                                                                 </div><!-- End .row -->
                                                             </div><!-- End .review -->
@@ -280,14 +275,6 @@
                         <a href="/products/?category={{product.category.name}}" class="btn btn-outline-dark-3"><span>View More Related Products</span><i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .widget widget-products -->
 
-                    {% comment %} <div class="widget widget-banner-sidebar">
-                        <div class="banner-sidebar-title">ad box 280 x 280</div><!-- End .ad-title -->
-                        
-                        <div class="banner-sidebar banner-overlay">
-                            <a href="#">
-                                <img src="images/blog/sidebar/banner.jpg" alt="banner" />
-                            </a>
-                        </div><!-- End .banner-ad --> {% endcomment %}
                     </div><!-- End .widget -->
                 </div><!-- End .sidebar sidebar-product -->
             </aside><!-- End .col-xl-2 -->

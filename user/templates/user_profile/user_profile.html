@@ -112,7 +112,7 @@
                     <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:350px">My Reviews</h2>
                     <hr class="mt-0 mb-3" />
                     <div class="row mb-3">
-                        {% include 'includes/reviews/reviews.html' %}
+                        {% include 'includes/user_reviews/user_reviews.html' with reviews=user_reviews%}
                     </div> <!-- End .row -->
                     </div><!-- End .col-lg-9 -->
                 </div>
