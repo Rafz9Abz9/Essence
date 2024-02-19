@@ -24,7 +24,7 @@ All the JavaScript files were tested through the [JShint Validator](https://jshi
 
 ## Python
 
-All the Python files were tested through the [CI](https://pep8ci.herokuapp.com/).
+All the Python files were tested through the [CI Python Linter](https://pep8ci.herokuapp.com/).
 
 
 # Browser Compatibility
