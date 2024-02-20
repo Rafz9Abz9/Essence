@@ -464,6 +464,8 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/134aa122-2ada-464f-8db0-def090a3546f)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2de92010-1a7c-491d-a321-be71e678e05d)
+
 ### Checkout Page
 
 
@@ -484,6 +486,12 @@ The website is set up with different pages, and each page is made for a specific
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28175583-a65a-4488-8a47-9f9f1845ef68)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/df289f34-9c94-47fd-b292-2c759204f6ba)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a0e56051-b350-4c3a-91d4-9e3bf7ee503b)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/039aa4ee-87f1-4667-a68a-37a8c76d0b3d)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e7093ee1-f8c0-4f2f-bab8-534b284d218d)
 
 ### Wishlist Page
 
