@@ -56,24 +56,19 @@ def register(request):
             domain = get_current_site(request).domain
             activate_url = 'http://'+domain+link
             email_body = f"Dear {user.email},  Please use this link to veify your account\n {activate_url}"
-            try:
-                # setup email
-                email = EmailMessage(
-                    email_subject,
-                    email_body,
-                    "noreply@essence.com",
-                    [user.email],
-                    headers={"Message-ID": "@essence-hotdesk"},
-                )
-                # send email
-                email.send(fail_silently=False)
-                
-                messages.success(request, "Your Registration is Successful, check your mailbox to activate your account before login")
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-            except Exception as e:
-                messages.error(request, f"Error sending email: {e}")
-                print(f"Error sending email: {e}")
-                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            # setup email
+            email = EmailMessage(
+                email_subject,
+                email_body,
+                "noreply@essence.com",
+                [user.email],
+                headers={"Message-ID": "@essence-hotdesk"},
+            )
+            # send email
+            email.send(fail_silently=False)
+            
+            messages.success(request, "Your Registration is Successful, check your mailbox to activate your account before login")
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     form = LoginForm(request.POST)
     reg_form = RegistrationForm(request.POST)
     context = {

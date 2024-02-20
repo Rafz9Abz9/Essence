@@ -53,8 +53,7 @@ def contact(request):
     return render(request, 'contact/contact.html', {'contact_form':contact_form})
 
 
-def checkout(request):
-    return render(request, 'checkout/checkout.html')
+
 
 def faq(request):
     return render(request, 'faq/faq.html')

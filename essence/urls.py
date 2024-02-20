@@ -17,6 +17,7 @@ urlpatterns = [
     path('products/', include('product.urls')),
     path('cart/', include('cart.urls')),
     path('wishlist/', include('wishlist.urls')),
+    path('checkout/', include('checkout.urls')),
     path('newsletter/', include('newsletter.urls')),
     path('activate/<uidb64>/<token>', VerificationView.as_view(), name='activate'),
     path('admin/', admin.site.urls), 

@@ -121,7 +121,7 @@
                 <aside class="col-lg-3">
                     <div class="summary summary-cart">
                         <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
-                        <form id="proceed_checkout_form">
+                        <form id="proceed_checkout_form" method="POST" action="{% url 'checkout'%}">
                             {% csrf_token %}
                             <table class="table table-summary">
                                 <tbody>
@@ -162,7 +162,7 @@
                                     </tr><!-- End .summary-total -->
                                 </tbody>
                             </table><!-- End .table table-summary -->
-                            <input type="hidden" value="" name="items_and_shiping_price" id="items_and_shiping_price" />
+                            <input type="hidden" value="" name="items_and_shipping_price" id="items_and_shipping_price" />
                             <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" disabled>PROCEED TO CHECKOUT</button>
                         </form>
                     </div><!-- End .summary -->
@@ -187,12 +187,11 @@
             var totalElement = document.getElementById('total');
             var submitButton = document.querySelector('#proceed_checkout_form button');
 
-            var itemsShipinePrice = document.getElementById('items_and_shiping_price');
-            var subTotal = parseFloat(subTotalElement.textContent.replace('€', '').trim());
-            itemsShipinePrice.value = subTotal;
+            var itemsShipinePrice = document.getElementById('items_and_shipping_price');
+            itemsShipinePrice.value =parseFloat(subTotalElement.textContent.replace('€', '').trim());;
             // Disable submit button initially
             submitButton.disabled = true;
-
+            console.log(submitButton)
             // Add event listener to the form
             proceedForm.addEventListener('change', function () {
                 // Check if either radio button is selected
