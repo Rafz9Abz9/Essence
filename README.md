@@ -207,6 +207,7 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7b683eb6-973e-46d8-83f9-c27e5f0358c5)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/503c921d-a7fc-4b01-a914-35f750f7dc5c)
 
 ### FAQ Page
 
