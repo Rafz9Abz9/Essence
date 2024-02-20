@@ -415,7 +415,8 @@ Site users have the option to subscribe to the newsletter without requiring an a
 
 # Testing
 
-
+## All the testings performed for this project is in this [**Testing Documentation**](https://github.com/Rafz9Abz9/Essence/blob/main/TESTING.md)
+       
 # Deployment
 This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, [**Heroku**](https://www.heroku.com/) as the deployment site, and [**Stripe**](https://stripe.com/en-se) for processing online payments.
 
