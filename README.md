@@ -60,6 +60,18 @@ The website is set up with different pages, and each page is made for a specific
 
 2. Wireframes: the wireframes were created using Balsamiq.
 
+<details>
+
+<summary>Home Page</summary>
+
+### Desktop
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8a04ab65-d70b-46dc-a456-cf4fb1b9b5e4)
+
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ec5639b0-9fbc-4685-89f2-cf5a9ee77f7b)
+
+</details>
 
 ## Surface
 
