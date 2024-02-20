@@ -446,6 +446,25 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Shopping Cart Page
 
+| PAGE          | FEATURE                                                                                      | OUTCOME                |
+|---------------|----------------------------------------------------------------------------------------------|------------------------|
+| SHOPPING CART | Images of products visible.                                                                  | PASS                   |
+| SHOPPING CART | Names, quantity of products added, and total amount is visible.                               | PASS                  |
+| SHOPPING CART | There’s a coupon code field but it has not been implemented – future implementation.         | PASS (FOR VISIBILITY)  |
+| SHOPPING CART | On the right side, the cart total is present enclosed in a box with subtotal, shipping options, and total cost visible. | PASS          |
+| SHOPPING CART | There’s a ‘PROCEED TO CHECKOUT’ button which takes the user to the checkout page.            | PASS                   |
+| SHOPPING CART | There’s a ‘CONTINUE SHOPPING’ feature which takes the user back to the products page.        | PASS                   |
+| SHOPPING CART | There’s an ‘UPDATE CART’ button allowing users to update the quantity of a product. Users receive a notification after updating. | PASS                   |
+| SHOPPING CART | If the user chooses more than the quantity in stock, they receive a failure notification.    | PASS                   |
+| SHOPPING CART | User can remove a product from the shopping cart by clicking on the ‘X’ feature. They receive a notification. | PASS                   |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c565dcd-f49a-4ca5-bef8-5e74442d0883)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/5b556f89-38d6-4e34-8399-42e49dd3eeb8)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/134aa122-2ada-464f-8db0-def090a3546f)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/2de92010-1a7c-491d-a321-be71e678e05d)
 
 ### Checkout Page
 
@@ -467,6 +486,12 @@ The website is set up with different pages, and each page is made for a specific
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28175583-a65a-4488-8a47-9f9f1845ef68)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/df289f34-9c94-47fd-b292-2c759204f6ba)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a0e56051-b350-4c3a-91d4-9e3bf7ee503b)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/039aa4ee-87f1-4667-a68a-37a8c76d0b3d)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e7093ee1-f8c0-4f2f-bab8-534b284d218d)
 
 ### Wishlist Page
 
@@ -524,18 +549,56 @@ The website is set up with different pages, and each page is made for a specific
 
 # Business Model
 
+## Business Overview
+
 Essence's Business Model follows a Business to Consumer (B2C) model. We directly provide our range of essential care products and services to individuals who are looking for effective solutions to maintain their well-being. A typical customer of Essence could be anyone seeking high-quality and reliable hair care, skin care, baby care, or men's care products, catering to diverse needs and preferences across different age groups and lifestyles.
 
-# Marketing Strategy
+## Benefits for the Business Owner
 
+- Diverse Product Range: Offering a wide range of products including hair care, skin care, men's grooming, and baby care ensures multiple revenue streams and appeals to a broader customer base.
+- Market Demand: Targeting multiple niches within the personal care industry taps into high demand markets, increasing the likelihood of consistent sales.
+- Scalability: The ecommerce model allows for easy scalability as the business grows, without the need for significant physical infrastructure investment.
+- Flexibility: With an online platform, the business owner can manage operations remotely, providing greater flexibility in managing the business.
+- Data Insights: Ecommerce platforms provide detailed analytics, allowing the owner to gather insights into customer behavior, preferences, and purchasing patterns to refine marketing strategies and optimize inventory management.
 
-## SEO
+## Benefits for Customers
 
+- Convenience: Customers can browse and purchase products from the comfort of their homes, saving time and effort.
+- Product Variety: Offering a wide selection caters to diverse needs and preferences, ensuring customers can find products suitable for them.
+- Accessibility: The online platform provides accessibility to customers regardless of their geographical location, expanding the potential customer base.
+- Information Availability: Detailed product descriptions and reviews empower customers to make informed purchasing decisions.
+- Convenient Delivery: The option for home delivery enhances convenience for customers, particularly those with busy schedules or limited mobility.
 
+## Cons of the Business Model
+
+- Competition: The personal care industry is highly competitive, with numerous established brands and new entrants, requiring effective differentiation strategies.
+- Logistics Challenges: Managing inventory, shipping, and handling returns can pose logistical challenges, particularly during peak seasons or unexpected events.
+- Customer Trust: Building trust and credibility in an online business requires consistent effort, as customers may be wary of purchasing personal care products online due to concerns about product authenticity and quality.
+- Customer Service Demands: Providing satisfactory customer service, including addressing inquiries, resolving issues, and managing returns, is essential but can be resource-intensive.
+- Digital Security: Protecting customer data and ensuring secure transactions is crucial to maintaining customer trust and compliance with data protection regulations.
+
+## Goals for the Website
+
+- Increase Sales: Achieve steady growth in sales by attracting new customers and encouraging repeat purchases.
+- Enhance Customer Experience: Continuously improve the website's user experience to make browsing and purchasing seamless and enjoyable for customers.
+- Build Brand Awareness: Increase brand visibility and recognition through targeted marketing efforts and engaging content.
+- Expand Product Range: Regularly introduce new products and expand the existing product range to cater to evolving customer needs and preferences.
+- Optimize Operations: Streamline backend processes such as inventory management, order fulfillment, and customer service to improve efficiency and reduce costs.
+
+# SEO
+
+## Sitemap.xml
+
+- [**XML-Sitemaps**](https://www.xml-sitemaps.com/) is used to generate the sitemap.xml file.
+
+## Robots.txt
 
 ## Social Media Marketing
 
 A prototype Facebook business account was crafted, drawing inspiration from the resources offered by Code Institute. This enhances the potential to boost sales by seamlessly linking to the business website, providing users with convenient access. Leveraging Facebook's extensive user base further amplifies sales opportunities, making it an ideal platform for driving business growth.
+- To view this page, you can click the link below.
+
+[**Facebook Business Page**](https://www.facebook.com/profile.php?id=61555157247407)
 
 ## Email Marketing
 
@@ -740,5 +803,6 @@ By following these steps, you'll have successfully set up Stripe payments for th
 
 ## Acknowledgements
 - Slack Community for the helpful materials.
-- Code Institute for their helpful materials.
+- Code Institute for their helpful materials and support.
 - My mentor Antonio Rodriguez for his advice and support.
+- Alan Bushell for his support and feedback. Speaking to him really calmed my nerves and made it mentally easier for me to complete this project.
