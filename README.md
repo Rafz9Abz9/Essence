@@ -60,6 +60,117 @@ The website is set up with different pages, and each page is made for a specific
 
 2. Wireframes: the wireframes were created using Balsamiq.
 
+<details>
+
+<summary>Home Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8a04ab65-d70b-46dc-a456-cf4fb1b9b5e4)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ec5639b0-9fbc-4685-89f2-cf5a9ee77f7b)
+
+</details>
+
+<details>
+
+<summary>About Us Page</summary>
+
+- Ended up adding a testimonial feature on this page.
+  
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4d2a668b-769a-4269-8a16-3bffdc1cc9ab)
+
+</details>
+
+<details>
+
+<summary>Contact Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c4273373-6e9b-4da9-8f71-4b80e50928b7)
+
+</details>
+
+<details>
+
+<summary>Products Page</summary>
+
+
+</details>
+
+<details>
+
+<summary>Products Details Page</summary>
+
+
+</details>
+
+<details>
+
+<summary>Register Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/91cbd41d-cc36-4082-8066-41242caba1d5)
+
+</details>
+
+<details>
+
+<summary>Login Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f754255d-a9c3-4996-9aec-166f5eb81514)
+
+</details>
+
+<details>
+
+<summary>Account Information Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/44d9bf21-f2e2-4820-b9f7-8139e99da26a)
+
+</details>
+
+<details>
+
+<summary>My Reviews Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/93f3b62d-710a-4247-b7ea-b772f80b28e0)
+
+</details>
+
+<details>
+
+<summary>My Orders Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/eaac294f-72ae-4cd6-b4f6-df74f8d39459)
+
+</details>
+
+<details>
+
+<summary>Wishlist Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/70a00182-1123-40c1-8ec8-ac0ccb5fbd3f)
+
+</details>
+
+<details>
+
+<summary>FAQ Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/aff392ab-475b-4316-9559-11c85c5b4082)
+
+</details>
+
+<details>
+
+<summary>Shopping Cart Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c2a7acfa-8e35-4753-a6a2-b1767a7c0272)
+
+</details>
+
+<details>
+
+<summary>Checkout Page</summary>
+
+</details>
 
 ## Surface
 
@@ -182,6 +293,9 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d260975b-9617-4386-843a-e0aeab98ee7d)
+
+
 ### About Us Page
 
 | PAGE      | FEATURE                                                                                                               |
@@ -201,6 +315,10 @@ The website is set up with different pages, and each page is made for a specific
 | CONTACT US  | - Users receive a confirmation message after submitting, assuring their message has been sent and the company will get back to them. |
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c22b393-6e79-4163-ab40-8980cd8db03d)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7b683eb6-973e-46d8-83f9-c27e5f0358c5)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/503c921d-a7fc-4b01-a914-35f750f7dc5c)
 
 ### FAQ Page
 
@@ -255,6 +373,14 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/55b645e5-1cd7-49d8-9dd2-8262de74bee6)
 
+- After user logs out of their account:
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c25bb02c-ec73-4e81-9e34-1701ea2e9db9)
+
+- After user logs into their account:
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/888f1966-a5e5-49f1-bcaf-8de3d51455cb)
+
 ### Forgot Password Page
 
 
@@ -308,6 +434,15 @@ The website is set up with different pages, and each page is made for a specific
 | PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | PRODUCTS DETAILS | - There's a ‘VIEW MORE PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/40458626-5ccd-4861-87d5-6ed206470f28)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/380ec445-b808-4293-b50b-86aee22c09ee)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b0faab9a-6a17-4e63-befb-4380d636bf5f)
+
+- For products that are out of stock, it will either have a sign saying 'Out of Stock' or when user goes to the product detail page for a particular product, amd they click on 'Add to Cart', they will get a 'failure' message, notifying them that the product is out of stock.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ac61b628-6ce5-4b32-bde3-33b10890c587)
 
 ### Shopping Cart Page
 
@@ -317,19 +452,49 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Account Information/Profile Page
 
+| PAGE                   | FEATURE                                                                                                    | OUTCOME                                                                                                          |
+|------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| MY ACCOUNT INFORMATION | User’s account information is present here: user information, newsletter subscription (ability to opt-in or opt-out), default shipping address. | PASS                                                                        |
+| MY ACCOUNT INFORMATION | User can edit their account information.                                                                   | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | User can edit their shipping address.                                                                      | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | User can choose to subscribe to the newsletter and unsubscribe from the newsletter.                        | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | When details have been edited, the user will receive a notification letting them know that their account information has been edited. | PASS                                                                                  |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d20980ba-ecd3-4f3e-8682-aab97be36e0f)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/98ec9f59-faea-4a56-ab21-567bdb900263)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28175583-a65a-4488-8a47-9f9f1845ef68)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/df289f34-9c94-47fd-b292-2c759204f6ba)
 
 ### Wishlist Page
 
+| PAGE     | FEATURE                                                                                                    | OUTCOME                                                                                                          |
+|----------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| WISHLIST | Wishlist consists of products that the user has saved.                                                     | PASS                                                                                                             |
+| WISHLIST | Product’s images are visible.                                                                              | PASS                                                                                                             |
+| WISHLIST | Product’s names are visible.                                                                               | PASS                                                                                                             |
+| WISHLIST | Product’s prices are visible.                                                                              | PASS                                                                                                             |
+| WISHLIST | ‘Add TO CART’ button is visible for each product that is added to this page. When clicked, product will be added to the shopping cart page => enhances shopping experience. | PASS                                            |
+| WISHLIST | There’s a ‘X’ feature visible for each product present. If clicked, the product will be removed from the Wishlist. | PASS                                                                                                      |
+| WISHLIST | There’s a ‘Stock Status’ visible which will let the user know if the product is in stock.  |   PASS                                                                                                                            |
+
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/00b0a380-7714-4094-b7f9-17af562917d0)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28d079c7-bd8f-4fa3-b852-43d0e6cdbe03)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8f715afe-287a-45f6-bac9-584e08992173)
 
 ### My Reviews Page
 
+| PAGE       | FEATURE                                                               | OUTCOME                                                                                      |
+|------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| MY REVIEWS | Image of products along with reviews made for the product and the rating present. | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d5204bf6-8cf3-4cb7-965f-7b5e9d116eb9)|
+| MY REVIEWS | There’s an ‘X’ feature and if clicked, it will remove the user’s review. | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6397fd3b-652f-4201-97f4-6ca66180f751)|
 
 ### My Orders Page
-
-
-### Management Site
-
-- This is the form created for admin to add products.
 
 
 ### Error Page
@@ -417,9 +582,21 @@ Site users have the option to subscribe to the newsletter without requiring an a
 
 # Testing
 
-
+## All the testings performed for this project is in this [**Testing Documentation**](https://github.com/Rafz9Abz9/Essence/blob/main/TESTING.md)
+       
 # Deployment
 This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, [**Heroku**](https://www.heroku.com/) as the deployment site, and [**Stripe**](https://stripe.com/en-se) for processing online payments.
+
+**Local Deployment**
+1. Repository cloning performed by clicking the "Code" button.
+2. Copy the URL.
+3. Open your preferred IDE and open the terminal section.
+4. Type "git clone" followed by the URL copied from earlier, and press enter.
+5. Install the required dependencies by typing "pip install -r requirements.txt" in the terminal.
+6. You will be required to set up the environment variables in the local environment.
+7. Connect to your preferred database and run the migrations by typing in "python manage.py migrate" in the terminal.
+8. Create a superuser by typing "python manage.py createsuperuser" in the terminal and following the prompts.
+9. Run the app by typing in "python manage.py runserver".
 
 **Set Up AWS to Store Static & Media Files**
 - Create an account on [AWS](https://aws.amazon.com/).
