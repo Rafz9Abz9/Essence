@@ -86,11 +86,91 @@ I was unable to incorporate these user stories, so I designated them as "Won't H
 
 
 
-
 # Manual Testing
 
+<details>
+
+<summary>Account Registration Tests</summary>
+
+| Test                               | Result |
+|------------------------------------|--------|
+| User can create an account        | Pass   |
+| Verified User can log into account| Pass   |
+| User can log out of account       | Pass   |
+| User is notified of logging in to account | Pass |
+| User is notified of logging out of account| Pass |
+| User receives email verification email| Fail   |
+
+</details>
+
+<details>
+
+<summary>User Navigation Tests</summary>
+
+| Test                                                   | Result |
+|--------------------------------------------------------|--------|
+| User can navigate to product                          | Pass   |
+| User can access product details                       | Pass   |
+| User can add a product to cart                        | Pass   |
+| User can navigate back to products                    | Pass   |
+| User can add additional products to cart              | Pass   |
+| User can add multiple quantities of a product         | Pass   |
+| User can navigate to cart                             | Pass   |
+| Logged in User can navigate to the profile section of accounts | Pass |
+| User can access their saved address information      | Pass   |
+| User can access past orders                           | Pass   |
+| User can access the contact page and form             | Pass   |
+| All links on footer open to correct pages             | Pass   |
+| All links on Heading Navigation open to correct option| Pass   |
+
+
+</details>
+
+<details>
+
+<summary>Account Security Tests</summary>
+
+| Test                                               | Result |
+|----------------------------------------------------|--------|
+| Unregistered user cannot access profile page      | Pass   |
+| Registered user can access profile page           | Pass   |
+| All users can access the contact form page       | Pass   |
+| Unregistered user cannot leave a review on products | Pass |
+| Registered user can leave a review on products   | Pass   |
+| Unregistered user cannot add products to wishlist | Pass   |
+| Registered user can add products to wishlist     | Pass   |
+
+</details>
+
+<details>
+
+<summary>Profile Tests</summary>
+
+| Test                                                   | Result |
+|--------------------------------------------------------|--------|
+| Unregistered user cannot access profile page           | Pass   |
+| Registered user can access profile page                | Pass   |
+| Registered user can see their details on the accounts information page | Pass |
+| Registered user can update their first name            | Pass   |
+| Registered user can update their last name             | Pass   |
+| Registered user can update their email                 | Pass   |
+| Registered user can navigate to their shipping information | Pass   |
+| Registered user can update street address              | Pass   |
+| Registered user can update city                        | Pass   |
+| Registered user can update state/province              | Pass   |
+| Registered user can update postcode                    | Pass   |
+| Registered user can update country                     | Pass   |
+| Registered user can subscribe to newsletter            | Pass   |
+| Registered user can unsubscribe newsletter            | Pass   |
+
+</details>
+
+<details>
+
+<summary>Payments Tests</summary>
 
 
 
+</details>
 
 
