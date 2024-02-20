@@ -446,6 +446,23 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Shopping Cart Page
 
+| PAGE          | FEATURE                                                                                      | OUTCOME                |
+|---------------|----------------------------------------------------------------------------------------------|------------------------|
+| SHOPPING CART | Images of products visible.                                                                  | PASS                   |
+| SHOPPING CART | Names, quantity of products added, and total amount is visible.                               | PASS                  |
+| SHOPPING CART | There’s a coupon code field but it has not been implemented – future implementation.         | PASS (FOR VISIBILITY)  |
+| SHOPPING CART | On the right side, the cart total is present enclosed in a box with subtotal, shipping options, and total cost visible. | PASS          |
+| SHOPPING CART | There’s a ‘PROCEED TO CHECKOUT’ button which takes the user to the checkout page.            | PASS                   |
+| SHOPPING CART | There’s a ‘CONTINUE SHOPPING’ feature which takes the user back to the products page.        | PASS                   |
+| SHOPPING CART | There’s an ‘UPDATE CART’ button allowing users to update the quantity of a product. Users receive a notification after updating. | PASS                   |
+| SHOPPING CART | If the user chooses more than the quantity in stock, they receive a failure notification.    | PASS                   |
+| SHOPPING CART | User can remove a product from the shopping cart by clicking on the ‘X’ feature. They receive a notification. | PASS                   |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c565dcd-f49a-4ca5-bef8-5e74442d0883)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/5b556f89-38d6-4e34-8399-42e49dd3eeb8)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/134aa122-2ada-464f-8db0-def090a3546f)
 
 ### Checkout Page
 
