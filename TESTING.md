@@ -16,6 +16,11 @@ All the HTML files were tested through the [W3C HTML Validator](https://validato
 
 All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input). 
 
+| FILE      | SCREENSHOT | NOTES            |
+|-----------|------------|------------------|
+| style.css | [Screenshot](link_to_screenshot) |  |
+| base.css  | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/0726b086-2370-4e3d-93b6-05f00db281c2)|  PASS – NO ERRORS |
+
 
 ## JavaScript
 
