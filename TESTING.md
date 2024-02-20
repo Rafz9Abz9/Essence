@@ -42,8 +42,6 @@ All the Python files were tested through the [CI Python Linter](https://pep8ci.h
 
 # User Story Testing
 
-## User Stories for Future Implementation
-
 These are some of the user stories that I have implemented.
 
 | USER STORY                                                                                                   | RESULTS |
