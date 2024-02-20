@@ -475,6 +475,17 @@ Site users have the option to subscribe to the newsletter without requiring an a
 # Deployment
 This project was developed using **Visual Studio Code** as the IDE, [**GitHub**](http://github.com/) as the remote repository, [**AWS**](https://aws.amazon.com/) to store static and media files, [**Heroku**](https://www.heroku.com/) as the deployment site, and [**Stripe**](https://stripe.com/en-se) for processing online payments.
 
+**Local Deployment**
+1. Repository cloning performed by clicking the "Code" button.
+2. Copy the URL.
+3. Open your preferred IDE and open the terminal section.
+4. Type "git clone" followed by the URL copied from earlier, and press enter.
+5. Install the required dependencies by typing "pip install -r requirements.txt" in the terminal.
+6. You will be required to set up the environment variables in the local environment.
+7. Connect to your preferred database and run the migrations by typing in "python manage.py migrate" in the terminal.
+8. Create a superuser by typing "python manage.py createsuperuser" in the terminal and following the prompts.
+9. Run the app by typing in "python manage.py runserver".
+
 **Set Up AWS to Store Static & Media Files**
 - Create an account on [AWS](https://aws.amazon.com/).
 - Login and go to All Services > Storage > S3
