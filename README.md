@@ -778,5 +778,6 @@ By following these steps, you'll have successfully set up Stripe payments for th
 
 ## Acknowledgements
 - Slack Community for the helpful materials.
-- Code Institute for their helpful materials.
+- Code Institute for their helpful materials and support.
 - My mentor Antonio Rodriguez for his advice and support.
+- Alan Bushell for his support and feedback. Speaking to him really calmed my nerves and made it mentally easier for me to complete this project.
