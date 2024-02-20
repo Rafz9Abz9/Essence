@@ -322,6 +322,21 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Account Information/Profile Page
 
+| PAGE                   | FEATURE                                                                                                    | OUTCOME                                                                                                          |
+|------------------------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| MY ACCOUNT INFORMATION | User’s account information is present here: user information, newsletter subscription (ability to opt-in or opt-out), default shipping address. | PASS                                                                        |
+| MY ACCOUNT INFORMATION | User can edit their account information.                                                                   | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | User can edit their shipping address.                                                                      | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | User can choose to subscribe to the newsletter and unsubscribe from the newsletter.                        | PASS                                                                                                             |
+| MY ACCOUNT INFORMATION | When details have been edited, the user will receive a notification letting them know that their account information has been edited. | PASS                                                                                  |
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d20980ba-ecd3-4f3e-8682-aab97be36e0f)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/98ec9f59-faea-4a56-ab21-567bdb900263)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28175583-a65a-4488-8a47-9f9f1845ef68)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/df289f34-9c94-47fd-b292-2c759204f6ba)
 
 ### Wishlist Page
 
