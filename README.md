@@ -182,6 +182,9 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d260975b-9617-4386-843a-e0aeab98ee7d)
+
+
 ### About Us Page
 
 | PAGE      | FEATURE                                                                                                               |
@@ -325,11 +328,6 @@ The website is set up with different pages, and each page is made for a specific
 
 
 ### My Orders Page
-
-
-### Management Site
-
-- This is the form created for admin to add products.
 
 
 ### Error Page
