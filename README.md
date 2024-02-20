@@ -111,7 +111,7 @@ The website is set up with different pages, and each page is made for a specific
 ### Desktop
 
 
-</details>#
+</details>
 
 <details>
 
