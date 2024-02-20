@@ -24,8 +24,7 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 ## JavaScript
 
-All the JavaScript files were tested through the [JShint Validator](https://jshint.com/).
-
+- JavaScript was sourced from the Bootstrap template.
 
 ## Python
 
