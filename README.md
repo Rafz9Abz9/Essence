@@ -324,6 +324,13 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/40458626-5ccd-4861-87d5-6ed206470f28)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/380ec445-b808-4293-b50b-86aee22c09ee)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b0faab9a-6a17-4e63-befb-4380d636bf5f)
+
+- For products that are out of stock, it will either have a sign saying 'Out of Stock' or when user goes to the product detail page for a particular product, amd they click on 'Add to Cart', they will get a 'failure' message, notifying them that the product is out of stock.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ac61b628-6ce5-4b32-bde3-33b10890c587)
 
 ### Shopping Cart Page
 
