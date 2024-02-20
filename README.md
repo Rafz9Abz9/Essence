@@ -205,6 +205,9 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8c22b393-6e79-4163-ab40-8980cd8db03d)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7b683eb6-973e-46d8-83f9-c27e5f0358c5)
+
+
 ### FAQ Page
 
 | PAGE  | FEATURE                                                                                         |
@@ -257,6 +260,14 @@ The website is set up with different pages, and each page is made for a specific
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d9b62fdd-5d68-4e8c-ae43-2ac6c0e80707)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/55b645e5-1cd7-49d8-9dd2-8262de74bee6)
+
+- After user logs out of their account:
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c25bb02c-ec73-4e81-9e34-1701ea2e9db9)
+
+- After user logs into their account:
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/888f1966-a5e5-49f1-bcaf-8de3d51455cb)
 
 ### Forgot Password Page
 
