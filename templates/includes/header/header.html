@@ -65,17 +65,6 @@
                                         </div><!-- End .menu-col -->
                                     </div><!-- End .col-md-6 -->
 
-                                    <div class="col-md-6">
-                                        <div class="banner banner-overlay">
-                                            <a href="category.html">
-                                                <img src="{% static 'images/menu/banner-2.jpg' %}" alt="Banner">
-
-                                                <div class="banner-content banner-content-bottom">
-                                                    <div class="banner-title text-white">New Trends<br><span><strong>spring 2019</strong></span></div><!-- End .banner-title -->
-                                                </div><!-- End .banner-content -->
-                                            </a>
-                                        </div><!-- End .banner -->
-                                    </div><!-- End .col-md-6 -->
                                 </div><!-- End .row -->
                             </div><!-- End .megamenu megamenu-sm -->
                         </li>
@@ -134,11 +123,11 @@
                             {% endif %}
                         </div><!-- End .cart-product -->
 
-                        {%if total_price%}
+                        {%if cart_item_total_price%}
                             <div class="dropdown-cart-total">
                                 <span>Total</span>
 
-                                <span class="cart-total-price">{{total_price}}</span>
+                                <span class="cart-total-price">{{cart_item_sub_total_price}}</span>
                         </div><!-- End .dropdown-cart-total -->
                         {% endif %}
                         <div class="dropdown-cart-action">

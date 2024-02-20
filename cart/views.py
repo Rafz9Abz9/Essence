@@ -14,7 +14,7 @@ def add_to_cart(request):
             product = get_object_or_404(Product, pk=product_id)
             
             if product.stock < 1:
-                messages.warning(request, 'Failure adding to cart:Out of stock!')
+                messages.warning(request, 'Failure adding to cart: Out of stock!')
                 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
             if request.user.is_authenticated:
                 
@@ -34,6 +34,33 @@ def add_to_cart(request):
                     carts.append(cart_item)
                 request.session['carts'] = carts
                 messages.success(request, 'Product added to Cart')
+                    
+    except Exception as e:
+        messages.error(request, f'Internal Server Error {e}')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def update_cart_product_quantity(request):
+    try:
+        if request.method == "POST":
+            product_id = request.POST['product_id']
+            qty = request.POST['qty']
+            product = get_object_or_404(Product, pk=product_id)
+            cart = get_object_or_404(Cart,  product=product, user=request.user)
+            if  int(qty) > product.stock:
+                messages.warning(request, 'Failure updating quantity: Product in stock is less than required quantity')
+                return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            if request.user.is_authenticated:
+                cart.quantity = qty
+                cart.save()
+                messages.success(request, 'Product quantity updated in Cart')
+            else:
+               # Unauthenticated user
+                carts = request.session.get('carts', [])                 
+                cart_item = next((item for item in carts if item['product_id'] == product_id), None)
+                if cart_item:                    
+                    cart_item['quantity'] = int(cart_item['quantity']) + int(qty)
+                request.session['carts'] = carts
+                messages.success(request, 'Product quantity updated in Cart')
                     
     except Exception as e:
         messages.error(request, f'Internal Server Error {e}')
