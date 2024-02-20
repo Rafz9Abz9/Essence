@@ -325,6 +325,22 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Wishlist Page
 
+| PAGE     | FEATURE                                                                                                    | OUTCOME                                                                                                          |
+|----------|------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| WISHLIST | Wishlist consists of products that the user has saved.                                                     | PASS                                                                                                             |
+| WISHLIST | Product’s images are visible.                                                                              | PASS                                                                                                             |
+| WISHLIST | Product’s names are visible.                                                                               | PASS                                                                                                             |
+| WISHLIST | Product’s prices are visible.                                                                              | PASS                                                                                                             |
+| WISHLIST | ‘Add TO CART’ button is visible for each product that is added to this page. When clicked, product will be added to the shopping cart page => enhances shopping experience. | PASS                                            |
+| WISHLIST | There’s a ‘X’ feature visible for each product present. If clicked, the product will be removed from the Wishlist. | PASS                                                                                                      |
+| WISHLIST | There’s a ‘Stock Status’ visible which will let the user know if the product is in stock.  |   PASS                                                                                                                            |
+
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/00b0a380-7714-4094-b7f9-17af562917d0)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/28d079c7-bd8f-4fa3-b852-43d0e6cdbe03)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8f715afe-287a-45f6-bac9-584e08992173)
 
 ### My Reviews Page
 
