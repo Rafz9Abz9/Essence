@@ -64,10 +64,7 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Home Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8a04ab65-d70b-46dc-a456-cf4fb1b9b5e4)
-
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ec5639b0-9fbc-4685-89f2-cf5a9ee77f7b)
 
@@ -76,8 +73,6 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>About Us Page</summary>
-
-### Desktop
 
 - Ended up adding a testimonial feature on this page.
   
@@ -89,8 +84,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Contact Us Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c4273373-6e9b-4da9-8f71-4b80e50928b7)
 
 </details>
@@ -99,8 +92,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Products Page</summary>
 
-### Desktop
-
 
 </details>
 
@@ -108,16 +99,12 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Products Details Page</summary>
 
-### Desktop
-
 
 </details>
 
 <details>
 
 <summary>Register Page</summary>
-
-### Desktop
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/91cbd41d-cc36-4082-8066-41242caba1d5)
 
@@ -127,8 +114,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Login Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f754255d-a9c3-4996-9aec-166f5eb81514)
 
 </details>
@@ -136,8 +121,6 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>Account Information Page</summary>
-
-### Desktop
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/44d9bf21-f2e2-4820-b9f7-8139e99da26a)
 
@@ -147,8 +130,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>My Reviews Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/93f3b62d-710a-4247-b7ea-b772f80b28e0)
 
 </details>
@@ -156,8 +137,6 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>My Orders Page</summary>
-
-### Desktop
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/eaac294f-72ae-4cd6-b4f6-df74f8d39459)
 
@@ -167,8 +146,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Wishlist Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/70a00182-1123-40c1-8ec8-ac0ccb5fbd3f)
 
 </details>
@@ -176,8 +153,6 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>FAQ Page</summary>
-
-### Desktop
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/aff392ab-475b-4316-9559-11c85c5b4082)
 
@@ -187,8 +162,6 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Shopping Cart Page</summary>
 
-### Desktop
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c2a7acfa-8e35-4753-a6a2-b1767a7c0272)
 
 </details>
@@ -196,9 +169,6 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>Checkout Page</summary>
-
-### Desktop
-
 
 </details>
 
