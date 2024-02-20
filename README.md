@@ -311,6 +311,8 @@ The website is set up with different pages, and each page is made for a specific
 | PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | PRODUCTS DETAILS | - There's a ‘VIEW MORE PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/40458626-5ccd-4861-87d5-6ed206470f28)
+
 
 ### Shopping Cart Page
 
@@ -326,6 +328,10 @@ The website is set up with different pages, and each page is made for a specific
 
 ### My Reviews Page
 
+| PAGE       | FEATURE                                                               | OUTCOME                                                                                      |
+|------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
+| MY REVIEWS | Image of products along with reviews made for the product and the rating present. | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d5204bf6-8cf3-4cb7-965f-7b5e9d116eb9)|
+| MY REVIEWS | There’s an ‘X’ feature and if clicked, it will remove the user’s review. | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6397fd3b-652f-4201-97f4-6ca66180f751)|
 
 ### My Orders Page
 
