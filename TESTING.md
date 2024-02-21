@@ -31,7 +31,12 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 ## Python
 
-All the Python files were tested through the [CI Python Linter](https://pep8ci.herokuapp.com/).
+- All the Python files were tested through the [CI Python Linter](https://pep8ci.herokuapp.com/).
+- The Python files were examined during testing, revealing primarily formatting-related issues such as whitespace inconsistencies, missing whitespace, trailing whitespace, and lines exceeding the recommended length.
+- These errors pertain to coding style and formatting rather than functional defects within the codebase.
+- To address these issues efficiently, I utilized a tool named **autopep8** to automatically correct the identified formatting discrepancies.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/12e6f3d6-f149-447b-ab6f-ae4b5081b779)
 
 
 # Browser Compatibility
