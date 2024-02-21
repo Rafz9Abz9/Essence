@@ -3,7 +3,10 @@
 During the project's development, I conducted multiple tests to guarantee the site's functionality. This section contains comprehensive documentation detailing all tests performed across the entire website.
 
 # Table Content
-
+1. [Code Validation](#code-validation)
+2. [Browser Compatibility](#browser-compatibility)
+3. [User Story Testing](#user-story-testing)
+4. [Manual Testing](#manual-testing)
 
 # Code Validation
 
@@ -32,9 +35,6 @@ All the Python files were tested through the [CI Python Linter](https://pep8ci.h
 
 
 # Browser Compatibility
-
-
-# Responsiveness
 
 
 # Lighthouse
