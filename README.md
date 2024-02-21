@@ -632,6 +632,7 @@ Site users have the option to subscribe to the newsletter without requiring an a
       - JSHint: validating JavaScript code.
       - CI Python Linter: validating Python code.
       - Chrome DevTools: debugging and testing with Lighthouse.
+      - autopep8: used to automatically format Python code according to the PEP 8 style guide. 
 7. Data Management
       - AWS: storing media and static data.
       - PostgreSQL (Postgres): used for storing and managing structured data.
