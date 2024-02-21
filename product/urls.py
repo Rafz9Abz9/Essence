@@ -6,4 +6,3 @@ urlpatterns = [
     path('<product_id>', views.product_details, name='product_details'),
     path('review/add', views.add_review, name='add_review'),
 ]
-

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import  CustomUser, ShippingAddress
+from .models import CustomUser, ShippingAddress
 
 
 admin.site.register(CustomUser)

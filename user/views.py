@@ -28,8 +28,9 @@ def user_auth_view(request):
 
     return render(request, 'user_auth/user_auth.html', context)
 
+
 def register(request):
-    
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -37,25 +38,26 @@ def register(request):
             user = form.save()
             # create user
             # e user profile
-            new_shipping_address = ShippingAddress.objects.create(user=user, id_user=user.id)
+            new_shipping_address = ShippingAddress.objects.create(
+                user=user, id_user=user.id)
             new_shipping_address.save()
-            
 
             user.is_active = False
             user.save()
             # email subject here
             email_subject = 'Activate Your Account'
             # email body
-           
+
             token = token_generator.make_token(user)
             uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
             link = reverse('activate', kwargs={
                 'uidb64': uidb64, 'token': token
             })
-            
+
             domain = get_current_site(request).domain
             activate_url = 'http://'+domain+link
-            email_body = f"Dear {user.email},  Please use this link to veify your account\n {activate_url}"
+            email_body = f"Dear {
+                user.email},  Please use this link to veify your account\n {activate_url}"
             # setup email
             email = EmailMessage(
                 email_subject,
@@ -66,8 +68,9 @@ def register(request):
             )
             # send email
             email.send(fail_silently=False)
-            
-            messages.success(request, "Your Registration is Successful, check your mailbox to activate your account before login")
+
+            messages.success(
+                request, "Your Registration is Successful, check your mailbox to activate your account before login")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     form = LoginForm(request.POST)
     reg_form = RegistrationForm(request.POST)
@@ -76,9 +79,8 @@ def register(request):
         "login_form": form
     }
 
-
-
     return render(request, 'user_auth/user_auth.html', context)
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -99,7 +101,7 @@ def login_view(request):
         else:
             messages.error(request, "Invalid Credentials")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    
+
     form = LoginForm(request.POST)
     reg_form = RegistrationForm(request.POST)
     context = {
@@ -108,6 +110,7 @@ def login_view(request):
     }
 
     return render(request, 'user_auth/user_auth.html', context)
+
 
 def logout_view(request):
     logout(request)
@@ -120,31 +123,33 @@ def user_profile(request):
     change_password_form = PasswordChangeForm(request.POST)
     user_reviews = None
     user_shipping_address = None
-    
+
     if request.user.is_authenticated:
-        user_shipping_address, created = ShippingAddress.objects.get_or_create(user=request.user )
+        user_shipping_address, created = ShippingAddress.objects.get_or_create(
+            user=request.user)
         user_reviews = Review.objects.filter(user=request.user)
-    
+
     context = {
         "user_shipping_address": user_shipping_address,
         "change_password_form": change_password_form,
         "user_reviews": user_reviews,
     }
-    
+
     return render(request, 'user_profile/user_profile.html', context)
+
 
 def update_user_info(request):
     if request.method == 'POST':
         if request.user.is_authenticated:
-            user  = get_object_or_404(CustomUser, pk = request.user.id)
+            user = get_object_or_404(CustomUser, pk=request.user.id)
             email = request.POST['email']
             first_name = request.POST['first_name']
             last_name = request.POST['last_name']
-            
-            user.email= email
-            user.first_name=first_name
-            user.last_name=last_name
-            
+
+            user.email = email
+            user.first_name = first_name
+            user.last_name = last_name
+
             user.save()
             messages.success(request, "Updated successfully!")
         else:
@@ -157,8 +162,9 @@ def update_user_info(request):
 def update_shipping_info(request):
     if request.method == 'POST':
         if request.user.is_authenticated:
-            user_shipping_address  = get_object_or_404(ShippingAddress, user=request.user )
-            
+            user_shipping_address = get_object_or_404(
+                ShippingAddress, user=request.user)
+
             email = request.POST['email']
             phone = request.POST['phone']
             street_address = request.POST['street_address']
@@ -166,7 +172,7 @@ def update_shipping_info(request):
             city = request.POST['city']
             state = request.POST['state']
             country = request.POST['country']
-            
+
             if user_shipping_address:
                 user_shipping_address.email = email
                 user_shipping_address.phone = phone
@@ -175,38 +181,43 @@ def update_shipping_info(request):
                 user_shipping_address.city = city
                 user_shipping_address.state = state
                 user_shipping_address.country = country
-                
+
                 user_shipping_address.save()
                 messages.success(request, "Updated Successfully!")
-                
+
         else:
             # Unauthenticated user
             messages.warning(request, 'Only Authenticated User is Allowed')
             raise PermissionDenied
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+
 def delete_review(request, review_id):
-    user_review=None
+    user_review = None
     if request.user.is_authenticated:
-        user_review = get_object_or_404(Review, user=request.user, pk=review_id)
+        user_review = get_object_or_404(
+            Review, user=request.user, pk=review_id)
         user_review.delete()
-        
+
         messages.success(request, "Deleted Successfully!")
-            
+
     else:
         # Unauthenticated user
         messages.warning(request, 'Only Authenticated User is Allowed')
         raise PermissionDenied
-    
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 
 def change_password(request):
     if request.method == 'POST':
-        change_password_form = PasswordChangeForm(user=request.user, data=request.POST)
+        change_password_form = PasswordChangeForm(
+            user=request.user, data=request.POST)
 
         if change_password_form.is_valid():
             change_password_form.save()
-            messages.success(request, 'Your password was successfully updated!')
+            messages.success(
+                request, 'Your password was successfully updated!')
         else:
             messages.error(request, 'Please correct the error below.')
 
@@ -214,23 +225,25 @@ def change_password(request):
         change_password_form = PasswordChangeForm(user=request.user)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
+
 class VerificationView(View):
     def get(self, request, uidb64, token):
         try:
             id = force_str(urlsafe_base64_decode(uidb64))
             user = CustomUser.objects.get(pk=id)
-            greetings = f"You're Welcome {user.email}, Account activated successfully."
+            greetings = f"You're Welcome {
+                user.email}, Account activated successfully."
             if user.is_active:
                 messages.info(request, "user account is already activated.")
-                login(request,user)
+                login(request, user)
                 # Redirect to a success page, e.g., user's profile page
                 return redirect("home")
             user.is_active = True
             user.save()
-            login(request,user)
+            login(request, user)
             messages.success(request, greetings)
             return redirect("home")
-            
+
         except Exception as ex:
             messages.error(request, "Error Activating Your Account.")
             print(f"Error Activating Your Account: {ex}")

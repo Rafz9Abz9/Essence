@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.validators import validate_image_file_extension,MinValueValidator, MaxValueValidator
+from django.core.validators import validate_image_file_extension, MinValueValidator, MaxValueValidator
 from .utils import validate_image_content
 from babel.numbers import format_currency
 from django.utils import timezone
@@ -9,7 +9,7 @@ from user.models import CustomUser
 
 
 # Create your models here.
-    
+
 class Category(models.Model):
     name = models.CharField(max_length=25, null=False)
     friendly_name = models.CharField(max_length=50, null=False, default=" ")
@@ -19,6 +19,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Image(models.Model):
     # Fields to store information about each image
@@ -31,12 +32,13 @@ class Image(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.caption 
+        return self.caption
 
 
 class Review(models.Model):
     # Fields to store information about each image
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(
+        CustomUser, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=255)
     full_name = models.CharField(max_length=255, default="")
     content = models.TextField(max_length=1025)
@@ -44,14 +46,17 @@ class Review(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(5)],
         default=0
     )
-    product = models.ForeignKey('Product', on_delete=models.CASCADE, related_name='reviews')
+    product = models.ForeignKey(
+        'Product', on_delete=models.CASCADE, related_name='reviews')
     created_at = models.DateTimeField(default=timezone.now, blank=True)
 
     def __str__(self):
         return f"Review for {self.product.name}"
 
+
 class Product(models.Model):
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        'Category', null=True, blank=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -60,34 +65,36 @@ class Product(models.Model):
     stock = models.BigIntegerField(default=0, null=False)
     sold = models.BigIntegerField(default=0, null=False)
     is_featured = models.BooleanField(default=False)
-    images = models.ManyToManyField('Image', related_name='products', blank=True)
+    images = models.ManyToManyField(
+        'Image', related_name='products', blank=True)
     ratings = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)],
         default=0
     )
-    review = models.ManyToManyField('Review', related_name='products', blank=True)
+    review = models.ManyToManyField(
+        'Review', related_name='products', blank=True)
     created_at = models.DateTimeField(default=timezone.now, blank=True)
 
     def formatted_price(self):
         return format_currency(self.price, 'EUR', locale='en_US')
-    
+
     def is_in_wishlist(self):
-         # Access request user using threading
+        # Access request user using threading
         from wishlist.models import Wishlist
-        
+
         user = get_current_authenticated_user()
-        
+
         if user:
             return Wishlist.objects.filter(user=user, product=self).exists()
-        
+
     def is_in_cart(self):
-         # Access request user using threading
+        # Access request user using threading
         from cart.models import Cart
-        
+
         user = get_current_authenticated_user()
-        
+
         if user:
-            return Cart.objects.filter(user=user, product=self).exists()       
-           
+            return Cart.objects.filter(user=user, product=self).exists()
+
     def __str__(self):
         return self.name

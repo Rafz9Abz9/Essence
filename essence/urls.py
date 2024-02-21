@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from core.views import custom_400_view,custom_404_view, custom_403_view, custom_500_view
-from django.conf.urls import handler400, handler404, handler403, handler500 
+from core.views import custom_400_view, custom_404_view, custom_403_view, custom_500_view
+from django.conf.urls import handler400, handler404, handler403, handler500
 from user.views import VerificationView
 
 handler400 = custom_400_view
@@ -20,7 +20,5 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('newsletter/', include('newsletter.urls')),
     path('activate/<uidb64>/<token>', VerificationView.as_view(), name='activate'),
-    path('admin/', admin.site.urls), 
+    path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-

@@ -6,23 +6,26 @@ from django.core.mail import EmailMessage
 from .models import NewsletterSubscribers
 from user.models import CustomUser
 # Create your views here.
+
+
 def subscribe_newsletter(request):
     if request.user.is_authenticated:
-        user = get_object_or_404(CustomUser, pk= request.user.id)
+        user = get_object_or_404(CustomUser, pk=request.user.id)
         email = None
         if request.method == "POST":
-            email= request.POST['email']
+            email = request.POST['email']
         else:
             email = user.email
-        newsletter, created = NewsletterSubscribers.objects.get_or_create(user_id=user.id, email=email)
+        newsletter, created = NewsletterSubscribers.objects.get_or_create(
+            user_id=user.id, email=email)
         user.is_subscribed_newsletter = True
         user.save()
-        
+
         # set up email notification to user
         email_subject = '@essence-newsletter'
-        email_msg =  "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."      
+        email_msg = "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."
         email_body = f"Hi {newsletter.email}, {email_msg}"
-        
+
         mail_email = EmailMessage(
             email_subject,
             email_body,
@@ -36,13 +39,14 @@ def subscribe_newsletter(request):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     else:
         if request.method == "POST":
-            email= request.POST['email']
-            newsletter, created = NewsletterSubscribers.objects.get_or_create(email=email)
+            email = request.POST['email']
+            newsletter, created = NewsletterSubscribers.objects.get_or_create(
+                email=email)
             # set up email notification to user
             email_subject = '@essence-newsletter'
-            email_msg =  "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."      
+            email_msg = "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."
             email_body = f"Hi {newsletter.email}, {email_msg}"
-            
+
             mail_email = EmailMessage(
                 email_subject,
                 email_body,
@@ -54,24 +58,25 @@ def subscribe_newsletter(request):
             mail_email.send(fail_silently=False)
             messages.success(request, "Successfully Subscribed to Newsletter!")
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-                
+
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-        
+
 
 def unsubscribe_newsletter(request):
     if request.user.is_authenticated:
-        user = get_object_or_404(CustomUser, pk= request.user.id)
-        newsletter = get_object_or_404(NewsletterSubscribers, user_id=user.id, email=user.email)
+        user = get_object_or_404(CustomUser, pk=request.user.id)
+        newsletter = get_object_or_404(
+            NewsletterSubscribers, user_id=user.id, email=user.email)
         user.is_subscribed_newsletter = False
         user.save()
-        
+
         newsletter.delete()
-        
+
         # set up email notification to user
         email_subject = '@essence-newsletter'
-        email_msg =  "You have successfully unsubscribed from our newsletter, Hope to get in touch with you again."      
+        email_msg = "You have successfully unsubscribed from our newsletter, Hope to get in touch with you again."
         email_body = f"Hi {newsletter.email}, {email_msg}"
-        
+
         email = EmailMessage(
             email_subject,
             email_body,
@@ -83,5 +88,5 @@ def unsubscribe_newsletter(request):
         email.send(fail_silently=False)
         messages.success(request, "Successfully Unsubscribed from Newsletter!")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-                
+
     return render(request, 'user_profile/user_profile.html')

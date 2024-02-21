@@ -9,13 +9,13 @@ from .models import CustomUser, ShippingAddress
 
 
 class RegistrationForm(UserCreationForm):
-    
+
     email = forms.EmailField(widget=forms.EmailInput(attrs={
-            'placeholder': 'Email Address',
-            'class': 'form-control',
-            'autocomplete': 'off',
-        }), required=True)
-    
+        'placeholder': 'Email Address',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
+
     password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
@@ -23,7 +23,7 @@ class RegistrationForm(UserCreationForm):
             'autocomplete': 'off',
         }),
         required=True,
-        min_length=8 
+        min_length=8
     )
 
     password2 = forms.CharField(
@@ -34,7 +34,7 @@ class RegistrationForm(UserCreationForm):
         }),
         required=True
     )
-        
+
     def clean(self):
         cleaned_data = super().clean()
         password1 = cleaned_data.get('password1')
@@ -44,20 +44,21 @@ class RegistrationForm(UserCreationForm):
             self.add_error('password2', "Passwords do not match.")
 
         email = cleaned_data.get('email')
-        email_validator = EmailValidator(message="Enter a valid email address.")
+        email_validator = EmailValidator(
+            message="Enter a valid email address.")
 
         if CustomUser.objects.filter(email=email).exists():
-            self.add_error('email', 'An account with this email already exists. Please use a different email address.')
-        
+            self.add_error(
+                'email', 'An account with this email already exists. Please use a different email address.')
+
         try:
             email_validator(email)
         except forms.ValidationError as e:
             self.add_error('email', e)
-    
+
     class Meta:
         model = CustomUser
-        fields = ('email',  'password1', 'password2' )
-
+        fields = ('email',  'password1', 'password2')
 
 
 class LoginForm(AuthenticationForm):
@@ -66,7 +67,7 @@ class LoginForm(AuthenticationForm):
         'class': 'form-control',
         'id': 'login-email',
     }), required=True)
-    
+
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
@@ -77,64 +78,61 @@ class LoginForm(AuthenticationForm):
     )
 
 
-
 class PasswordChangeForm(PasswordChangeForm):
-   
+
     def cleaned_data(self):
         old_password = self.cleaned_data.get('old_password')
         new_password1 = self.cleaned_data.get('new_password1')
 
         if old_password and old_password == new_password1:
-            raise forms.ValidationError("New password must be different from the old password.")
+            raise forms.ValidationError(
+                "New password must be different from the old password.")
 
         return new_password1
-    
+
+
 class ShippingAddressForm(forms.ModelForm):
-    
+
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'placeholder': 'Email Address',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-   
+
     phone = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Phone Number',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
+
     street_address = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'street address',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
+
     post_code = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Post Code',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
+
     city = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'city ',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
+
     state = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'state/province ',
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
-    
 
-    country= forms.ChoiceField(choices=countries,  widget=forms.Select(attrs={'class': 'form-control'}))
-    
+    country = forms.ChoiceField(
+        choices=countries,  widget=forms.Select(attrs={'class': 'form-control'}))
+
     class Meta:
         model = ShippingAddress
-        fields = ('email',  'phone', 'street_address' , 'post_code', 'city', 'state', 'country')
-        
-        
-
-    
+        fields = ('email',  'phone', 'street_address',
+                  'post_code', 'city', 'state', 'country')
