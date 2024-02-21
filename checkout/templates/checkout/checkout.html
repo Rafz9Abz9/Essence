@@ -1,9 +1,10 @@
 {% extends 'base/base.html' %}
 {% block title%}Chekout{% endblock %}
 {% load static %}
+{% load countries %}
+
 
 {% block main %}
-
 <nav aria-label="breadcrumb" class="breadcrumb-nav">
     <div class="container">
         <ol class="breadcrumb">
@@ -30,64 +31,61 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>First Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" name="first_name" required value="{% if user.first_name|length > 0%} {{user.first_name}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>Last Name *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" name="last_name" required value="{% if user.last_name|length > 0%} {{ user.last_name}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
-                            <label>Company Name (Optional)</label>
-                            <input type="text" class="form-control">
+                            <label>Email address *</label>
+                            <input type="email" class="form-control" name="email" required value="{% if shipping_address.email|length > 0%} {{shipping_address.email}} {% endif %}">
 
-                            <label>Country *</label>
-                            <input type="text" class="form-control" required>
+                            
 
                             <label>Street address *</label>
-                            <input type="text" class="form-control" placeholder="House number and Street name" required>
-                            <input type="text" class="form-control" placeholder="Appartments, suite, unit etc ..." required>
+                            <input type="text" class="form-control" name="street_address" placeholder="House number and Street name" required value="{% if shipping_address.street_address|length > 0%} {{shipping_address.street_address}} {% endif %}">
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Town / City *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" name="city" required value="{% if shipping_address.city|length > 0%} {{shipping_address.city}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>State / County *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" name="state" required value="{% if shipping_address.state|length > 0%} {{shipping_address.state}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
                             <div class="row">
                                 <div class="col-sm-6">
                                     <label>Postcode / ZIP *</label>
-                                    <input type="text" class="form-control" required>
+                                    <input type="text" class="form-control" name="post_code" required value="{% if shipping_address.post_code|length > 0%} {{shipping_address.post_code}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
 
                                 <div class="col-sm-6">
                                     <label>Phone *</label>
-                                    <input type="tel" class="form-control" required>
+                                    <input type="tel" class="form-control" name="phone" required value="{% if shipping_address.phone|length > 0%} {{shipping_address.phone}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
 
-                            <label>Email address *</label>
-                            <input type="email" class="form-control" required>
+                            <label>Country *</label>
+                            <select class="form-control" name="country" name="country" >
+                                <option value="" >Select Country</option>
+                                {% get_countries as countries %}
+                                {% for country in countries %}
+                                  <option value="{{country.code}}" {% if shipping_address.country == country.code %} selected {% endif %}>{{ country.name }}</option>
+                                {% endfor %}
+                              </select>
 
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="checkout-create-acc">
-                                <label class="custom-control-label" for="checkout-create-acc">Create an account?</label>
-                            </div><!-- End .custom-checkbox -->
+                            <input type="hidden" class="form-control" name="shipping_method" value="{{selected_shipping_method}}">
+                            <input type="hidden" class="form-control" name="shipping_price" value="{{shipping_price}}">
+                            <input type="hidden" class="form-control" name="sub_total" value="{{cart_item_sub_total_price}}">
+                            <input type="hidden" class="form-control" name="grand_total" value="{{items_and_shipping_price}}">
 
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="checkout-diff-address">
-                                <label class="custom-control-label" for="checkout-diff-address">Ship to a different address?</label>
-                            </div><!-- End .custom-checkbox -->
-
-                            <label>Order notes (optional)</label>
-                            <textarea class="form-control" cols="30" rows="4" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
                     </div><!-- End .col-lg-9 -->
                     <aside class="col-lg-3">
                         <div class="summary">
@@ -97,15 +95,19 @@
                                 <tbody>
                                     <tr class="summary-subtotal">
                                         <td>Subtotal:</td>
-                                        <td>$160.00</td>
+                                        {% if cart_item_sub_total_price%}
+                                            <td>{{cart_item_sub_total_price}}</td>
+                                        {%endif%}
                                     </tr><!-- End .summary-subtotal -->
                                     <tr>
                                         <td>Shipping:</td>
-                                        <td>Free shipping</td>
+                                        <td>{{selected_shipping_method}} ({{formatted_shipping_price}})</td>
                                     </tr>
                                     <tr class="summary-total">
                                         <td>Total:</td>
-                                        <td>$160.00</td>
+                                        {% if items_and_shipping_price%}
+                                            <td>{{formatted_grand_total}}</td>
+                                        {%endif%}
                                     </tr><!-- End .summary-total -->
                                 </tbody>
                             </table><!-- End .table table-summary -->
@@ -115,9 +117,8 @@
                                 <div class="card">
                                     <div class="card-header" id="heading-5">
                                         <h2 class="card-title">
-                                            <a class="collapsed " role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+                                            <a class="collapsed show" role="button" data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
                                                 Credit Card (Stripe)
-                                                <img src="images/payments-summary.png" alt="payments cards">
                                             </a>
                                         </h2>
                                     </div><!-- End .card-header -->

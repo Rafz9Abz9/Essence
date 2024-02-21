@@ -40,8 +40,8 @@
                   <label for="country">Country</label>
                 
                   <select class="form-control" name="country" >
+                    <option value="" >Select Country</option>
                     {% for country in countries %}
-                      
                       <option value="{{ country.code }}" {% if shipping_address.country == country.code %} selected {% endif %}>{{ country.name }}</option>
                     {% endfor %}
                   </select>

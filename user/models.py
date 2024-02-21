@@ -44,3 +44,6 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return f'Shipping Address for {self.user}'
+    
+    class Meta:
+        verbose_name_plural = "ShippingAddress"

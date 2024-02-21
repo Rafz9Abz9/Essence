@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-)9fifm_iesntfpix2@81e1wl4=m9t2gftg@qif=s4s$tnwpm_#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_countries',
     'user',
     'core',
     'cart',
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'newsletter',
     'wishlist',
     'checkout',
+    'django_countries',
 ]
 
 MIDDLEWARE = [

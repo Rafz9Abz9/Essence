@@ -162,6 +162,7 @@
                                     </tr><!-- End .summary-total -->
                                 </tbody>
                             </table><!-- End .table table-summary -->
+                            <input type="hidden" value="" name="selected_shipping_method" id="selected_shipping_method" />
                             <input type="hidden" value="" name="items_and_shipping_price" id="items_and_shipping_price" />
                             <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" disabled>PROCEED TO CHECKOUT</button>
                         </form>
@@ -184,6 +185,7 @@
             var subTotalElement = document.getElementById('sub_total');
             var standardPriceElement = document.getElementById('standard_price');
             var expressPriceElement = document.getElementById('express_price');
+            var selectedShippingMethod = document.getElementById('selected_shipping_method');
             var totalElement = document.getElementById('total');
             var submitButton = document.querySelector('#proceed_checkout_form button');
 
@@ -204,6 +206,10 @@
                     var selectedShippingPrice = selectedShippingRadio.id == 'standard_shipping'
                         ? standardPriceElement.textContent
                         : expressPriceElement.textContent
+
+                    selectedShippingMethod.value = selectedShippingRadio.id == 'standard_shipping'
+                    ? "Standard Shipping"
+                    :"Express Shipping"
                             
                     // Parse and format the prices
                     var subTotal = parseFloat(subTotalElement.textContent.replace('€', '').trim());
