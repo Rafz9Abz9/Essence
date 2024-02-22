@@ -31,6 +31,7 @@ def cart_count(request):
 
 
 def cart_item(request):
+    full_cart_item = None
     cart_item = None
     summed_price = 0
     SHIPPING_METHOD_STANDARD = settings.SHIPPING_METHOD_STANDARD
@@ -38,6 +39,8 @@ def cart_item(request):
     formatted_sub_total_price = format_currency(0, 'EUR', locale='en_US')
 
     if request.user.is_authenticated:
+        full_cart_item = (Cart.objects.filter(
+            user=request.user).order_by('-created_at'))
         cart_item = (Cart.objects.filter(
             user=request.user).order_by('-created_at')[:2])
         # Calculate total price
@@ -62,9 +65,12 @@ def cart_item(request):
                     Decimal(product.price)
                 formatted_sub_total_price = format_currency(
                     summed_price, 'EUR', locale='en_US')
+        full_cart_item =cart_item
+        cart_item = cart_item[:2]
 
     return {
         'cart_item': cart_item,
+        'full_cart_item': full_cart_item,
         'cart_item_sub_total_price': formatted_sub_total_price,
         'formatted_total_price': formatted_sub_total_price,
         'shipping_express': SHIPPING_METHOD_EXPRESS,

@@ -165,7 +165,7 @@
 {% block extrascripts %}  
 
 <script>
-    $('#q').keypress(function (e) {
+    {% comment %} $('#q').keypress(function (e) {
         if (e.which === 13) {
             e.preventDefault();
             // Get the current page address
@@ -175,7 +175,7 @@
             console.log($('#search-form').action)
             $('#search-form').submit();
         }
-    });
+    }); {% endcomment %}
 
 </script>
 

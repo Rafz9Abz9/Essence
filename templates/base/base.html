@@ -32,6 +32,7 @@
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+   
     {% block extracss %}
     {% endblock %}
     <title>Essence | {% block title %}{% endblock %}</title>
@@ -69,6 +70,7 @@
         {% include 'includes/mobile_menu/mobile_menu.html' %}
 
         <!-- Plugins JS File -->
+        <script src="https://js.stripe.com/v3/"></script>
         <script src="{% static 'js/jquery.min.js' %}"></script>
         <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static 'js/jquery.hoverIntent.min.js' %}"></script>
@@ -78,7 +80,10 @@
         <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
         <!-- Main JS File -->
         <script src="{% static 'js/main.js' %}"></script>
-
+        
+        {% block extrascripts %}
+        {% endblock %}
+        
         <script>
             const options = {
                 delay: 6000, 
@@ -90,8 +95,7 @@
             
         </script>
 
-        {% block extrascripts %}
-        {% endblock %}
+        
 
 </body>
 

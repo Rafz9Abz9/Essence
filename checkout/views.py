@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from babel.numbers import format_currency
+from django.http import HttpResponseRedirect
 
 from django.conf import settings
 from user.models import ShippingAddress
@@ -8,6 +9,9 @@ from user.models import ShippingAddress
 def checkout(request):
     shipping_price = 0
     user_shipping_address = None
+    items_and_shipping_price = None
+    stripe_public_key= settings.STRIPE_PUBLIC_KEY
+    client_secret= settings.CLIENT_SECRET_KEY
     
     if request.user.is_authenticated:
         user_shipping_address=  get_object_or_404(ShippingAddress, user=request.user)
@@ -31,5 +35,12 @@ def checkout(request):
         "shipping_address":user_shipping_address,
         "formatted_shipping_price":format_currency(shipping_price, 'EUR', locale='en_US'),
         "selected_shipping_method":selected_shipping_method,
+        "stripe_public_key":stripe_public_key,
+        "client_secret":client_secret,
     }
     return render(request, 'checkout/checkout.html', context)
+
+
+def place_order(request):
+    
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
