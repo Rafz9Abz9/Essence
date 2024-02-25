@@ -121,8 +121,8 @@
                 <aside class="col-lg-3">
                     <div class="summary summary-cart">
                         <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
-                        <form id="proceed_checkout_form" method="POST" action="{% url 'checkout'%}">
-                            {% csrf_token %}
+                        <div id="proceed_checkout_form">
+                            
                             <table class="table table-summary">
                                 <tbody>
                                     <tr class="summary-subtotal">
@@ -158,14 +158,14 @@
                                 
                                     <tr class="summary-total">
                                         <td>Total:</td>
-                                        <td id="total">{{formatted_total_price}}</td>
+                                        <td id="total">{{formatted_sub_total_price}}</td>
                                     </tr><!-- End .summary-total -->
                                 </tbody>
                             </table><!-- End .table table-summary -->
-                            <input type="hidden" value="" name="selected_shipping_method" id="selected_shipping_method" />
-                            <input type="hidden" value="" name="items_and_shipping_price" id="items_and_shipping_price" />
-                            <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" disabled>PROCEED TO CHECKOUT</button>
-                        </form>
+                            {% comment %} <input type="hidden" value="" name="selected_shipping_method" id="selected_shipping_method" />
+                            <input type="hidden" value="" name="items_and_shipping_price" id="items_and_shipping_price" /> {% endcomment %}
+                            <a href="#" class="btn btn-outline-primary-2 btn-order btn-block" id="proceed_link" role="link" aria-disabled="true">PROCEED TO CHECKOUT</a>
+                        </div>
                     </div><!-- End .summary -->
 
                     <a href="{% url 'products'%}" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
@@ -185,40 +185,45 @@
             var subTotalElement = document.getElementById('sub_total');
             var standardPriceElement = document.getElementById('standard_price');
             var expressPriceElement = document.getElementById('express_price');
-            var selectedShippingMethod = document.getElementById('selected_shipping_method');
+            //var selectedShippingMethod = document.getElementById('selected_shipping_method');
             var totalElement = document.getElementById('total');
-            var submitButton = document.querySelector('#proceed_checkout_form button');
+            var proceedCheckoutLink = document.getElementById('proceed_link');
 
-            var itemsShipinePrice = document.getElementById('items_and_shipping_price');
-            itemsShipinePrice.value =parseFloat(subTotalElement.textContent.replace('€', '').trim());;
+            //var itemsShipinePrice = document.getElementById('items_and_shipping_price');
+            itemsShipingPrice =parseFloat(subTotalElement.textContent.replace('€', '').trim());;
             // Disable submit button initially
-            submitButton.disabled = true;
-            console.log(submitButton)
+            proceedCheckoutLink.ariaDisabled= true;
             // Add event listener to the form
             proceedForm.addEventListener('change', function () {
                 // Check if either radio button is selected
                 var selectedShippingRadio = Array.from(shippingMethodRadios).find(radio => radio.checked);
                 if (selectedShippingRadio) {
                     // Enable the submit button
-                    submitButton.disabled = false;
+                    proceedCheckoutLink.ariaDisabled= false;
 
                     // Update total based on selected shipping option
-                    var selectedShippingPrice = selectedShippingRadio.id == 'standard_shipping'
-                        ? standardPriceElement.textContent
-                        : expressPriceElement.textContent
+                    var selectedShippingPrice = null;
 
-                    selectedShippingMethod.value = selectedShippingRadio.id == 'standard_shipping'
-                    ? "Standard Shipping"
-                    :"Express Shipping"
-                            
+                    var selectedShippingMethod = null;
+
+                    
+                    if(selectedShippingRadio.id == 'standard_shipping'){
+                        selectedShippingPrice = standardPriceElement.textContent
+                        selectedShippingMethod = "Standard Shipping"
+                    }else{
+                        selectedShippingPrice = expressPriceElement.textContent
+                        selectedShippingMethod = "Express Shipping"
+                    }
+                    
                     // Parse and format the prices
                     var subTotal = parseFloat(subTotalElement.textContent.replace('€', '').trim());
                     var shippingPrice = parseFloat(selectedShippingPrice.replace('€', '').trim());
                     var total = subTotal + shippingPrice;
-
+                    
                     // Update the total element
                     totalElement.textContent = '€' + total.toFixed(2);
-                    itemsShipinePrice.value = total.toFixed(2);
+                    itemsShipingPrice = total.toFixed(2);
+                    proceedCheckoutLink.href= `/checkout/?selected_shipping_method=${selectedShippingMethod}&items_and_shipping_price=${itemsShipingPrice}` 
                 } else {
                     // If neither radio button is selected, disable the submit button
                     submitButton.disabled = true;

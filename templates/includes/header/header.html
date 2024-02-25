@@ -94,11 +94,11 @@
                         <i class="icon-shopping-cart"></i>
                         <span class="cart-count">{{cart_itmes_count}}</span>
                     </a>
-                    {%if cart_item%}
+                    {%if reduced_cart_item%}
                     <div class="dropdown-menu dropdown-menu-right">
                         <div class="dropdown-cart-products">
-                            {%if cart_item%}
-                                {%for item in cart_item %}
+                            {%if reduced_cart_item%}
+                                {%for item in reduced_cart_item %}
                                 <div class="product">
                                     <div class="product-cart-details">
                                         <h4 class="product-title">
@@ -123,16 +123,15 @@
                             {% endif %}
                         </div><!-- End .cart-product -->
 
-                        {%if cart_item_total_price%}
+                        {%if formatted_sub_total_price %}
                             <div class="dropdown-cart-total">
                                 <span>Total</span>
 
-                                <span class="cart-total-price">{{cart_item_sub_total_price}}</span>
+                                <span class="cart-total-price">{{formatted_sub_total_price}}</span>
                         </div><!-- End .dropdown-cart-total -->
                         {% endif %}
                         <div class="dropdown-cart-action ">
                             <a href="{% url 'cart' %}" class="btn btn-primary w-100">View Cart</a>
-                           
                         </div><!-- End .dropdown-cart-total -->
                     </div><!-- End .dropdown-menu -->
                     {%endif%}

@@ -26,7 +26,8 @@
                     <label for="checkout-discount-input" class="text-truncate">Have a coupon? <span>Click here to enter your code</span></label>
                 </form>
             </div><!-- End .checkout-discount -->
-            <form action="#">
+            <form method="POST" action="{% url 'checkout'%}" id="payment-form">
+                {%csrf_token%}
                 <div class="row">
                     <div class="col-lg-8">
                         <h2 class="checkout-title">Billing Details</h2><!-- End .checkout-title -->
@@ -73,7 +74,7 @@
                                     <input type="tel" class="form-control" name="phone" required value="{% if shipping_address.phone|length > 0%} {{shipping_address.phone}} {% endif %}">
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
-
+                            {{stripe_total}}
                             <label>Country *</label>
                             <select class="form-control" name="country" name="country" >
                                 <option value="" >Select Country</option>
@@ -95,23 +96,25 @@
 
                             <table class="table table-summary">
                                 <tbody>
-                                    {% for item in full_cart_item%}
-                                        <tr>
-                                            <td>
-                                                <a href="{{ item.product.images.all|access_list:0|image_url }}" target="_blank">
-                                                    <img src="{{ item.product.images.all|access_list:0|image_url }}"  alt="{{item.product.images.all|access_list:0|image_caption}}" width="35">
-                                                </a>
-                                            </td>
-                                            <td><a href="{%url 'product_details' product_id=item.product.id %}">{{item.product.name}}</a></td>
-                                            <td>{{item.quantity}} X {{item.product.formatted_price}}</td>
-                                        </tr>
-                                    {% endfor %}
+                                    {%if full_cart_item%}
+                                        {% for item in full_cart_item%}
+                                            <tr>
+                                                <td>
+                                                    <a href="{{ item.product.images.all|access_list:0|image_url }}" target="_blank">
+                                                        <img src="{{ item.product.images.all|access_list:0|image_url }}"  alt="{{item.product.images.all|access_list:0|image_caption}}" width="35">
+                                                    </a>
+                                                </td>
+                                                <td><a href="{%url 'product_details' product_id=item.product.id %}">{{item.product.name}}</a></td>
+                                                <td>{{item.quantity}} X {{item.product.formatted_price}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {%endif%}
                                     <tr class="summary-subtotal">
                                         <td>Subtotal:</td>
                                         <td></td>
                                         
-                                        {% if cart_item_sub_total_price%}
-                                            <td>{{cart_item_sub_total_price}}</td>
+                                        {% if formatted_sub_total_price%}
+                                            <td>{{formatted_sub_total_price}}</td>
                                         {%endif%}
                                     </tr><!-- End .summary-subtotal -->
                                     <tr>
@@ -148,7 +151,7 @@
                                 </div><!-- End .card -->
                             </div><!-- End .accordion -->
 
-                            <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                            <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block" id="submit-button">
                                 <span class="btn-text">Place Order</span>
                                 <span class="btn-hover-text">Proceed to Checkout</span>
                             </button>

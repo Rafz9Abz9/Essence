@@ -45,7 +45,7 @@ def cart_item(request):
             user=request.user).order_by('-created_at')[:2])
         # Calculate total price
         summed_price = sum(
-            item.quantity * item.product.price for item in cart_item)
+            item.quantity * item.product.price for item in full_cart_item)
         formatted_sub_total_price = format_currency(
             summed_price, 'EUR', locale='en_US')
 
@@ -69,10 +69,10 @@ def cart_item(request):
         cart_item = cart_item[:2]
 
     return {
-        'cart_item': cart_item,
+        'reduced_cart_item': cart_item,
         'full_cart_item': full_cart_item,
-        'cart_item_sub_total_price': formatted_sub_total_price,
-        'formatted_total_price': formatted_sub_total_price,
+        'cart_item_sub_total_price': summed_price,
+        'formatted_sub_total_price': formatted_sub_total_price,
         'shipping_express': SHIPPING_METHOD_EXPRESS,
         'formatted_shipping_express': format_currency(SHIPPING_METHOD_EXPRESS, 'EUR', locale='en_US'),
         'shipping_standard': SHIPPING_METHOD_STANDARD,
