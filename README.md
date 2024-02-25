@@ -68,6 +68,8 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ec5639b0-9fbc-4685-89f2-cf5a9ee77f7b)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/fed39d9c-4b9d-4615-a634-35d4b65678de)
+
 </details>
 
 <details>
@@ -78,6 +80,8 @@ The website is set up with different pages, and each page is made for a specific
   
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4d2a668b-769a-4269-8a16-3bffdc1cc9ab)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/62441ea3-7584-477d-8944-037b3ea06b12)
+
 </details>
 
 <details>
@@ -86,6 +90,8 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c4273373-6e9b-4da9-8f71-4b80e50928b7)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/427a2cf6-ed16-49ec-bf83-3650359f8f87)
+
 </details>
 
 <details>
@@ -93,12 +99,15 @@ The website is set up with different pages, and each page is made for a specific
 <summary>Products Page</summary>
 
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/bb5618f1-3f5b-4f95-97e6-908a6b66cd4a)
+
 </details>
 
 <details>
 
 <summary>Products Details Page</summary>
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/64a83f33-60b2-4ba1-ab87-54c3cbb9cbbc)
 
 </details>
 
@@ -148,6 +157,9 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/70a00182-1123-40c1-8ec8-ac0ccb5fbd3f)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/fdb65ba9-339d-46ad-afed-0dd3ada77372)
+
+
 </details>
 
 <details>
@@ -163,6 +175,10 @@ The website is set up with different pages, and each page is made for a specific
 <summary>Shopping Cart Page</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c2a7acfa-8e35-4753-a6a2-b1767a7c0272)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/837e0ef1-ba2e-4c72-b9d3-308af4b9fa0b)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47fd6564-3c7c-4333-a8b3-7ab1367734fa)
 
 </details>
 
