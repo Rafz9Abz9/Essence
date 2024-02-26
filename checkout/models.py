@@ -19,6 +19,7 @@ class Order(models.Model):
     state = models.TextField(max_length=80, default="")
     country = models.CharField(max_length=200,  null=True, choices=CountryField(
     ).choices + [('', 'Select Country')])
+    status = models.CharField(max_length=50, blank=True, default="In-Progress")
     shipping_method = models.TextField(max_length=80, default="")
     shipping_price = models.DecimalField(max_digits=6, decimal_places=2)
     sub_total = models.DecimalField(max_digits=10, decimal_places=2)

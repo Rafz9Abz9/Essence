@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
 {% block title%}Home{% endblock %}
 {% load static %}
+{% load cart_tag %}
 
 {% block main %}
 <div class="intro-section bg-lighter pt-5 pb-6">
@@ -92,9 +93,9 @@
                                 </a>
 
                                 <div class="banner-content">
-                                    <h4 class="banner-subtitle text-darkwhite"><a href="#">Baby Care Products</a></h4><!-- End .banner-subtitle -->
+                                    <h4 class="banner-subtitle text-darkwhite"><a href="products/?category={{categories|access_list:0|get_name}}">Baby Care Products</a></h4><!-- End .banner-subtitle -->
                                     <h3 class="banner-title text-white"><a href="#">Nurture your little one with care.</a></h3><!-- End .banner-title -->
-                                    <a href="#" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                                    <a href="products/?category={{categories|access_list:0|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                                 </div><!-- End .banner-content -->
                             </div><!-- End .banner -->
                         </div><!-- End .col-md-6 col-lg-12 -->
@@ -167,7 +168,12 @@
                             </a>
     
                             <div class="product-action-vertical">
-                                <a href="wishlist.html" class="btn-product-icon btn-wishlist"><span>Add to Wishlist</span></a>
+                                {% if product.is_in_wishlist%}
+                                    <a href="{% url 'remove_from_wishlist' product_id=product.id%}" class="btn-product-icon remove_wishlist" title="Remove from wishlist"></a>
+                                
+                                {% else %}
+                                    <a href="{% url 'add_to_wishlist' product_id=product.id%}" class="btn-product-icon btn-wishlist" title="Add to wishlist"></a>
+                                {% endif %}
                             </div><!-- End .product-action-vertical -->
                         </figure><!-- End .product-media -->
     
@@ -178,8 +184,24 @@
                             </div><!-- End .product-price -->
     
                         </div><!-- End .product-body -->
-                        <div class="product-action">
-                            <a href="cart.html" class="btn-product btn-cart"><span>Add to Cart</span></a>
+                        <div class="product-action d-flex justify-content-center">
+                            {% if not product.is_in_cart%}
+                                {% if not product|is_in_cart:request.session.carts%} 
+                                    <form method="POST" action="{% url 'add_to_cart' %}">
+                                        {% csrf_token %}
+                                        <div>
+                                            <input type="hidden" id="product_id" name="product_id" class="form-control" value="{{product.id}}">
+                                            <input type="hidden" id="qty" name="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+                                        </div><!-- End .product-details-quantity -->
+                                        <input type="submit" class="btn-product btn-cart px-5" value="Add to Cart" >
+                                    </form>
+                                {% else %}
+                                    {{product|is_in_cart:request.session.carts}}
+                                    <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                {% endif %}     
+                            {% else %}
+                                <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                            {% endif %}
                         </div><!-- End .product-action -->
                     </div><!-- End .product -->
                     {% endfor %}
@@ -302,7 +324,7 @@
 
                     <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 d-flex">
                          {% csrf_token %}
-                        <input type="email" name="email" class="form-control  rounded-left" style="width:550px;" placeholder="Email Address">
+                        <input type="email" name="email" class="form-control  rounded-left" style="width:550px;" placeholder="Email Address" required>
                         <button type="submit" class="btn btn-outline-white p-0 h-0 w-0" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></button>
                     </form><!-- End .col-auto -->
                 </div><!-- End .row no-gutters -->

@@ -53,14 +53,25 @@ def checkout(request):
                 order.user_id =request_user_id
                 order.save()
                 
-            for item in full_cart_item:
-                order_line_item = OrderLineItem(
-                    order=order,
-                    product=item.product,
-                    quantity=item.quantity
-                )
+                for item in full_cart_item:
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=item.product,
+                        quantity=item.quantity
+                    )
+                    order_line_item.save()
                 
-                order_line_item.save()
+            else:
+                for item in full_cart_item:
+                    product = get_object_or_404(Product, pk=item['product'].id)
+                    order_line_item = OrderLineItem(
+                        order=order,
+                        product=product,
+                        quantity=int(item['quantity'])
+                    )
+                    order_line_item.save()
+                
+                
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             return messages.error(request,'Your form is invalid')
@@ -104,21 +115,48 @@ def checkout(request):
 def checkout_success(request, order_number):
     context= context_processors.cart_item(request)
     full_cart_item=context['full_cart_item']
-    
-    for item in full_cart_item:
-        product = get_object_or_404(Product, pk=item.product.id)
-        product.stock= product.stock - item.quantity
-        product.sold= product.sold + item.quantity
-        product.save()
-        cart = get_object_or_404(Cart, pk=item.id, user=request.user)
-        cart.delete()
+    if request.user.is_authenticated:
+        for item in full_cart_item:
+            product = get_object_or_404(Product, pk=item.product.id)
+            product.stock= product.stock - item.quantity
+            product.sold= product.sold + item.quantity
+            product.save()
+            cart = get_object_or_404(Cart, pk=item.id, user=request.user)
+            cart.delete()
+    else:
+        carts = request.session.get('carts', [])
+        
+        for item in carts:
+            product = get_object_or_404(Product, pk=item['product_id'])
+            product.stock= product.stock - int(item['quantity'])
+            product.sold= product.sold + int(item['quantity'])
+            product.save()
+            request.session['carts'] = []
+            
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Your Order has been Received!\
+    messages.success(request, f'''Your Order has been Received!\
         Your Order Number is {order.order_number}.\
-         A confirmation Email will be sent to {order.email}')
+         A confirmation Email will be sent to {order.email}''')
     
     email_subject = 'Contact @essence-hotdeskk'
-    email_msg = "Your Order has been Received!. It will be processed and delivered soon."
+    email_msg =f"""Your Order has been Received!
+
+            Order Details:
+            - Order Number: {order.order_number}
+            - Order Date: {order.created_at}
+            - Order Total: {order.formatted_sub_total()}
+            - Delivery: {order.formatted_shipping_price()}
+            - Grand Total: {order.formatted_grand_total()}
+
+            We have your phone number on record as {order.phone}.
+
+            If you have any questions, feel free to contact us at info.essencestore@gmail.com.
+
+            Thank you for shopping with Essence!
+
+            Best regards,
+            Essence
+            """
     email_body = "Hi " + order.first_name + " " + email_msg
     # setup email
     email = EmailMessage(

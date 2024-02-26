@@ -14,6 +14,7 @@ from .utils import token_generator
 from .forms import RegistrationForm, LoginForm, PasswordChangeForm, ShippingAddressForm
 from .models import ShippingAddress, CustomUser
 from product.models import Review
+from checkout.models import Order
 
 
 # Create your views here.
@@ -123,16 +124,19 @@ def user_profile(request):
     change_password_form = PasswordChangeForm(request.POST)
     user_reviews = None
     user_shipping_address = None
+    orders=None
 
     if request.user.is_authenticated:
         user_shipping_address, created = ShippingAddress.objects.get_or_create(
             user=request.user)
         user_reviews = Review.objects.filter(user=request.user)
+        orders=Order.objects.filter(user_id=request.user.id)
 
     context = {
         "user_shipping_address": user_shipping_address,
         "change_password_form": change_password_form,
         "user_reviews": user_reviews,
+        "orders": orders,
     }
 
     return render(request, 'user_profile/user_profile.html', context)

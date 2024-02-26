@@ -3,7 +3,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models.functions import Lower
 from django.contrib import messages
 from django.urls import reverse
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.db.models import Q
 
 from .models import Product, Category, Review
@@ -113,12 +113,5 @@ def add_review(request):
             )
             messages.success(request, 'Thank you for reviewing this product!')
         else:
-            Review.objects.create(
-                full_name=full_name,
-                title=title,
-                content=content,
-                ratings=rating,
-                product=product
-            )
-            messages.success(request, 'Thank you for reviewing this product!')
+            return HttpResponseBadRequest()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
