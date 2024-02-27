@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from babel.numbers import format_currency
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 import stripe
 from django.contrib import messages
 from django.core.mail import EmailMessage
+from django.views.decorators.http import require_POST
+import json
 
 from django.conf import settings
 from user.models import ShippingAddress
@@ -14,6 +16,41 @@ from cart.models import Cart
 from product.models import Product
 
 # Create your views here.
+@require_POST
+def cache_checkout_data(request):
+    pid = request.POST.get('client_secret').split('_secret')[0]
+    first_name = request.POST.get('first_name')
+    last_name = request.POST.get('last_name')
+    email = request.POST.get('email')
+    phone = request.POST.get('phone')
+    post_code = request.POST.get('post_code')
+    street_address = request.POST.get('street_address')
+    city = request.POST.get('city')
+    state = request.POST.get('state')
+    country = request.POST.get('country')
+    shipping_method = request.POST.get('shipping_method')
+    shipping_price = request.POST.get('shipping_price')
+    sub_total = request.POST.get('sub_total')
+    grand_total = request.POST.get('grand_total')
+    stripe.api_key = settings.CLIENT_SECRET_KEY
+    
+    stripe.PaymentIntent.modify(pid, metadata={
+        'first_name':first_name,
+        'last_name':last_name,
+        'email':email,
+        'phone':phone,
+        'post_code':post_code,
+        'street_address':street_address,
+        'city':city,
+        'state':state,
+        'country':country,
+        'shipping_method':shipping_method,
+        'shipping_price':shipping_price,
+        'sub_total':sub_total,
+        'grand_total':grand_total,
+    })
+    return HttpResponse(status=200)
+
 def checkout(request):
     shipping_price = 0
     user_shipping_address = None
@@ -21,6 +58,7 @@ def checkout(request):
     stripe_public_key= settings.STRIPE_PUBLIC_KEY
     client_secret= settings.CLIENT_SECRET_KEY
     context= context_processors.cart_item(request)
+ 
     full_cart_item=context['full_cart_item']
     
     if request.user.is_authenticated:
@@ -41,19 +79,26 @@ def checkout(request):
             'shipping_price': request.POST['shipping_price'],
             'sub_total': request.POST['sub_total'],
             'grand_total': request.POST['grand_total'],
+            
         }
         
         order_form = OrderForm(form_data)
         
         if order_form.is_valid():
-            order = order_form.save()
+            order = order_form.save(commit=False)
             
             if request.user.is_authenticated:
                 request_user_id=  request.user.id
+                stripe_pid= request.POST.get('client_secret').split('_secret')[0],
                 order.user_id =request_user_id
                 order.save()
                 
                 for item in full_cart_item:
+                    if item.product.quantity < int(item.quantity):
+                        order.delete()
+                        messages.warning(request, f"{item.product.name} is out of stock")
+                        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+                    
                     order_line_item = OrderLineItem(
                         order=order,
                         product=item.product,
@@ -62,8 +107,14 @@ def checkout(request):
                     order_line_item.save()
                 
             else:
+                order.save()
+                
                 for item in full_cart_item:
                     product = get_object_or_404(Product, pk=item['product'].id)
+                    if product.quantity < int(item['quantity']):
+                        order.delete()
+                        messages.warning(request, f"{product.name} is out of stock")
+                        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
                     order_line_item = OrderLineItem(
                         order=order,
                         product=product,
@@ -113,8 +164,11 @@ def checkout(request):
     return render(request, 'checkout/checkout.html', context)
 
 def checkout_success(request, order_number):
+    
     context= context_processors.cart_item(request)
-    full_cart_item=context['full_cart_item']
+    full_cart_item=[]
+    if context:
+        full_cart_item=context['full_cart_item']
     if request.user.is_authenticated:
         for item in full_cart_item:
             product = get_object_or_404(Product, pk=item.product.id)
@@ -139,24 +193,24 @@ def checkout_success(request, order_number):
          A confirmation Email will be sent to {order.email}''')
     
     email_subject = 'Contact @essence-hotdeskk'
-    email_msg =f"""Your Order has been Received!
+    email_msg =(
+    f"""Your Order has been Received!
 
-            Order Details:
-            - Order Number: {order.order_number}
-            - Order Date: {order.created_at}
-            - Order Total: {order.formatted_sub_total()}
-            - Delivery: {order.formatted_shipping_price()}
-            - Grand Total: {order.formatted_grand_total()}
+    Order Details:
+        - Order Number: {order.order_number}
+        - Order Date: {order.created_at}
+        - Order Total: {order.formatted_sub_total()}
+        - Delivery: {order.formatted_shipping_price()}
+        - Grand Total: {order.formatted_grand_total()}
+    We have your phone number on record as {order.phone}.
 
-            We have your phone number on record as {order.phone}.
+    If you have any questions, feel free to contact us at info.essencestore@gmail.com.
 
-            If you have any questions, feel free to contact us at info.essencestore@gmail.com.
+    Thank you for shopping with Essence!
 
-            Thank you for shopping with Essence!
-
-            Best regards,
-            Essence
-            """
+    Best regards,
+    Essence
+    """)
     email_body = "Hi " + order.first_name + " " + email_msg
     # setup email
     email = EmailMessage(

@@ -84,6 +84,7 @@
                                 {% endfor %}
                               </select>
 
+                            <input type="hidden" class="form-control" name="client_secret" value="{{client_secret}}">
                             <input type="hidden" class="form-control" name="shipping_method" value="{{selected_shipping_method}}">
                             <input type="hidden" class="form-control" name="shipping_price" value="{{shipping_price}}">
                             <input type="hidden" class="form-control" name="sub_total" value="{{cart_item_sub_total_price}}">
