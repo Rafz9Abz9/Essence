@@ -170,7 +170,7 @@ def update_shipping_info(request):
             user_shipping_address = get_object_or_404(
                 ShippingAddress, user=request.user)
 
-            email = request.POST['email']
+            email = request.POST['shipping_email']
             phone = request.POST['phone']
             street_address = request.POST['street_address']
             post_code = request.POST['post_code']

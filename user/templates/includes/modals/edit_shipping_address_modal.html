@@ -13,8 +13,8 @@
             <form method="POST" action="{% url 'update_shipping_info'%}" id="update_shipping_info_form">
               {% csrf_token %}                 
                 <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" class="form-control" id="email" name="email" value="{% if shipping_address.email|length > 0%} {{shipping_address.email}} {% endif %}" placeholder="Email here here..">
+                  <label for="shipping_email">Email Address</label>
+                  <input type="email" class="form-control" id="shipping_email" name="shipping_email" value="{% if shipping_address.email|length > 0%} {{shipping_address.email}} {% endif %}" placeholder="Email here here..">
                 </div>
                 <div class="form-group">
                   <label for="phone">Phone Number</label>
