@@ -82,7 +82,7 @@
                     <form id="search-form" action="{% url 'products' %}" method="GET">
                         <div class="header-search-wrapper">
                             <label for="q" class="sr-only">Search</label>
-                            <input type="search" class="form-control" name="q" id="q" placeholder="Search in..." />
+                            <input value="{{search_term}}" type="search" class="form-control" name="q" id="q" placeholder="Search in..." />
                         </div><!-- End .header-search-wrapper -->
                     </form>
 
