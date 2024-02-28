@@ -19,4 +19,8 @@ urlpatterns = [
     path('profile/reviews/<review_id>/delete',
          views.delete_review, name='delete_review'),
     path('profile/change-password', views.change_password, name='change_password'),
+    path('request_password_reset', views.request_password_reset,
+        name='request_password_reset'),
+    path('reset_password/<uidb64>/<token>', views.reset_password,
+        name='reset_password'),
 ]

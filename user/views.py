@@ -11,7 +11,8 @@ from django.http import HttpResponseRedirect
 from django.core.exceptions import PermissionDenied
 
 from .utils import token_generator
-from .forms import RegistrationForm, LoginForm, PasswordChangeForm, ShippingAddressForm
+from .forms import RegistrationForm, LoginForm, PasswordChangeForm,  PasswordResetForm
+
 from .models import ShippingAddress, CustomUser
 from product.models import Review
 from checkout.models import Order
@@ -228,6 +229,78 @@ def change_password(request):
     else:
         change_password_form = PasswordChangeForm(user=request.user)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+def request_password_reset(request):
+    
+    if request.method == 'POST':
+        email= request.POST.get('email')
+        
+        if email:
+            user=CustomUser.objects.filter(email=email)[0]
+            
+            if user:
+                # email subject here
+                email_subject = 'Password Reset Request'
+                # email body
+                print(user.email)
+                token = token_generator.make_token(user)
+                uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
+                
+                link = reverse('reset_password', kwargs={
+                    'uidb64':uidb64, 'token': token
+                })
+
+                domain = get_current_site(request).domain
+                pwd_reset_link = 'http://'+domain+link
+                email_body = (
+                        f"""Dear {user,email},!
+
+                        We received password reset request from you.
+                        Use the link here to confirm your email. {pwd_reset_link}
+
+                        Kindly Ignore this mail if you haven't requested for password rest.
+
+                        Thank you for shopping with Essence!
+
+                        Best regards,
+                        Essence
+                        """)
+                
+                # setup email
+                email = EmailMessage(
+                    email_subject,
+                    email_body,
+                    "noreply@essence.com",
+                    [user.email],
+                    headers={"Message-ID": "@essence-hotdesk"},
+                )
+                # send email
+                email.send(fail_silently=False)
+                messages.success(request, "Check your mailbox for password reset confirmation link")
+            else:
+                messages.warning(request, "Requested user does not exist, Pleaser verify your email or register with a new account")
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def reset_password(request, uidb64, token):
+    form = PasswordResetForm(request)
+    
+    if request.method == "POST":
+        id = force_str(urlsafe_base64_decode(uidb64))
+        user = CustomUser.objects.get(pk=id)
+        form=PasswordResetForm(request.POST or None, user=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Password Reset Successfully, Login with your new Password')
+            return redirect(reverse('user_auth'))
+        else:
+            messages.error(request, 'Password Do Not Match')
+    context={
+        'form':PasswordResetForm,
+        'uidb64':uidb64,
+        'token':token,
+    }
+    return render(request, 'password_reset/password_reset.html', context)
 
 
 class VerificationView(View):

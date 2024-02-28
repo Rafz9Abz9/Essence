@@ -13,19 +13,19 @@
             <form method="POST" action="{% url 'update_shipping_info'%}" id="update_shipping_info_form">
               {% csrf_token %}                 
                 <div class="form-group">
-                  <label for="address">Email Address</label>
+                  <label for="email">Email Address</label>
                   <input type="email" class="form-control" id="email" name="email" value="{% if shipping_address.email|length > 0%} {{shipping_address.email}} {% endif %}" placeholder="Email here here..">
                 </div>
                 <div class="form-group">
-                  <label for="address">Phone Number</label>
+                  <label for="phone">Phone Number</label>
                   <input type="text" class="form-control" id="phone" name="phone" value="{% if shipping_address.phone|length > 0%} {{shipping_address.phone}} {% endif %}" placeholder="Phone Number here here..">
                 </div>
                 <div class="form-group">
-                  <label for="address">Street Address</label>
+                  <label for="street_address">Street Address</label>
                   <input type="text" class="form-control" id="street_address" name="street_address" value="{% if shipping_address.street_address|length > 0%} {{shipping_address.street_address}} {% endif %}" placeholder="Street Address here here..">
                 </div>
                 <div class="form-group">
-                  <label for="address">Postal Code</label>
+                  <label for="post_code">Postal Code</label>
                   <input type="text" class="form-control" id="post_code" name="post_code" value="{% if shipping_address.post_code|length > 0%} {{shipping_address.post_code}} {% endif %}" placeholder="Street Address here here..">
                 </div>
                 <div class="form-group">
@@ -33,13 +33,13 @@
                   <input type="text" class="form-control" id="city" name="city" value="{% if shipping_address.city|length > 0%} {{shipping_address.city}} {% endif %}" placeholder="City Address here here..">
                 </div>
                 <div class="form-group">
-                  <label for="state_province">State/Province</label>
+                  <label for="state">State/Province</label>
                   <input type="text" class="form-control" id="state" name="state" value="{% if shipping_address.state|length > 0%} {{shipping_address.state}} {% endif %}" placeholder="State Address here here..">
                 </div>
                 <div class="form-group">
                   <label for="country">Country</label>
                 
-                  <select class="form-control" name="country" >
+                  <select id="country" class="form-control" name="country" >
                     <option value="" >Select Country</option>
                     {% for country in countries %}
                       <option value="{{ country.code }}" {% if shipping_address.country == country.code %} selected {% endif %}>{{ country.name }}</option>

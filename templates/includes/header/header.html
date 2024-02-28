@@ -142,7 +142,7 @@
                     <li class="user-icon dropdown">
                         <a href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"><i class="icon-user"></i></a>
 
-                        <div class="dropdown-menu p-1 px-5" aria-labelledby="userDropdown">
+                        <div id="userDropdown" class="dropdown-menu p-1 px-5" aria-labelledby="userDropdown">
                             <ul>
                                 {% if user.is_authenticated %}
                                     <li><a href="{% url 'user_profile' %}">Profile</a></li>
@@ -174,7 +174,7 @@
             console.log($('#search-form').action)
             $('#search-form').submit();
         }
-    }); {% endcomment %}
+    });  {% endcomment %}
 
 </script>
 

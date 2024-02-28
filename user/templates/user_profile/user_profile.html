@@ -34,17 +34,17 @@
                 <div class="row tab-content">
                     <div id="accountInfo" class="col-lg-12 tab-pane fade in active show">
                         <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:450px">Account Information</h2>
-                        <hr class="mt-0 mb-3" />
+                        <hr class="mt-0 mb-3">
                         <div class="row mb-3">
                              <div class="col-12 col-sm-6">
                                 <h4>User Information </h4>
                                 {% if user.first_name|length > 0 or user.last_name|length > 0 %}
-                                    <span>First Name:{{ user.first_name}} </span><br />
+                                    <span>First Name:{{ user.first_name}} </span><br>
                                     <span>Last Name: {{user.last_name}}</span>
                                 {% else %}
                                     <span>First and Last name fields are empty</span>
                                 {% endif %}  
-                                <br />
+                                <br>
                                 {% if user.email|length > 0  %}
                                     <span>Email: {{ user.email}}</span>
                                 {% else %}
@@ -82,10 +82,10 @@
                                 <h4>Default Shipping Address</h4>
                                 {% if user_shipping_address.phone or user_shipping_address.street_address or user_shipping_address.post_code or user_shipping_address.city or user_shipping_address.country or user_shipping_address.state%}
                                     <span>Email: {{user_shipping_address.email}} </span> 
-                                    <span class="ml-3">Phone: {{user_shipping_address.phone}} </span><br/>
-                                    <span>Street Address: {{user_shipping_address.street_address}}  </span><br/>
+                                    <span class="ml-3">Phone: {{user_shipping_address.phone}} </span><br>
+                                    <span>Street Address: {{user_shipping_address.street_address}}  </span><br>
                                     <span>Post Code: {{user_shipping_address.post_code}}</span>
-                                    <span class="ml-3">City: {{user_shipping_address.city}}</span><br/>
+                                    <span class="ml-3">City: {{user_shipping_address.city}}</span><br>
                                     <span>State: {{user_shipping_address.state}}</span>
                                     {% get_country user_shipping_address.country as country %}
 
@@ -103,14 +103,14 @@
                     </div><!-- End .col-lg-9 -->
                     <div id="myorders" class="col-lg-12 tab-pane fade in">
                     <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:350px">My Orders</h2>
-                    <hr class="mt-0 mb-3" />
+                    <hr class="mt-0 mb-3">
                     <div class="row mb-3">
                         {% include 'includes/order/order.html' %}
                     </div> <!-- End .row -->
                     </div><!-- End .col-lg-9 -->
                     <div id="myreviews" class="col-lg-12 tab-pane fade in">
                     <h2 class="border rounded mb-0 py-3 px-4" style="border-top-right-radius: 15px !important; width:350px">My Reviews</h2>
-                    <hr class="mt-0 mb-3" />
+                    <hr class="mt-0 mb-3">
                     <div class="row mb-3">
                         {% include 'includes/user_reviews/user_reviews.html' with reviews=user_reviews%}
                     </div> <!-- End .row -->
@@ -123,11 +123,11 @@
                     <ul class="nav nav-tabs flex-column w-100 shadow-sm p-5">
                         <li class="active">
                             <a  data-toggle="tab" href="#accountInfo">My Account Info</a>
-                            <hr class="my-2" />
+                            <hr class="my-2">
                         </li><!-- End .tabx -->
                         <li class="">
                             <a  data-toggle="tab" href="#myorders">My Orders</a>
-                            <hr class="my-2" />
+                            <hr class="my-2">
                         </li><!-- End .tab -->
                         <li class="">
                             <a  data-toggle="tab" href="#myreviews">My Reviews</a>

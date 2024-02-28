@@ -4,6 +4,8 @@ from django.core.validators import EmailValidator
 from django.core.exceptions import ValidationError
 from django.contrib.auth.forms import PasswordChangeForm
 from django_countries import countries
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.translation import gettext as _
 
 from .models import CustomUser, ShippingAddress
 
@@ -89,6 +91,49 @@ class PasswordChangeForm(PasswordChangeForm):
                 "New password must be different from the old password.")
 
         return new_password1
+    
+    
+from django.contrib.auth.forms import PasswordResetForm
+
+class PasswordResetForm(PasswordResetForm):
+    # Add new password and password confirmation fields
+    new_password1 = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'New Password',
+            'autocomplete': 'new-password'
+        }),
+        label=_("New Password"),
+    )
+    new_password2 = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Confirm New Password',
+            'autocomplete': 'new-password'
+        }),
+        label=_("Confirm New Password"),
+    )
+
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super().__init__(*args, **kwargs)
+        self.fields.pop('email')
+
+    def clean_new_password2(self):
+        new_password1 = self.cleaned_data.get('new_password1')
+        new_password2 = self.cleaned_data.get('new_password2')
+        if new_password1 and new_password2 and new_password1 != new_password2:
+            raise forms.ValidationError(_("The two password fields didn't match."))
+        return new_password2
+
+    def save(self, commit=True):
+        # Reset the user's password here
+        user = self.user  # Use the user obtained from the form's initialization
+        user.set_password(self.cleaned_data['new_password1'])
+        if commit:
+            user.save()
+        
+        return user
 
 
 class ShippingAddressForm(forms.ModelForm):

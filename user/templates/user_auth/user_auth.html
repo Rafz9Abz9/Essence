@@ -50,9 +50,11 @@
                                     <span>LOG IN</span>
                                     <i class="icon-long-arrow-right"></i>
                                 </button>
-                                <a href="#" class="forgot-link">Forgot Your Password?</a>
+                                <a href="#" class="forgot-link" data-toggle="modal" data-target="#forgotPassword">Forgot Your Password?</a>
+
                             </div><!-- End .form-footer -->
                         </form>
+                        {% include 'includes/modals/forgot_password_modal.html' %}<!-- End forgot password modal -->
                     </div><!-- .End .tab-pane -->
                     <div class="tab-pane fade " id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
                         <form action="{% url 'register' %}" method="POST">
@@ -108,6 +110,13 @@
     var submitButton = document.getElementById('submitBtn');
     agreeCheckbox.addEventListener('change', function () {
       submitButton.disabled = !agreeCheckbox.checked;
+    });
+
+     {% comment %} To Trigger reset Password Form {% endcomment %}
+     $('#forgotPasswordBtn').click(function (e) {
+        e.preventDefault();
+        $('#forgotPasswordForm').submit();
+        
     });
    
 </script>
