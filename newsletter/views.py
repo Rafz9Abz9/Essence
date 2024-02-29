@@ -19,7 +19,7 @@ def subscribe_newsletter(request):
     if request.user.is_authenticated:
         user = get_object_or_404(CustomUser, pk=request.user.id)
         newsletter, created = NewsletterSubscribers.objects.get_or_create(
-        user_id=user.id, email=email)
+        user_id=user.id, email=user.email)
         user.is_subscribed_newsletter = True
         user.save()
     else:
