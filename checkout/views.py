@@ -94,7 +94,7 @@ def checkout(request):
                 order.save()
                 
                 for item in full_cart_item:
-                    if item.product.quantity < int(item.quantity):
+                    if item.product.stock < int(item.quantity):
                         order.delete()
                         messages.warning(request, f"{item.product.name} is out of stock")
                         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
@@ -111,7 +111,7 @@ def checkout(request):
                 
                 for item in full_cart_item:
                     product = get_object_or_404(Product, pk=item['product'].id)
-                    if product.quantity < int(item['quantity']):
+                    if product.stock < int(item['quantity']):
                         order.delete()
                         messages.warning(request, f"{product.name} is out of stock")
                         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
