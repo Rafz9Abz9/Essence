@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
 {% block title%}Thank You - Checkout Success{% endblock %}
 {% load static %}
+{% load countries %}
 
 {% block main %}
 <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
@@ -114,7 +115,8 @@
                             <p >Country</p>
                         </div>
                         <div class="col-12 col-md-6">
-                            <p >{{order.country}}</p>
+                            {% get_country order.country as country %}
+                            <p >{{country.name}}</p>
                         </div>
                     </div>
                     <div class="row">
