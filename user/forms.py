@@ -7,7 +7,7 @@ from django_countries import countries
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.translation import gettext as _
 
-from .models import CustomUser
+from .models import CustomUser, ShippingAddress
 
 
 class RegistrationForm(UserCreationForm):
@@ -136,48 +136,48 @@ class PasswordResetForm(PasswordResetForm):
         return user
 
 
-# class ShippingAddressForm(forms.ModelForm):
+class ShippingAddressForm(forms.ModelForm):
 
-#     email = forms.EmailField(widget=forms.EmailInput(attrs={
-#         'placeholder': 'Email Address',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    email = forms.EmailField(widget=forms.EmailInput(attrs={
+        'placeholder': 'Email Address',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     phone = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Phone Number',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    phone = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Phone Number',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     street_address = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'street address',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    street_address = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'street address',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     post_code = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'Post Code',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    post_code = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Post Code',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     city = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'city ',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    city = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'city ',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     state = forms.CharField(widget=forms.TextInput(attrs={
-#         'placeholder': 'state/province ',
-#         'class': 'form-control',
-#         'autocomplete': 'off',
-#     }), required=True)
+    state = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'state/province ',
+        'class': 'form-control',
+        'autocomplete': 'off',
+    }), required=True)
 
-#     country = forms.ChoiceField(
-#         choices=countries,  widget=forms.Select(attrs={'class': 'form-control'}))
+    country = forms.ChoiceField(
+        choices=countries,  widget=forms.Select(attrs={'class': 'form-control'}))
 
-#     class Meta:
-#         model = ShippingAddress
-#         fields = ('email',  'phone', 'street_address',
-#                   'post_code', 'city', 'state', 'country')
+    class Meta:
+        model = ShippingAddress
+        fields = ('email',  'phone', 'street_address',
+                  'post_code', 'city', 'state', 'country')

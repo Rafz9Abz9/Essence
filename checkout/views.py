@@ -8,7 +8,7 @@ from django.views.decorators.http import require_POST
 import json
 
 from django.conf import settings
-# from user.models import ShippingAddress
+from user.models import ShippingAddress
 from cart import context_processors
 from .forms import OrderForm
 from .models import Order, OrderLineItem
@@ -61,8 +61,8 @@ def checkout(request):
  
     full_cart_item=context['full_cart_item']
     
-    # if request.user.is_authenticated:
-    #     user_shipping_address=  get_object_or_404(ShippingAddress, user=request.user)
+    if request.user.is_authenticated:
+        user_shipping_address=  get_object_or_404(ShippingAddress, user=request.user)
     
     if request.method == 'POST':
         form_data ={

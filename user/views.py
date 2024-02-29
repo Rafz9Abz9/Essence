@@ -13,7 +13,7 @@ from django.core.exceptions import PermissionDenied
 from .utils import token_generator
 from .forms import RegistrationForm, LoginForm, PasswordChangeForm,  PasswordResetForm
 
-from .models import  CustomUser
+from .models import ShippingAddress, CustomUser
 from product.models import Review
 from checkout.models import Order
 
@@ -128,8 +128,8 @@ def user_profile(request):
     orders=None
 
     if request.user.is_authenticated:
-        # user_shipping_address, created = ShippingAddress.objects.get_or_create(
-        #     user=request.user)
+        user_shipping_address, created = ShippingAddress.objects.get_or_create(
+            user=request.user)
         user_reviews = Review.objects.filter(user=request.user)
         orders=Order.objects.filter(user_id=request.user.id)
 
@@ -165,11 +165,10 @@ def update_user_info(request):
 
 
 def update_shipping_info(request):
-    user_shipping_address=None
     if request.method == 'POST':
         if request.user.is_authenticated:
-            # user_shipping_address = get_object_or_404(
-            #     ShippingAddress, user=request.user)
+            user_shipping_address = get_object_or_404(
+                ShippingAddress, user=request.user)
 
             email = request.POST['shipping_email']
             phone = request.POST['phone']
