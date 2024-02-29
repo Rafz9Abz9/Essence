@@ -31,8 +31,7 @@ venv/
 env/
 
 # Ignore media and static files
-media/
-static/
+
 
 # Ignore secret key files
 *.key
