@@ -22,9 +22,6 @@ logs/
 *.db
 *.sqlite
 
-# ignore migration file
-migrations/
-
 # Ignore system-specific files
 .DS_Store
 Thumbs.db
