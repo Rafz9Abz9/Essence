@@ -1,5 +1,7 @@
 # Essence
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/fd972945-3b85-435d-888f-4ee0dc64ea7d)
+
 # Project Overview
 Essence is your go-to destination for top-quality self-care essentials. From women’s care and hair care to baby-care, skin care, and men’s care products, Essence has got you covered. The site’s mission is to simplify your self-care routine by offering a curated selection of products tailored to your needs. Whether you’re a woman, a parent, or a man focused on grooming, find what you need for a healthier, more confident lifestyle on Essence. Shop on the site for a convenient, reliable, and satisfying self-care experience. 
 
