@@ -41,7 +41,7 @@ def register(request):
             # create user
             # e user profile
             new_shipping_address = ShippingAddress.objects.create(
-                user=user, id_user=user.id)
+                user=user)
             new_shipping_address.save()
 
             user.is_active = False
