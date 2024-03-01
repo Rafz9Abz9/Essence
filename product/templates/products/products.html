@@ -77,8 +77,8 @@
                                                     <span class="ratings-text">( 0 Review )</span>
                                                 {% endif %}
                                             </div><!-- End .rating-container -->
-                                            {% if not product.is_in_cart%}
-                                                {% if not product|is_in_cart:request.session.carts%} 
+                                            {% if user.is_authenticated %}
+                                                {% if not product.is_in_cart%}
                                                     <form method="POST" action="{% url 'add_to_cart' %}">
                                                         {% csrf_token %}
                                                         <div class="product-details-quantity mb-1">
@@ -91,8 +91,19 @@
                                                     
                                                     <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
                                                 {% endif %}     
-                                            {% else %}
-                                                <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                            {%else%}
+                                                {% if not product|is_in_cart:request.session.carts%} 
+                                                    <form method="POST" action="{% url 'add_to_cart' %}">
+                                                        {% csrf_token %}
+                                                        <div class="product-details-quantity mb-1">
+                                                            <input type="hidden" id="{{product.id}}" name="product_id" class="form-control" value="{{product.id}}">
+                                                            <input type="hidden" id="{{product.id}}1" name="qty" class="form-control" value="1" data-decimals="0">
+                                                        </div><!-- End .product-details-quantity -->
+                                                        <input type="submit" class="btn-product btn-cart px-5" value="Add to Cart" >
+                                                    </form>
+                                                {% else %}
+                                                    <a href="{% url 'remove_from_cart' product_id=product.id %}" class="btn-product btn-cart"><span>remove from cart</span></a>
+                                                {% endif %}     
                                             {% endif %}    
                                         </div><!-- End .product-list-action -->
                                     </div><!-- End .col-sm-6 col-lg-3 -->
