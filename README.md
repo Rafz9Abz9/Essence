@@ -2,6 +2,8 @@
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/fd972945-3b85-435d-888f-4ee0dc64ea7d)
 
+[Link To Live Site](#https://e-ssence-33d6a66effe9.herokuapp.com/)
+
 # Project Overview
 Essence is your go-to destination for top-quality self-care essentials. From women’s care and hair care to baby-care, skin care, and men’s care products, Essence has got you covered. The site’s mission is to simplify your self-care routine by offering a curated selection of products tailored to your needs. Whether you’re a woman, a parent, or a man focused on grooming, find what you need for a healthier, more confident lifestyle on Essence. Shop on the site for a convenient, reliable, and satisfying self-care experience. 
 
@@ -57,8 +59,7 @@ The website is set up with different pages, and each page is made for a specific
 - I created a clear and organized layout for the database in order to make building the website easier for me.
 - I used [DrawSQL](https://drawsql.app/) to draw the database which uses a database called Postgres.
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c548cd5d-9028-43f1-87a5-c6d3462c95ce)
-
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/efe59d83-dfd8-45ab-9e90-6482dbadf0ab)
 
 2. Wireframes: the wireframes were created using Balsamiq.
 
@@ -187,6 +188,8 @@ The website is set up with different pages, and each page is made for a specific
 <details>
 
 <summary>Checkout Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/10aa7aac-4338-4cd3-a80e-5aa3556bee75)
 
 </details>
 
@@ -412,9 +415,15 @@ The website is set up with different pages, and each page is made for a specific
 
 -  They'll be sent an email with a password reset link.
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b8dcd30a-699b-4df0-a36f-4f8349a18c77)
 
 - They'll then be taken to a page where they can enter in a new password.
   
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/05909e9b-dc6d-42da-ad4c-c5d3655bdd2f)
+
+- They'll then receive a notification of the successful password reset.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8028f9c7-e24e-4858-8121-114d57b63624)
 
 ### Products Page
 
@@ -608,6 +617,19 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Error Page
 
+- 400 Error Page - Bad Request: This error indicates that the server cannot process the user's request due to something that the server perceives as a user error.
+
+- 403 Error Page - Forbidden: When this error occurs, the server understands the client's request but refuses to fulfill it. This might happen due to inadequate permissions, where the user does not have the necessary authorization to access the requested resource.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f6972f98-b37a-4485-9f0f-a8bff7c588ba)
+
+- 404 Error Page - Not Found: This error occurs when the server cannot find the requested resource.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/cf6b7172-6fd2-46db-b389-cfecf3f45134)
+
+- 500 Error Page - Internal Server Error: This error means something went wrong on the server's end, preventing it from fulfilling the request.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/73726399-3e02-41f9-9b0b-e8f736f7a85a)
 
 ## Authentication
 - **Register**: easily sign up for an account using the ‘Register’ option in the account navbar. Once registered, user will receive a confirmation email. User can register with their email address and password. 
@@ -673,9 +695,16 @@ Essence's Business Model follows a Business to Consumer (B2C) model. We directly
 
 ## Sitemap.xml
 
-- [**XML-Sitemaps**](https://www.xml-sitemaps.com/) is used to generate the sitemap.xml file.
+- [**XML-Sitemaps**](https://www.xml-sitemaps.com/) is used to generate the sitemap.xml file using my deployed site URL: https://e-ssence-33d6a66effe9.herokuapp.com/.
+- Once the site crawl was completed, it generated a sitemap.xml file, which I have downloaded and added to the repository.
 
 ## Robots.txt
+
+- I've created the robots.txt file at the root-level. Inside, I've included the default settings:
+
+User-agent: *
+Disallow:
+Sitemap: https://e-ssence-33d6a66effe9.herokuapp.com/sitemap.xml
 
 ## Social Media Marketing
 
