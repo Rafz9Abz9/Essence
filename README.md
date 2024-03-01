@@ -256,7 +256,7 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Footer Page
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/38ac83f7-4b92-4283-b0d5-bb01bd518f94)
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/577f1cdc-8a30-4434-8a3b-61b6fbccabc2)
 
 - Includes: message from the 'Essence' company along with the logo. If logo is clicked, will take the user to the home page.
 
@@ -272,7 +272,7 @@ The website is set up with different pages, and each page is made for a specific
 
 - There are also 'Social Media' icons on the right side that takes the user to their respective pages. The Facebook icon will take user to the business page I created for this web application but if it is deactivated, I'll include the image of the page in another section.
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/839aa2a7-54c4-47e7-bd7f-db0d0395c13c)
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/29e693d4-77a7-4ba4-ba3e-99df093417d4)
 
 - There's also a copyright sentence displayed at the bottom and on the right side.
 
