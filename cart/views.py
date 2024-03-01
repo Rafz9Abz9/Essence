@@ -14,7 +14,7 @@ def add_to_cart(request):
         qty = request.POST['qty']
         product = get_object_or_404(Product, pk=product_id)
 
-        if product.stock < qty:
+        if product.stock < int(qty):
             messages.warning(request, 'Out of stock!')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         if request.user.is_authenticated:
