@@ -102,15 +102,25 @@ All the HTML files were tested through the [W3C HTML Validator](https://validato
 
 </details>
 
-
 ## CSS
 
-All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input). 
+All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input). Majority of them are minified so couldn't do the testing on them. I was able to test checkout.css and base.css and the results are below.
 
-| FILE      | SCREENSHOT | NOTES            |
-|-----------|------------|------------------|
-| style.css | [Screenshot](link_to_screenshot) |  |
-| base.css  | ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/0726b086-2370-4e3d-93b6-05f00db281c2)|  PASS – NO ERRORS |
+<details>
+
+<summary>Base.css</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/caa5fbbc-1534-4591-a450-50443abdf088)
+
+</details>
+
+<details>
+
+<summary>Checkout.css</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/69f37faa-0bf1-464e-b57a-7ad16baf25c7)
+
+</details>
 
 
 ## JavaScript
