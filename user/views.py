@@ -48,8 +48,8 @@ def register(request):
             user = form.save()
             # create user
             # e user profile
-            new_shipping_address = ShippingAddress.objects.create(
-                user=user)
+            new_shipping_address = ShippingAddress.objects.create(email=email, user=user)
+
             
             user.is_active = False
             user.save()
