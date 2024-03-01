@@ -237,9 +237,10 @@ def request_password_reset(request):
         email= request.POST.get('email')
         
         if email:
-            user=get_object_or_404(CustomUser, email=email)
             
-            if user:
+            
+            if get_object_or_404(CustomUser, email=email):
+                user=get_object_or_404(CustomUser, email=email)
                 # email subject here
                 email_subject = 'Password Reset Request'
                 # email body
