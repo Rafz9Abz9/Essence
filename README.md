@@ -57,8 +57,7 @@ The website is set up with different pages, and each page is made for a specific
 - I created a clear and organized layout for the database in order to make building the website easier for me.
 - I used [DrawSQL](https://drawsql.app/) to draw the database which uses a database called Postgres.
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c548cd5d-9028-43f1-87a5-c6d3462c95ce)
-
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/efe59d83-dfd8-45ab-9e90-6482dbadf0ab)
 
 2. Wireframes: the wireframes were created using Balsamiq.
 
