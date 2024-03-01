@@ -187,6 +187,8 @@ The website is set up with different pages, and each page is made for a specific
 
 <summary>Checkout Page</summary>
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/10aa7aac-4338-4cd3-a80e-5aa3556bee75)
+
 </details>
 
 ## Surface
@@ -411,9 +413,15 @@ The website is set up with different pages, and each page is made for a specific
 
 -  They'll be sent an email with a password reset link.
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b8dcd30a-699b-4df0-a36f-4f8349a18c77)
 
 - They'll then be taken to a page where they can enter in a new password.
   
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/05909e9b-dc6d-42da-ad4c-c5d3655bdd2f)
+
+- They'll then receive a notification of the successful password reset.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8028f9c7-e24e-4858-8121-114d57b63624)
 
 ### Products Page
 
@@ -607,6 +615,19 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Error Page
 
+- 400 Error Page - Bad Request: This error indicates that the server cannot process the user's request due to something that the server perceives as a user error.
+
+- 403 Error Page - Forbidden: When this error occurs, the server understands the client's request but refuses to fulfill it. This might happen due to inadequate permissions, where the user does not have the necessary authorization to access the requested resource.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f6972f98-b37a-4485-9f0f-a8bff7c588ba)
+
+- 404 Error Page - Not Found: This error occurs when the server cannot find the requested resource.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/cf6b7172-6fd2-46db-b389-cfecf3f45134)
+
+- 500 Error Page - Internal Server Error: This error means something went wrong on the server's end, preventing it from fulfilling the request.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/73726399-3e02-41f9-9b0b-e8f736f7a85a)
 
 ## Authentication
 - **Register**: easily sign up for an account using the ‘Register’ option in the account navbar. Once registered, user will receive a confirmation email. User can register with their email address and password. 
@@ -672,9 +693,16 @@ Essence's Business Model follows a Business to Consumer (B2C) model. We directly
 
 ## Sitemap.xml
 
-- [**XML-Sitemaps**](https://www.xml-sitemaps.com/) is used to generate the sitemap.xml file.
+- [**XML-Sitemaps**](https://www.xml-sitemaps.com/) is used to generate the sitemap.xml file using my deployed site URL: https://e-ssence-33d6a66effe9.herokuapp.com/.
+- Once the site crawl was completed, it generated a sitemap.xml file, which I have downloaded and added to the repository.
 
 ## Robots.txt
+
+- I've created the robots.txt file at the root-level. Inside, I've included the default settings:
+
+User-agent: *
+Disallow:
+Sitemap: https://e-ssence-33d6a66effe9.herokuapp.com/sitemap.xml
 
 ## Social Media Marketing
 
