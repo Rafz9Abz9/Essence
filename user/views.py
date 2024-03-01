@@ -41,7 +41,7 @@ def register(request):
         user_exist = CustomUser.objects.filter(email=email).exists()
         if user_exist:
             messages.warning(request,'An account with this email already exists. Please use a different email address.')
-            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+            return redirect('register')
         form = RegistrationForm(request.POST)
         if form.is_valid():
             # Form data is valid; create a new user,
