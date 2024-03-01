@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://e-ssence-33d6a66effe9.herokuapp.com/sitemap.xml
