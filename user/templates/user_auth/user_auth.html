@@ -26,7 +26,7 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade show active" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
+                    <div class="tab-pane fade {% if current_tab='login'%}show active {%endif%}" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
                         <form action="{% url 'login' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-group">
@@ -56,7 +56,7 @@
                         </form>
                     </div><!-- .End .tab-pane -->
                     {% include 'includes/modals/forgot_password_modal.html' %}<!-- End forgot password modal -->
-                    <div class="tab-pane fade " id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                    <div class="tab-pane fade {% if current_tab='register'%}show active {%endif%}" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
                         <form action="{% url 'register' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-group text-danger">

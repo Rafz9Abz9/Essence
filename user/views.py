@@ -22,17 +22,21 @@ from checkout.models import Order
 def user_auth_view(request):
     reg_form = RegistrationForm
     login_form = LoginForm
+    current_tab='login'
 
     context = {
         "reg_form": reg_form,
-        "login_form": login_form
+        "login_form": login_form,
+        "current_tab": current_tab,
     }
 
     return render(request, 'user_auth/user_auth.html', context)
 
 
 def register(request):
+    current_tab='register'
     if request.method == 'POST':
+        current_tab='register'
         email = request.POST.get('email')
         user_exist = CustomUser.objects.filter(email=email).exists()
         if user_exist:
@@ -82,14 +86,17 @@ def register(request):
     reg_form = RegistrationForm(request.POST)
     context = {
         "reg_form": reg_form,
-        "login_form": form
+        "login_form": form,
+        "current_tab": current_tab
     }
 
     return render(request, 'user_auth/user_auth.html', context)
 
 
 def login_view(request):
+    current_tab='login' 
     if request.method == 'POST':
+        current_tab='login' 
         email = request.POST['email']
         password = request.POST['password']
         user = authenticate(request, email=email, password=password)
@@ -112,7 +119,8 @@ def login_view(request):
     reg_form = RegistrationForm(request.POST)
     context = {
         "reg_form": reg_form,
-        "login_form": form
+        "login_form": form,
+        "current_tab": current_tab,
     }
 
     return render(request, 'user_auth/user_auth.html', context)
