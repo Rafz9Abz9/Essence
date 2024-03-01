@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="offset-2" method="POST" action="{% url 'add_review' %}" id="add_review_form">
+        <form class="offset-md-2" method="POST" action="{% url 'add_review' %}" id="add_review_form">
           {% csrf_token %}
             <div class="form-group">
               <label for="full_name">Full Name</label>
