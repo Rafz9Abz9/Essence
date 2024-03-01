@@ -570,7 +570,7 @@ The website is set up with different pages, and each page is made for a specific
 | WISHLIST | Product’s images are visible.                                                                              | PASS                                                                                                             |
 | WISHLIST | Product’s names are visible.                                                                               | PASS                                                                                                             |
 | WISHLIST | Product’s prices are visible.                                                                              | PASS                                                                                                             |
-| WISHLIST | ‘Add TO CART’ button is visible for each product that is added to this page. When clicked, product will be added to the shopping cart page => enhances shopping experience. | PASS                                            |
+| WISHLIST | ‘Add TO CART’ button is visible for each product that is added to this page. When clicked, product will be added to the shopping cart page and once it's been added, 'REMOVE FROM CART' button is then shown which removes it from the cart. => enhances shopping experience. | PASS                                            |
 | WISHLIST | There’s a ‘X’ feature visible for each product present. If clicked, the product will be removed from the Wishlist. | PASS                                                                                                      |
 | WISHLIST | There’s a ‘Stock Status’ visible which will let the user know if the product is in stock.  |   PASS                                                                                                                            |
 
@@ -581,6 +581,10 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8f715afe-287a-45f6-bac9-584e08992173)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f3d6a52c-e3b3-4589-9188-8f1596d7efd8)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/de83eba9-b321-4df9-86be-d3e0c00c10d3)
+
 ### My Reviews Page
 
 | PAGE       | FEATURE                                                               | OUTCOME                                                                                      |
@@ -590,6 +594,9 @@ The website is set up with different pages, and each page is made for a specific
 
 ### My Orders Page
 
+- Includes the orders made by the user: order number, product image and name, cost, order status and order date. These are present.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/458e0579-42cc-4ba3-9a39-0529d309e736)
 
 ### Error Page
 
