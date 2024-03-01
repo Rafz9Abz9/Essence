@@ -18,8 +18,6 @@ All the HTML files were tested through the [W3C HTML Validator](https://validato
 
 <summary>Home Page</summary>
 
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2F
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7b8a55cd-c801-4943-897e-3624654e6769)
 
 </details>
@@ -27,8 +25,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 <details>
 
 <summary>Products Page</summary>
-
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fproducts%2F
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d94cd2b0-95a9-4e87-bcd7-fc72993cea3f)
 
@@ -38,8 +34,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 
 <summary>Product Details Page</summary>
 
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fproducts%2F24
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/202e4461-24ec-4f89-bf62-eb836ee57e78)
 
 </details>
@@ -47,8 +41,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 <details>
 
 <summary>Profile Page</summary>
-
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fuser%2Fauth-page%3Fnext%3D%2Fuser%2Fprofile
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/bdb2e70e-ea05-4021-8471-d1b56f67ab6d)
 
@@ -58,8 +50,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 
 <summary>Register & Login Page</summary>
 
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fuser%2Fauth-page
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f0ba7704-985e-4b28-920c-d4de53b41a5b)
 
 </details>
@@ -67,8 +57,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 <details>
 
 <summary>Shopping Cart Page</summary>
-
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fcart%2F
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c7585a8e-636c-459c-b865-74ee8ccbd808)
 
@@ -78,8 +66,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 
 <summary>Contact Us Page</summary>
 
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fcontact-us
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f640dd5e-069b-4f95-8b78-714b969352e6)
 
 </details>
@@ -87,8 +73,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 <details>
 
 <summary>About Us Page</summary>
-
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fabout-us
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f8478217-60c0-4d3b-be25-13fa38cc5092)
 
@@ -106,8 +90,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 
 <summary>FAQ Page</summary>
 
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Ffaq
-
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/dfca8a31-de8c-42c8-94f3-94993cc60872)
 
 </details>
@@ -115,8 +97,6 @@ https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.c
 <details>
 
 <summary>Wishlist Page</summary>
-
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fe-ssence-33d6a66effe9.herokuapp.com%2Fuser%2Fauth-page%3Fnext%3D%2Fwishlist%2F
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d3aa4883-daca-410b-9ec0-5a6c2aef42e4)
 
