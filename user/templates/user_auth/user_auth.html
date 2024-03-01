@@ -54,13 +54,13 @@
 
                             </div><!-- End .form-footer -->
                         </form>
-                        {% include 'includes/modals/forgot_password_modal.html' %}<!-- End forgot password modal -->
                     </div><!-- .End .tab-pane -->
+                    {% include 'includes/modals/forgot_password_modal.html' %}<!-- End forgot password modal -->
                     <div class="tab-pane fade " id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
                         <form action="{% url 'register' %}" method="POST">
                             {% csrf_token %}
                             <div class="form-group text-danger">
-                                <label for="register-email-2">Your Email Address *</label>
+                                <label>Your Email Address *</label>
                                 {{ reg_form.email }}
                                 <p class="text-danger">
                                     {{ reg_form.errors.email }}
@@ -68,7 +68,7 @@
                             </div><!-- End .form-group -->
 
                             <div class="form-group text-danger">
-                                <label for="register-password-2">Password *</label>
+                                <label>Password *</label>
                                 {{ reg_form.password1 }}
                                 <p class="text-danger">
                                     {{ reg_form.errors.password1 }}
@@ -76,7 +76,7 @@
                             </div><!-- End .form-group -->
 
                             <div class="form-group text-danger">
-                                <label for="register-password-2">Confirm Password *</label>
+                                <label>Confirm Password *</label>
                                 {{ reg_form.password2 }}
                                 <p class="text-danger">
                                     {{ reg_form.errors.password2 }}
