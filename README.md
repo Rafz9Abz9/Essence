@@ -465,6 +465,10 @@ The website is set up with different pages, and each page is made for a specific
 | PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | PRODUCTS DETAILS | - There's a ‘VIEW MORE RELATED PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
 
+- The social media icons are there simply for decoration. I just like how it makes the page look, I have not implemented it to enable user to share the product onto the social media icons that are present on this page.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/896ee3c4-b197-4461-af05-b60f1ff4f411)
+
 - VIEW FOR UNREGISTERED USER: they won't be able to add a review so feature is absent
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/37eb1b80-1ef4-4df1-97fc-c23aa6f8b68a)
@@ -584,6 +588,10 @@ The website is set up with different pages, and each page is made for a specific
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f3d6a52c-e3b3-4589-9188-8f1596d7efd8)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/de83eba9-b321-4df9-86be-d3e0c00c10d3)
+
+- The social media icons are there simply for decoration. I just like how it makes the page look, I have not implemented it to enable user to share the product onto the social media icons that are present on this page.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7835a115-13ff-4f68-883f-cf14db59b47c)
 
 ### My Reviews Page
 
