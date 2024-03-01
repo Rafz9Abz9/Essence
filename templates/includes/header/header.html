@@ -161,17 +161,3 @@
 
 
 
-{% block extrascripts %}  
-
-<script src="https://code.jquery.com/jquery-3.6.4.min.js">
-    $('#q').keypress(function (e) {
-        if (e.which === 13) {
-            e.preventDefault();
-            // Get the current page address
-            $('#search-form').submit();
-        }
-    });
-
-</script>
-
-{% endblock %}
