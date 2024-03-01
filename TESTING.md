@@ -139,9 +139,92 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 # Browser Compatibility
 
+<details>
+
+<summary>Chrome</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/05e023f3-0c7e-4862-a502-be1a4652631a)
+
+</details>
+
+<details>
+
+<summary>Edge</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/93215dbe-d1d4-4f8e-8ce8-bfc8ef9e24b6)
+
+</details>
+
+<details>
+
+<summary>Firefox</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/5bbffd7c-e5f8-4846-8f42-a4610ff334b7)
+
+</details>
 
 # Lighthouse
 
+<details>
+
+<summary>Home Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9c61fa1a-74db-470c-86b4-88378c9a6eae)
+
+</details>
+
+<details>
+
+<summary>Products Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/0c10e92f-7f56-4623-b8b3-43c02b96bfb3)
+
+</details>
+
+<details>
+
+<summary>Product Details Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b6617a8b-8006-4c84-b551-dfd13e7928e2)
+
+</details>
+
+<details>
+
+<summary>Shopping Cart Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/02cfd41b-f51d-4aed-8226-43caea108b68)
+
+</details>
+
+<details>
+
+<summary>Contact Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/149d1754-7c91-484f-9426-fa62e31aa018)
+
+</details>
+
+<details>
+
+<summary>About Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8d7eb697-c026-45e2-b916-c658bf6a80d2)
+
+</details>
+
+<summary>FAQ Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47768aec-a22c-4ed7-a6ed-2d4e0d21c211)
+
+</details>
+
+<details>
+
+<summary>Wishlist Page</summary>
+
+
+</details>
 
 # User Story Testing
 
