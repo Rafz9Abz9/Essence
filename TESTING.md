@@ -14,6 +14,64 @@ During the project's development, I conducted multiple tests to guarantee the si
 
 All the HTML files were tested through the [W3C HTML Validator](https://validator.w3.org/). 
 
+<details>
+
+<summary>Home Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/7b8a55cd-c801-4943-897e-3624654e6769)
+
+</details>
+
+<details>
+
+<summary>Products Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d94cd2b0-95a9-4e87-bcd7-fc72993cea3f)
+
+</details>
+
+<details>
+
+<summary>Product Details Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/202e4461-24ec-4f89-bf62-eb836ee57e78)
+
+</details>
+
+<details>
+
+<summary>Profile Page</summary>
+
+</details>
+
+<details>
+
+<summary>Register & Login Page</summary>
+
+</details>
+
+<details>
+
+<summary>Shopping Cart Page</summary>
+
+</details>
+
+<details>
+
+<summary>Contact Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f640dd5e-069b-4f95-8b78-714b969352e6)
+
+</details>
+
+<details>
+
+<summary>About Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/f8478217-60c0-4d3b-be25-13fa38cc5092)
+
+</details>
+
 
 ## CSS
 
