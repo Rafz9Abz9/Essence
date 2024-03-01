@@ -72,7 +72,7 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="cname" class="sr-only">Name</label>
+                            <label class="sr-only">Name</label>
                             {{ contact_form.name }}
                             <p class="text-danger">
                                 {{ contact_form.errors.name }}
@@ -80,7 +80,7 @@
                         </div><!-- End .col-sm-6 -->
 
                         <div class="col-sm-6">
-                            <label for="cemail" class="sr-only">Email</label>
+                            <label class="sr-only">Email</label>
                             {{ contact_form.email }}
                             <p class="text-danger">
                                 {{ contact_form.errors.email }}
@@ -90,7 +90,7 @@
 
                     <div class="row">
                         <div class="col-sm-6">
-                            <label for="cphone" class="sr-only">Phone</label>
+                            <label class="sr-only">Phone</label>
                             {{ contact_form.phone }}
                             <p class="text-danger">
                                 {{ contact_form.errors.phone }}
@@ -98,7 +98,7 @@
                         </div><!-- End .col-sm-6 -->
 
                         <div class="col-sm-6">
-                            <label for="csubject" class="sr-only">Subject</label>
+                            <label class="sr-only">Subject</label>
                             {{ contact_form.subject }}
                             <p class="text-danger">
                                 {{ contact_form.errors.subject }}
@@ -106,7 +106,7 @@
                         </div><!-- End .col-sm-6 -->
                     </div><!-- End .row -->
 
-                    <label for="cmessage" class="sr-only">Message</label>
+                    <label class="sr-only">Message</label>
                     {{ contact_form.message }}
                     <p class="text-danger">
                         {{ contact_form.errors.message }}
