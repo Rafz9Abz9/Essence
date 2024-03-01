@@ -15,7 +15,7 @@ def products(request):
     products = Product.objects.all().order_by('-created_at')
     sort = None
     direction = None
-    query=None
+    query=''
     if request.GET:
         category_name = request.GET.get('category')
 

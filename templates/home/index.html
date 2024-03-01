@@ -23,8 +23,8 @@
                         <div class="intro-slide">
                             <figure class="slide-image">
                                 <picture>
-                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide-1-480w.jpg' %}">
-                                    <img src="{% static 'images/slider/slide_4.jpg' %}" alt="Image Desc">
+                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide_4.jpg' %}">
+                                    <img src="{% static 'images/slider/slide_4_480w.jpg' %}" alt="Image Desc">
                                 </picture>
                             </figure><!-- End .slide-image -->
 
@@ -43,8 +43,8 @@
                         <div class="intro-slide">
                             <figure class="slide-image">
                                 <picture>
-                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide-2-480w.jpg' %}">
-                                    <img src="{% static 'images/slider/slide_5.jpg' %}" alt="Image Desc">
+                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide_5.jpg' %}">
+                                    <img src="{% static 'images/slider/slide_5_480w.jpg' %}" alt="Image Desc">
                                 </picture>
                             </figure><!-- End .slide-image -->
 
@@ -63,8 +63,8 @@
                         <div class="intro-slide">
                             <figure class="slide-image">
                                 <picture>
-                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide-3-480w.jpg' %}">
-                                    <img src="{% static 'images/slider/slide_6.jpg' %}" alt="Image Desc">
+                                    <source media="(max-width: 480px)" srcset="{% static 'images/slider/slide_6.jpg' %}">
+                                    <img src="{% static 'images/slider/slide_6_480w.jpg' %}" alt="Image Desc">
                                 </picture>
                             </figure><!-- End .slide-image -->
 
@@ -233,7 +233,7 @@
                     </a>
                         
                     <div class="banner-content banner-content-center">
-                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:3|friendly_name}}</a></h3><!-- End .banner-title -->
+                        <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:3|get_name}}">{{categories|access_list:3|friendly_name}}</a></h3><!-- End .banner-title -->
                         <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .banner-content -->
                 </div><!-- End .banner -->
@@ -245,7 +245,7 @@
                     </a>
 
                     <div class="banner-content banner-content-center">
-                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:0|friendly_name}}</a></h3><!-- End .banner-title -->
+                        <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:0|get_name}}">{{categories|access_list:0|friendly_name}}</a></h3><!-- End .banner-title -->
                         <a href="products/?category={{categories|access_list:0|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .banner-content -->
                 </div><!-- End .banner -->
@@ -258,7 +258,7 @@
                         </a>
 
                         <div class="banner-content banner-content-center">
-                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:3|get_name}}">{{categories|access_list:2|friendly_name}}</a></h3><!-- End .banner-title -->
+                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:2|get_name}}">{{categories|access_list:2|friendly_name}}</a></h3><!-- End .banner-title -->
                             <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                         </div><!-- End .banner-content -->
                     </div><!-- End .banner -->
@@ -269,7 +269,7 @@
                         </a>
 
                         <div class="banner-content banner-content-center">
-                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:0|get_name}}">{{categories|access_list:1|friendly_name}}</a></h3><!-- End .banner-title -->
+                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:1|get_name}}">{{categories|access_list:1|friendly_name}}</a></h3><!-- End .banner-title -->
                             <a href="products/?category={{categories|access_list:1|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                         </div><!-- End .banner-content -->
                     </div><!-- End .banner -->
@@ -334,10 +334,10 @@
                             <p class="cta-desc text-white">Essence presents the best product news</p><!-- End .cta-desc -->
                         </div><!-- End .col -->
 
-                        <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 d-flex">
+                        <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 row">
                             {% csrf_token %}
-                            <input type="email" name="email" class="form-control  rounded-left" style="width:550px;" placeholder="Email Address" required>
-                            <button type="submit" class="btn btn-outline-white p-0 h-0 w-0" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></button>
+                            <input type="email" name="email" class="form-control  rounded-left col-md-8" style="width:550px;" placeholder="Email Address" required>
+                            <button type="submit" class="btn btn-outline-white p-0 h-0 w-0 col-md-8" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></button>
                         </form><!-- End .col-auto -->
                     </div><!-- End .row no-gutters -->
                 </div><!-- End .col-md-10 col-lg-9 -->
