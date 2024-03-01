@@ -325,7 +325,7 @@
                             <p class="cta-desc text-white">Essence presents the best product news</p><!-- End .cta-desc -->
                         </div><!-- End .col -->
 
-                        <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 row">
+                        <form method="POST" action="{%url 'subscribe_newsletter'%}" class="col-6 row px-2">
                             {% csrf_token %}
                             <input type="email" name="email" class="form-control  rounded-left col-md-8" style="width:550px;" placeholder="Email Address" required>
                             <button type="submit" class="btn btn-outline-white p-0 h-0 w-0 col-md-8" style="width: 80px; height: 46px;"><span>Submit</span><i class="icon-long-arrow-right"></i></button>
