@@ -76,7 +76,7 @@
                             </div><!-- End .row -->
                             {{stripe_total}}
                             <label>Country *</label>
-                            <select class="form-control" name="country" name="country" >
+                            <select class="form-control" name="country">
                                 <option value="" >Select Country</option>
                                 {% get_countries as countries %}
                                 {% for country in countries %}
@@ -162,7 +162,7 @@
                 </div><!-- End .row -->
             </form><!--End of Checkout form-->
             <div class="loading-overlay">
-                <h2 class="spinner-grow" role="status">
+                <h2 class="spinner-grow">
                 </h2>
                 <p >Loading...</p>
             </div>
