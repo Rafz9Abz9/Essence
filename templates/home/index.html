@@ -32,7 +32,7 @@
                                 <h3 class="intro-subtitle">Skin Care Products</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Upgrade your <br> skincare game.</h1><!-- End .intro-title -->
                                 {% if categories%}
-                                    <a href="products/?category={{categories|access_list:1|get_name}}" class="btn btn-outline-white">
+                                    <a href="products/?category={{categories|access_list:0|get_name}}" class="btn btn-outline-white">
                                         <span>SHOP NOW</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </a>
@@ -52,7 +52,7 @@
                                 <h3 class="intro-subtitle">Hair Care</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Unlock your hair's potential.</h1><!-- End .intro-title -->
                                 {% if categories%}
-                                    <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white">
+                                    <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white">
                                         <span>SHOP NOW</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </a>
@@ -72,7 +72,7 @@
                                 <h3 class="intro-subtitle">Men's Care</h3><!-- End .h3 intro-subtitle -->
                                 <h1 class="intro-title">Elevate your grooming routine.</h1><!-- End .intro-title -->
                                 {% if categories%}
-                                    <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white">
+                                    <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white">
                                         <span>SHOP NOW</span>
                                         <i class="icon-long-arrow-right"></i>
                                     </a>
@@ -98,7 +98,7 @@
                                 <div class="banner-content">
                                     <h4 class="banner-subtitle text-darkwhite">
                                         {% if categories%}
-                                            <a href="products/?category={{categories|access_list:0|get_name}}">Baby Care Products</a>
+                                            <a href="products/?category={{categories|access_list:1|get_name}}">Baby Care Products</a>
                                         {% endif %}
                                     </h4><!-- End .banner-subtitle -->
                                     <h3 class="banner-title text-white"><a href="#">Nurture your little one with care.</a></h3><!-- End .banner-title -->
@@ -228,49 +228,49 @@
         {%if categories %}
             <div class="col-6 col-lg-4">
                 <div class="banner banner-display banner-link-anim">
-                    <a href="products/?category={{categories|access_list:2|get_name}}">
+                    <a href="products/?category={{categories|access_list:3|get_name}}">
                         <img src="{% static 'images/banners/home/banner_1.jpg' %}" alt="Banner">
                     </a>
                         
                     <div class="banner-content banner-content-center">
-                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:2|friendly_name}}</a></h3><!-- End .banner-title -->
-                        <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:3|friendly_name}}</a></h3><!-- End .banner-title -->
+                        <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .banner-content -->
                 </div><!-- End .banner -->
             </div><!-- End .col-sm-6 col-lg-3 -->
             <div class="col-6 col-lg-4 order-lg-last">
                 <div class="banner banner-display banner-link-anim">
-                    <a href="products/?category={{categories|access_list:1|get_name}}">
+                    <a href="products/?category={{categories|access_list:0|get_name}}">
                         <img src="{% static 'images/banners/home/banner_2.jpg' %}" alt="Banner">
                     </a>
 
                     <div class="banner-content banner-content-center">
-                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:1|friendly_name}}</a></h3><!-- End .banner-title -->
-                        <a href="products/?category={{categories|access_list:1|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                        <h3 class="banner-title text-white"><a href="#">{{categories|access_list:0|friendly_name}}</a></h3><!-- End .banner-title -->
+                        <a href="products/?category={{categories|access_list:0|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                     </div><!-- End .banner-content -->
                 </div><!-- End .banner -->
             </div><!-- End .col-sm-6 col-lg-3 -->
             <div class="col-sm-12 col-lg-4 banners-sm">
                 <div class="row">
                     <div class="banner banner-display banner-link-anim col-lg-12 col-6">
-                        <a href="products/?category={{categories|access_list:3|get_name}}">
+                        <a href="products/?category={{categories|access_list:2|get_name}}">
                             <img src="{% static 'images/banners/home/banner_3.jpg' %}" alt="Banner">
                         </a>
 
                         <div class="banner-content banner-content-center">
-                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:3|get_name}}">{{categories|access_list:3|friendly_name}}e</a></h3><!-- End .banner-title -->
-                            <a href="products/?category={{categories|access_list:3|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:3|get_name}}">{{categories|access_list:2|friendly_name}}e</a></h3><!-- End .banner-title -->
+                            <a href="products/?category={{categories|access_list:2|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                         </div><!-- End .banner-content -->
                     </div><!-- End .banner -->
 
                     <div class="banner banner-display banner-link-anim col-lg-12 col-6">
-                        <a href="products/?category={{categories|access_list:0|get_name}}">
+                        <a href="products/?category={{categories|access_list:1|get_name}}">
                             <img src="{% static 'images/banners/home/banner_4.jpg' %}" alt="Banner">
                         </a>
 
                         <div class="banner-content banner-content-center">
-                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:0|get_name}}">{{categories|access_list:0|friendly_name}}</a></h3><!-- End .banner-title -->
-                            <a href="products/?category={{categories|access_list:0|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
+                            <h3 class="banner-title text-white"><a href="products/?category={{categories|access_list:0|get_name}}">{{categories|access_list:1|friendly_name}}</a></h3><!-- End .banner-title -->
+                            <a href="products/?category={{categories|access_list:1|get_name}}" class="btn btn-outline-white banner-link">Shop Now<i class="icon-long-arrow-right"></i></a>
                         </div><!-- End .banner-content -->
                     </div><!-- End .banner -->
                 </div>

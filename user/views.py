@@ -237,7 +237,7 @@ def request_password_reset(request):
         email= request.POST.get('email')
         
         if email:
-            user=CustomUser.objects.filter(email=email)[0]
+            user=get_object_or_404(CustomUser, email=email)
             
             if user:
                 # email subject here

@@ -14,7 +14,7 @@ def add_to_cart(request):
         qty = request.POST['qty']
         product = get_object_or_404(Product, pk=product_id)
 
-        if product.stock < 1:
+        if product.stock < qty:
             messages.warning(request, 'Out of stock!')
             return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         if request.user.is_authenticated:
@@ -64,7 +64,7 @@ def update_cart_product_quantity(request):
                 product = get_object_or_404(Product, pk=cart_item['product_id'])
                 if int(qty) > product.stock:
                     messages.warning(
-                        request, 'Failure updating quantity: Product in stock is less than required quantity')
+                        request, 'Product in stock is less than required quantity')
                     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
                 cart_item['quantity'] =  int(qty)
             request.session['carts'] = carts
