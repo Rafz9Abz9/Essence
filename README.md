@@ -672,9 +672,11 @@ Essence's Business Model follows a Business to Consumer (B2C) model. We directly
 ## Social Media Marketing
 
 A prototype Facebook business account was crafted, drawing inspiration from the resources offered by Code Institute. This enhances the potential to boost sales by seamlessly linking to the business website, providing users with convenient access. Leveraging Facebook's extensive user base further amplifies sales opportunities, making it an ideal platform for driving business growth.
-- To view this page, you can click the link below.
+- To view this page, you can click the link below. I've also included an image of the page just in case if the facebook gets removed,
 
 [**Facebook Business Page**](https://www.facebook.com/profile.php?id=61555157247407)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6502fb65-99bc-4d22-9887-a11a115c173c)
 
 ## Email Marketing
 
