@@ -465,11 +465,15 @@ The website is set up with different pages, and each page is made for a specific
 | PRODUCTS DETAILS | - On the right side of the page, there’s a section called ‘Related Product’ which consists of some products that are similar or complementary to the one the customer is currently viewing.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | PRODUCTS DETAILS | - There's a ‘VIEW MORE RELATED PRODUCTS’ button visible. If user clicks on the button, they’ll be taken to more related products page. For example, if user is looking at a baby care product, the related product section will display other products from the baby care products, and if user selects the ‘VIEW MORE RELATED PRODUCTS’, they’ll be taken to the baby care products page.                                                                                                                                                          |
 
+- VIEW FOR UNREGISTERED USER: they won't be able to add a review so feature is absent
+
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/37eb1b80-1ef4-4df1-97fc-c23aa6f8b68a)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/9b74f4a9-6fd0-407f-9a05-9e6932acac48)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e7121923-6a71-4373-a161-80c7606e3068)
+
+- VIEW FOR REGISTERED USER: they'll be able to add a review so feature is present.
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/33dccf6c-2f99-48f8-89a0-e7920df2c099)
 
@@ -495,7 +499,7 @@ The website is set up with different pages, and each page is made for a specific
 | SHOPPING CART | On the right side, the cart total is present enclosed in a box with subtotal, shipping options, and total cost visible. | PASS          |
 | SHOPPING CART | There’s a ‘PROCEED TO CHECKOUT’ button which takes the user to the checkout page.            | PASS                   |
 | SHOPPING CART | There’s a ‘CONTINUE SHOPPING’ feature which takes the user back to the products page.        | PASS                   |
-| SHOPPING CART | There’s an ‘UPDATE CART’ button allowing users to update the quantity of a product. Users receive a notification after updating. | PASS                   |
+| SHOPPING CART | There’s an ‘UPDATE’ button allowing users to update the quantity of a product. Users receive a notification after updating. | PASS                   |
 | SHOPPING CART | If the user chooses more than the quantity in stock, they receive a failure notification.    | PASS                   |
 | SHOPPING CART | User can remove a product from the shopping cart by clicking on the ‘X’ feature. They receive a notification. | PASS                   |
 
@@ -509,6 +513,27 @@ The website is set up with different pages, and each page is made for a specific
 
 ### Checkout Page
 
+- The fields present are: first name, last name, email address, street address, town/city, state/county, postcode/zip, phone, and country. All fields must be filled.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/43b0114c-fcb3-49bb-808e-3e6635ed4add)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/dcd67d7a-d00c-4261-814a-a77b5a814b6e)
+
+- On the right side, there is a summary of the order details: the image, names, quantity and price of each product, subtotal, shipping option chosen, total, and a field where user can enter their card details: card number, MM/YY, CVC, ZIP. There’s an ‘ADJUST CART’ button which will take user back to shopping cart page where they’ll be able to adjust their cart.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e2a38745-2682-4f6b-a1ee-75296e6023e1)
+
+- There is a ‘PLACE ORDER’ button and if selected user will see a page that shows them that their order is being processed.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/25f40c2f-df89-42cf-8a3a-e6d10536b2a2)
+
+- Once it’s successful, they’ll see a page which contains their order confirmation and summary of their order. There's also a 'SHOP MORE' button which will take user back to products page.
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d91b9f4b-c6d2-4af8-8e6b-b7140b994446)
+
+- They will also be sent an email which will have the same thing. 
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a554bcd1-892c-4954-be87-7a832ff6e8d3)
 
 ### Account Information/Profile Page
 
@@ -518,7 +543,7 @@ The website is set up with different pages, and each page is made for a specific
 | MY ACCOUNT INFORMATION | User can edit their account information.                                                                   | PASS                                                                                                             |
 | MY ACCOUNT INFORMATION | User can edit their shipping address.                                                                      | PASS                                                                                                             |
 | MY ACCOUNT INFORMATION | User can choose to subscribe to the newsletter and unsubscribe from the newsletter.                        | PASS                                                                                                             |
-| MY ACCOUNT INFORMATION | When details have been edited, the user will receive a notification letting them know that their account information has been edited. | PASS                                                                                  |
+| MY ACCOUNT INFORMATION | When details have been edited, the user will receive a notification letting them know that their account information has been edited. They'll be taken back to the sign in page. | PASS                                                                                  |
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d20980ba-ecd3-4f3e-8682-aab97be36e0f)
 
@@ -533,6 +558,9 @@ The website is set up with different pages, and each page is made for a specific
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/039aa4ee-87f1-4667-a68a-37a8c76d0b3d)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e7093ee1-f8c0-4f2f-bab8-534b284d218d)
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d492e442-fb6a-44ac-b6bc-dc7ab8c639ce)
+
 
 ### Wishlist Page
 
