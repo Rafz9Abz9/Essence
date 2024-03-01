@@ -15,6 +15,7 @@ class RegistrationForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'placeholder': 'Email Address',
         'class': 'form-control',
+        'name': 'email',
         'autocomplete': 'off',
     }), required=True)
 

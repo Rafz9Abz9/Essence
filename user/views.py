@@ -32,8 +32,12 @@ def user_auth_view(request):
 
 
 def register(request):
-
     if request.method == 'POST':
+        email = request.POST.get('email')
+        user_exist = CustomUser.objects.filter(email=email).exists()
+        if user_exist:
+            messages.warning(request,'An account with this email already exists. Please use a different email address.')
+            return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         form = RegistrationForm(request.POST)
         if form.is_valid():
             # Form data is valid; create a new user,
@@ -59,7 +63,7 @@ def register(request):
             domain = get_current_site(request).domain
             activate_url = 'http://'+domain+link
             email_body = f"Dear {
-                user.email},  Please use this link to veify your account\n {activate_url}"
+                user.email},  Please use this link to verify your account\n {activate_url}"
             # setup email
             email = EmailMessage(
                 email_subject,
