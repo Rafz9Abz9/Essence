@@ -270,7 +270,14 @@ I was unable to incorporate these user stories, so I designated them as "Won't H
 
 <summary>Payments Tests</summary>
 
-
+| Test                                                  | Result |
+|-------------------------------------------------------|--------|
+| Unregistered User can successfully make a payment & order | Pass   |
+| Registered User can successfully make a payment & order   | Pass   |
+| All users receive an email confirmation of order          | Pass   |
+| If payment is successful user will be redirected to order success page | Pass   |
+| If order fails due to incorrect information being submitted order will not be submitted | Pass   |
+| If there is an error when processing the order the site returns a 500 error without processing order | Pass   |
 
 </details>
 
