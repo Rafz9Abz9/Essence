@@ -123,9 +123,3 @@
     }
 
 }
-
-/* fixed slider image to object-fit */
-
-.slide-image picture, .slide-image img{
-    object-fit: cover;
-}
