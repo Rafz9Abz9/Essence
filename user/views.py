@@ -50,8 +50,7 @@ def register(request):
             # e user profile
             new_shipping_address = ShippingAddress.objects.create(
                 user=user)
-            new_shipping_address.save()
-
+            
             user.is_active = False
             user.save()
             # email subject here
