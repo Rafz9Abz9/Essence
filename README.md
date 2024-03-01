@@ -318,6 +318,8 @@ The website is set up with different pages, and each page is made for a specific
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/e0e1a3f5-4b88-49a9-8fa0-7df8b8493a6b)
 
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b3c5dc13-e7fa-44dc-a72f-37122b017d31)
+
 ### About Us Page
 
 | PAGE      | FEATURE                                                                                                               |
