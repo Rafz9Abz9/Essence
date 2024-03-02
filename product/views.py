@@ -15,7 +15,7 @@ def products(request):
     products = Product.objects.all().order_by('-created_at')
     sort = None
     direction = None
-    query=''
+    query = ''
     if request.GET:
         category_name = request.GET.get('category')
 
@@ -26,9 +26,9 @@ def products(request):
                 messages.error(
                     request, 'You didn\'t enter any search criteria')
                 return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-            queries= Q(name__icontains=query) | Q(description__icontains=query)
-            products= products.filter(queries)
-
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
+            products = products.filter(queries)
 
         if category_name:
             category = get_object_or_404(Category, name=category_name)
@@ -67,7 +67,7 @@ def products(request):
     context = {
         'current_sorting': sort,
         'products': products,
-        'search_term':query
+        'search_term': query
     }
     return render(request, 'products/products.html', context)
 

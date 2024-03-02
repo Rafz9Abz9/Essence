@@ -31,7 +31,7 @@ def add_to_cart(request):
             cart_item = next(
                 (item for item in carts if item['product_id'] == product_id), None)
             if cart_item:
-                cart_item['quantity'] =  int(qty)
+                cart_item['quantity'] = int(qty)
             else:
                 cart_item = {'product_id': product_id, 'quantity': qty}
                 carts.append(cart_item)
@@ -61,12 +61,13 @@ def update_cart_product_quantity(request):
             cart_item = next(
                 (item for item in carts if item['product_id'] == product_id), None)
             if cart_item:
-                product = get_object_or_404(Product, pk=cart_item['product_id'])
+                product = get_object_or_404(
+                    Product, pk=cart_item['product_id'])
                 if int(qty) > product.stock:
                     messages.warning(
                         request, 'Product in stock is less than required quantity')
                     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-                cart_item['quantity'] =  int(qty)
+                cart_item['quantity'] = int(qty)
             request.session['carts'] = carts
             messages.success(request, 'Product quantity updated in Cart')
 

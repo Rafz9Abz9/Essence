@@ -22,7 +22,7 @@ from checkout.models import Order
 def user_auth_view(request):
     reg_form = RegistrationForm
     login_form = LoginForm
-    current_tab='login'
+    current_tab = 'login'
 
     context = {
         "reg_form": reg_form,
@@ -34,13 +34,14 @@ def user_auth_view(request):
 
 
 def register(request):
-    current_tab='register'
+    current_tab = 'register'
     if request.method == 'POST':
-        current_tab='register'
+        current_tab = 'register'
         email = request.POST.get('email')
         user_exist = CustomUser.objects.filter(email=email).exists()
         if user_exist:
-            messages.warning(request,'An account with this email already exists. Please use a different email address.')
+            messages.warning(
+                request, 'An account with this email already exists. Please use a different email address.')
             return redirect('register')
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -48,9 +49,9 @@ def register(request):
             user = form.save()
             # create user
             # e user profile
-            new_shipping_address = ShippingAddress.objects.create(email=email, user=user)
+            new_shipping_address = ShippingAddress.objects.create(
+                email=email, user=user)
 
-            
             user.is_active = False
             user.save()
             # email subject here
@@ -93,9 +94,9 @@ def register(request):
 
 
 def login_view(request):
-    current_tab='login' 
+    current_tab = 'login'
     if request.method == 'POST':
-        current_tab='login' 
+        current_tab = 'login'
         email = request.POST['email']
         password = request.POST['password']
         user = authenticate(request, email=email, password=password)
@@ -136,13 +137,13 @@ def user_profile(request):
     change_password_form = PasswordChangeForm(request.POST)
     user_reviews = None
     user_shipping_address = None
-    orders=None
+    orders = None
 
     if request.user.is_authenticated:
         user_shipping_address, created = ShippingAddress.objects.get_or_create(
             user=request.user)
         user_reviews = Review.objects.filter(user=request.user)
-        orders=Order.objects.filter(user_id=request.user.id)
+        orders = Order.objects.filter(user_id=request.user.id)
 
     context = {
         "user_shipping_address": user_shipping_address,
@@ -243,30 +244,29 @@ def change_password(request):
 
 
 def request_password_reset(request):
-    
+
     if request.method == 'POST':
-        email= request.POST.get('email')
-        
+        email = request.POST.get('email')
+
         if email:
-            
-            
+
             if get_object_or_404(CustomUser, email=email):
-                user=get_object_or_404(CustomUser, email=email)
+                user = get_object_or_404(CustomUser, email=email)
                 # email subject here
                 email_subject = 'Password Reset Request'
                 # email body
                 print(user.email)
                 token = token_generator.make_token(user)
                 uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
-                
+
                 link = reverse('reset_password', kwargs={
-                    'uidb64':uidb64, 'token': token
+                    'uidb64': uidb64, 'token': token
                 })
 
                 domain = get_current_site(request).domain
                 pwd_reset_link = 'http://'+domain+link
                 email_body = (
-                        f"""Dear {user,email},!
+                    f"""Dear {user, email},!
 
                         We received password reset request from you.
                         Use the link here to confirm your email. {pwd_reset_link}
@@ -278,7 +278,7 @@ def request_password_reset(request):
                         Best regards,
                         Essence
                         """)
-                
+
                 # setup email
                 email = EmailMessage(
                     email_subject,
@@ -289,28 +289,32 @@ def request_password_reset(request):
                 )
                 # send email
                 email.send(fail_silently=False)
-                messages.success(request, "Check your mailbox for password reset confirmation link")
+                messages.success(
+                    request, "Check your mailbox for password reset confirmation link")
             else:
-                messages.warning(request, "Requested user does not exist, Pleaser verify your email or register with a new account")
+                messages.warning(
+                    request, "Requested user does not exist, Pleaser verify your email or register with a new account")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
 
 def reset_password(request, uidb64, token):
     form = PasswordResetForm(request)
-    
+
     if request.method == "POST":
         id = force_str(urlsafe_base64_decode(uidb64))
         user = CustomUser.objects.get(pk=id)
-        form=PasswordResetForm(request.POST or None, user=user)
+        form = PasswordResetForm(request.POST or None, user=user)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Password Reset Successfully, Login with your new Password')
+            messages.success(
+                request, 'Password Reset Successfully, Login with your new Password')
             return redirect(reverse('user_auth'))
         else:
             messages.error(request, 'Password Do Not Match')
-    context={
-        'form':PasswordResetForm,
-        'uidb64':uidb64,
-        'token':token,
+    context = {
+        'form': PasswordResetForm,
+        'uidb64': uidb64,
+        'token': token,
     }
     return render(request, 'password_reset/password_reset.html', context)
 

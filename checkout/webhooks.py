@@ -15,11 +15,11 @@ def webhook(request):
     payload = request.body
     event = None
     wh_secret = settings.STRIPE_WH_SECRET
-    stripe.api_key= settings.CLIENT_SECRET_KEY
+    stripe.api_key = settings.CLIENT_SECRET_KEY
 
     try:
         event = stripe.Event.construct_from(
-        json.loads(payload), wh_secret
+            json.loads(payload), wh_secret
         )
     except ValueError as e:
         # Invalid payload
@@ -33,18 +33,18 @@ def webhook(request):
 
     # setup a wh handler
     handler = StripeWH_Handler(request)
-    
+
     #  Map webhook event with relevant handler function
     event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
     }
-    
+
     # Get the webhook type from stripe
     event_type = event['type']
-    
-    event_handler=event_map.get(event_type, handler.handle_event)
-    
+
+    event_handler = event_map.get(event_type, handler.handle_event)
+
     # call event handler with the event
     response = event_handler(event)
     return response

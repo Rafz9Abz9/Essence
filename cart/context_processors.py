@@ -65,7 +65,7 @@ def cart_item(request):
                     Decimal(product.price)
                 formatted_sub_total_price = format_currency(
                     summed_price, 'EUR', locale='en_US')
-        full_cart_item =cart_item
+        full_cart_item = cart_item
         cart_item = cart_item[:2]
 
     return {

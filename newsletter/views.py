@@ -10,24 +10,25 @@ from user.models import CustomUser
 
 def subscribe_newsletter(request):
     email = None
-    user=None
-              
+    user = None
+
     if NewsletterSubscribers.objects.filter(email=email).exists():
         messages.warning(request, 'You Already Subscribed For News Letter')
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    
+
     if request.user.is_authenticated:
         user = get_object_or_404(CustomUser, pk=request.user.id)
         email = user.email
         if request.method == 'POST':
             email = request.POST['email']
         newsletter, created = NewsletterSubscribers.objects.get_or_create(
-        user_id=user.id, email=email)
+            user_id=user.id, email=email)
         user.is_subscribed_newsletter = True
         user.save()
     else:
         email = request.POST['email']
-        newsletter, created = NewsletterSubscribers.objects.get_or_create(email=email)
+        newsletter, created = NewsletterSubscribers.objects.get_or_create(
+            email=email)
     # set up email notification to user
     email_subject = '@essence-newsletter'
     email_msg = "Thank you for for subscribing to our newsletter, We'll keep you posted on our product and trends."
@@ -44,8 +45,7 @@ def subscribe_newsletter(request):
     mail_email.send(fail_silently=False)
     messages.success(request, "Successfully Subscribed to Newsletter!")
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    
-    
+
 
 def unsubscribe_newsletter(request):
     if request.user.is_authenticated:

@@ -9,7 +9,7 @@ class OrderForm(forms.ModelForm):
         'class': 'form-control',
         'autocomplete': 'off',
     }), required=True)
-    
+
     last_name = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Phone Number',
         'class': 'form-control',
@@ -22,7 +22,6 @@ class OrderForm(forms.ModelForm):
         'autocomplete': 'off',
     }), required=True)
 
-    
     phone = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Phone Number',
         'class': 'form-control',
@@ -60,4 +59,3 @@ class OrderForm(forms.ModelForm):
         model = Order
         fields = ('first_name', 'last_name', 'email',  'phone', 'street_address',
                   'post_code', 'city', 'state', 'country', 'shipping_method', 'shipping_price', 'sub_total', 'grand_total', 'stripe_pid')
- 

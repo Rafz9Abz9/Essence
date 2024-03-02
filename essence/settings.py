@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-)9fifm_iesntfpix2@81e1wl4=m9t2gftg@qif=s4s$tnwpm_#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['e-ssence-33d6a66effe9.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['e-ssence-33d6a66effe9.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -145,8 +145,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'), 
-STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -186,4 +186,3 @@ STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_KEY')
 CLIENT_SECRET_KEY = config('CLIENT_SECRET_KEY')
 STRIPE_WH_SECRET = config('STRIPE_WH_SECRET')
 STRIPE_CURRENCY = 'EUR'
-

@@ -1,3 +1,4 @@
+from django.contrib.auth.forms import PasswordResetForm
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.core.validators import EmailValidator
@@ -92,9 +93,7 @@ class PasswordChangeForm(PasswordChangeForm):
                 "New password must be different from the old password.")
 
         return new_password1
-    
-    
-from django.contrib.auth.forms import PasswordResetForm
+
 
 class PasswordResetForm(PasswordResetForm):
     # Add new password and password confirmation fields
@@ -124,7 +123,8 @@ class PasswordResetForm(PasswordResetForm):
         new_password1 = self.cleaned_data.get('new_password1')
         new_password2 = self.cleaned_data.get('new_password2')
         if new_password1 and new_password2 and new_password1 != new_password2:
-            raise forms.ValidationError(_("The two password fields didn't match."))
+            raise forms.ValidationError(
+                _("The two password fields didn't match."))
         return new_password2
 
     def save(self, commit=True):
@@ -133,7 +133,7 @@ class PasswordResetForm(PasswordResetForm):
         user.set_password(self.cleaned_data['new_password1'])
         if commit:
             user.save()
-        
+
         return user
 
 

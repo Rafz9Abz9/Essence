@@ -33,10 +33,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
 class ShippingAddress(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    email = models.EmailField(_("email address"), unique=True, null=True, default="")
+    email = models.EmailField(
+        _("email address"), unique=True, null=True, default="")
     phone = models.TextField(max_length=20, null=True, default="")
     street_address = models.TextField(max_length=250, null=True, default="")
-    post_code = models.TextField(max_length=20, blank=True, null=True, default="")
+    post_code = models.TextField(
+        max_length=20, blank=True, null=True, default="")
     city = models.TextField(max_length=80, null=True, default="")
     state = models.TextField(max_length=80, default="")
     country = models.CharField(max_length=200,  null=True, choices=CountryField(
@@ -44,6 +46,6 @@ class ShippingAddress(models.Model):
 
     def __str__(self):
         return f'Shipping Address for {self.user}'
-    
+
     class Meta:
         verbose_name_plural = "ShippingAddress"

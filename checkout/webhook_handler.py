@@ -4,29 +4,31 @@ import time
 
 from .models import Order, OrderLineItem
 from cart import context_processors
+
+
 class StripeWH_Handler:
     """Handle Stripe Webhooks"""
-    
+
     def __init__(self, request):
-        self.request= request
-        
+        self.request = request
+
     def handle_event(self, event):
         """handles a generic/ unknown/unexpected webhook event"""
-        
+
         return HttpResponse(
             content=f"unhandled Webhook received: {event["type"]}",
             status=200
         )
-        
+
     def handle_payment_intent_succeeded(self, event, request):
         """handles payment_intent.succeeded webhook from stripe"""
-        
-        intent= event.data.object
+
+        intent = event.data.object
         pid = intent.id
-        
+
         order_exist = False
-        attempt=1
-        while attempt <=5:
+        attempt = 1
+        while attempt <= 5:
             try:
                 order = Order.objects.get(
                     stripe_pid__iexact=pid,
@@ -44,27 +46,27 @@ class StripeWH_Handler:
                     sub_total__iexact=intent.metadata.sub_total,
                     grand_total__iexact=intent.metadata.grand_total,
                 )
-                
+
                 order_exist = True
                 break
-                
+
             except Order.DoesNotExist:
-                attempt +=1
+                attempt += 1
                 time.sleep(1)
         if order_exist:
             return HttpResponse(
-                    content=f" Webhook received: {event["type"]}",
-                    status=200
-                )
+                content=f" Webhook received: {event["type"]}",
+                status=200
+            )
         else:
-            order=None
+            order = None
             try:
-                context= context_processors.cart_item(request)
-                full_cart_item=context['full_cart_item']
-                
-                user= get_current_authenticated_user()
-                
-                order =  Order.objects.create(
+                context = context_processors.cart_item(request)
+                full_cart_item = context['full_cart_item']
+
+                user = get_current_authenticated_user()
+
+                order = Order.objects.create(
                     stripe_pid=pid,
                     first_name=intent.metadata.first_name,
                     last_name=intent.metadata.last_name,
@@ -81,15 +83,16 @@ class StripeWH_Handler:
                     grand_total=intent.metadata.grand_total,
                 )
                 if user:
-                    order.user_id=user.id
+                    order.user_id = user.id
                     order.save()
                 for item in full_cart_item:
                     if item.product.quantity < int(item.quantity):
                         order.delete()
                         return HttpResponse(
-                        content=f" Webhook received: {event["type"]} | {item.product.name} is out of stock ", 
-                        status=403)
-                        
+                            content=f" Webhook received: {event["type"]} | {
+                                item.product.name} is out of stock ",
+                            status=403)
+
                     order_line_item = OrderLineItem(
                         order=order,
                         product=item.product,
@@ -100,17 +103,18 @@ class StripeWH_Handler:
                 if order:
                     order.delete()
                 return HttpResponse(
-                    content=f" Webhook received: {event["type"]} | ERROR:{e}", 
+                    content=f" Webhook received: {event["type"]} | ERROR:{e}",
                     status=500)
-    
+
         return HttpResponse(
-            content=f" Webhook received: {event["type"]} | SUCCESS: Created order in webhook",
+            content=f" Webhook received: {
+                event["type"]} | SUCCESS: Created order in webhook",
             status=200
         )
-        
+
     def handlefi_payment_intent_payment_failed(self, event):
         """handles payment_intent.failed webhook from stripe"""
-        
+
         return HttpResponse(
             content=f"Webhook recieved: {event["type"]}",
             status=200
