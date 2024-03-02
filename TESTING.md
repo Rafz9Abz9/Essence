@@ -213,16 +213,11 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 </details>
 
+<details>
+
 <summary>FAQ Page</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47768aec-a22c-4ed7-a6ed-2d4e0d21c211)
-
-</details>
-
-<details>
-
-<summary>Wishlist Page</summary>
-
 
 </details>
 
