@@ -79,10 +79,10 @@
             <div class="header-right  position-relative">
                 <div class="header-search dropdown">
                     <a href="#" class="search-toggle " role="button" title="Search"><i class="icon-search"></i></a>
-                    <form id="search-form" action="{% url 'products' %}" method="GET">
+                    <form class="search-form" action="{% url 'products' %}" method="GET">
                         <div class="header-search-wrapper">
                             <label for="q" class="sr-only">Search</label>
-                            <input value="{{search_term}}" type="search" class="form-control" name="q" id="q" placeholder="Search in..." />
+                            <input value="{{search_term}}" type="search" class="form-control q" name="q" placeholder="Search in..." />
                         </div><!-- End .header-search-wrapper -->
                     </form>
 
