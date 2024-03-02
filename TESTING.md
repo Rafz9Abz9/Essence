@@ -136,6 +136,44 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/12e6f3d6-f149-447b-ab6f-ae4b5081b779)
 
+| APP        | FILE                  | RESULT |
+|------------|-----------------------|--------|
+| essence    | settings              | PASS   |
+| essence    | urls                  | PASS   |
+| core       | forms                 | PASS   |
+| core       | models                | PASS   |
+| core       | views                 | PASS   |
+| cart       | urls                  | PASS   |
+| cart       | views                 | PASS   |
+| cart       | tests                 | PASS   |
+| cart       | context_processors   | PASS   |
+| newsletter | views                 | PASS   |
+| product    | admin                 | PASS   |
+| product    | context_processors   | PASS   |
+| product    | forms                 | PASS   |
+| product    | models                | PASS   |
+| product    | utils                 | PASS   |
+| product    | views                 | PASS   |
+| user       | forms                 | PASS   |
+| user       | guard                 | PASS   |
+| user       | managers              | PASS   |
+| user       | models                | PASS   |
+| user       | urls                  | PASS   |
+| user       | utils                 | PASS   |
+| user       | views                 | PASS   |
+| user       | apps                  | PASS   |
+| wishlist   | context_processors   | PASS   |
+| wishlist   | models                | PASS   |
+| wishlist   | urls                  | PASS   |
+| wishlist   | views                 | PASS   |
+| checkout   | forms                 | PASS   |
+| checkout   | models                | PASS   |
+| checkout   | urls                  | PASS   |
+| checkout   | views                 | PASS   |
+| checkout   | Webhook_handler      | PASS   |
+| checkout   | webhooks              | PASS   |
+
+
 
 # Browser Compatibility
 
