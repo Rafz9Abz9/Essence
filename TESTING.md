@@ -203,6 +203,8 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 # Lighthouse
 
+**Mobile**
+
 <details>
 
 <summary>Home Page</summary>
@@ -253,9 +255,83 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 <details>
 
+<summary>Register & Login Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/bb475787-8772-4491-b31f-77891b2e87af)
+
+</details>
+
+<details>
+
 <summary>FAQ Page</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/47768aec-a22c-4ed7-a6ed-2d4e0d21c211)
+
+</details>
+
+**Desktop**
+
+<details>
+
+<summary>Home Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/1b4e025f-ce24-4b93-8cfb-63c06a629368)
+
+</details>
+
+<details>
+
+<summary>Products Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/493c53ab-30f8-4bb7-bc1c-c3d9e594ce02)
+
+</details>
+
+<details>
+
+<summary>Product Details Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/84ee4e7a-4dfc-4b98-b8a4-27b9ce6b0288)
+
+</details>
+
+<details>
+
+<summary>Shopping Cart Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8dea2b15-ad59-47c8-9e10-fd95c0bb5052)
+
+</details>
+
+<details>
+
+<summary>Contact Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/164e4dd5-ab47-436f-ad29-0c5915e36148)
+
+</details>
+
+<details>
+
+<summary>About Us Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/079c8085-94c4-4937-a639-b9dae1c00659)
+
+</details>
+
+<details>
+
+<summary>Register & Login Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/832397eb-2703-4cec-87e7-11e8a6c6cb8b)
+
+</details>
+
+<details>
+
+<summary>FAQ Page</summary>
+
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/faa321f1-b884-449c-8bbd-5157388b14db)
 
 </details>
 
