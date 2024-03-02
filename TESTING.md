@@ -365,123 +365,224 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 
 # User Story Testing
 
+## User Stories That I Have Implemented
+
 <details>
-
-<summary>User Stories That I Have Implemented:</summary>
-
-- As a site user I can easily navigate and explore the home page which includes clear navigation links to different sections and visually appealing design elements so that it can enhance my overall experience and guide me to relevant areas of the website efficiently.
+  
+<summary>*As a site user I can easily navigate and explore the home page which includes clear navigation links to different sections and visually appealing design elements so that it can enhance my overall experience and guide me to relevant areas of the website efficiently.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/bcccc0cb-c62f-4fb4-be59-260606f9ba9a)
 
-- As a site user I can select a category of certain products so that I can find products that I'm interested in easily.
+</details>
+
+<details>
+  
+<summary>*As a site user I can select a category of certain products so that I can find products that I'm interested in easily.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/4750cc49-af34-4ba6-a1b9-9d19fbe064cf)
 
-- As a site user I want to easily register for an account so that I can have a personal profile. This will allow me to conveniently add products to my shopping bag and place orders with simplicity.
+</details>
+
+<details>
+  
+<summary>*As a site user I want to easily register for an account so that I can have a personal profile. This will allow me to conveniently add products to my shopping bag and place orders with simplicity.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/0e33113a-0939-4749-a1a8-0062f6ec1af2)
 
-- As a site user I can log in or log out of my account so that I can have the ability to access my account when needed or log out for security purposes.
+</details>
+
+<details>
+  
+<summary>*As a site user I can log in or log out of my account so that I can have the ability to access my account when needed or log out for security purposes.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/157f1d42-8d0b-44bb-9144-e03410493f44)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/5e74956e-9da6-4932-afc0-d03b44248ad6)
 
-- As a site user I can browse the products page so that I can easily explore the diverse range of items available on the website
+</details>
+
+<details>
+  
+<summary>*As a site user I can browse the products page so that I can easily explore the diverse range of items available on the website.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b23666f3-5275-413a-973c-81666d36dfaa)
 
-- As a site user I can view the product details page so that I can gather detailed information about a specific item.
+</details>
+
+<details>
+  
+<summary>*As a site user I can view the product details page so that I can gather detailed information about a specific item.
+*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/60ea6531-f3bf-476e-b85c-64f4d2d1de18)
 
-- As a site user I can modify the quantity of items so that I can have a flexible and personalized shopping experience.
+</details>
+
+<details>
+  
+<summary>*As a site user I can modify the quantity of items so that I can have a flexible and personalized shopping experience.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ec11895c-388d-4e8d-9f84-4612ed67bf81)
 
-- As a site user I can view images of various products so that I can have a visual of what I want to purchase.
+</details>
+
+<details>
+  
+<summary>*As a site user I can view images of various products so that I can have a visual of what I want to purchase.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/58ba6614-6863-49e4-9559-ca72b16c8c21)
 
-- As a site user I can access a button that adds my products into my shopping cart so that I can view them in the cart which will make my purchasing process faster and efficient.
+</details>
+
+<details>
+  
+<summary>*As a site user I can access a button that adds my products into my shopping cart so that I can view them in the cart which will make my purchasing process faster and efficient.
+*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/53a29ef7-7a91-4f36-bc31-b1136f2a10a7)
 
-- As a site user I can use the "Sort By" filter so that I can conveniently organize products based on different criteria.
+</details>
+
+<details>
+  
+<summary>*As a site user I can use the "Sort By" filter so that I can conveniently organize products based on different criteria.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/79bf1da4-5a4e-4bba-9112-712186acaa68)
 
-- As a registered user I can add products to my wish list so that I can save and track items I am interested in purchasing in the future.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can add products to my wish list so that I can save and track items I am interested in purchasing in the future.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8cc4dbe3-2e61-4c5f-bd8e-03549e41fa05)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/5fd553a0-0866-44bb-a26d-a4b69766ca4e)
 
-- As a site user I can fill out a contact form so that I can easily get in touch with the store regarding my inquiry.
+</details>
+
+<details>
+  
+<summary>*As a site user I can fill out a contact form so that I can easily get in touch with the store regarding my inquiry.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/19d4c2e1-6179-4d2a-996a-164107da8e9f)
 
-- As a registered user I can access my address book so that I can add anew address to my account for shipping purposes.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can access my address book so that I can add anew address to my account for shipping purposes.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ee794408-02fb-442e-981b-3f9705586f90)
 
-- As a registered user I can leave a review so that I can share my experience and insights with others.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can leave a review so that I can share my experience and insights with others.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/528f9604-1da9-4a3c-985f-972ce93fe85d)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/29329d67-7a47-48be-91ac-c952d438e095)
 
-- As a registered user I can select 'forgot password' so that I can recover access to my account in case I forget my password.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can select 'forgot password' so that I can recover access to my account in case I forget my password.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/541c9c13-9640-40c3-9db7-0f5939a54f64)
 
-- As a registered user I can access the "My Product Reviews" page so that I can conveniently manage and view the reviews I have submitted for various products on the website.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can access the "My Product Reviews" page so that I can conveniently manage and view the reviews I have submitted for various products on the website.
+*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/b9efb95c-b903-492e-b3b0-1d12e8a5b60f)
 
-- As a registered user I can subscribe to the newsletter so that I can stay informed and engaged with the offerings of the site.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can subscribe to the newsletter so that I can stay informed and engaged with the offerings of the site.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/02d1c7d8-2458-4a76-a8cf-829277e0aecb)
 
-- As a registered user I can access my account's page so that I can edit my contact information, delivery address, and opt-in or opt-out of newsletter subscription easily.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can access my account's page so that I can edit my contact information, delivery address, and opt-in or opt-out of newsletter subscription easily.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/baaac5f8-5b99-4147-96d1-0e0fde2d0018)
 
-- As an unregistered user I want a straightforward and guest-friendly checkout process from the shopping cart. so that I can purchase the products without having to create an account.
+</details>
+
+<details>
+  
+<summary>*As an unregistered user I want a straightforward and guest-friendly checkout process from the shopping cart. so that I can purchase the products without having to create an account.
+*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/caa517d2-6b77-486c-ad2c-2a4c67d97772)
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/ae16fbbb-d8ab-4400-a466-985c15617fb6)
 
-- As a site user I can access my shopping cart so that I can view all the products I added for faster checkout process.
+
+</details>
+
+<details>
+  
+<summary>*As a site user I can access my shopping cart so that I can view all the products I added for faster checkout process.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/19bc87af-e4d3-4dda-b3cf-e30e94b093a6)
 
-- As a registered user I can access the "My Orders" page so that I can review and track the status of my previous purchases.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can access the "My Orders" page so that I can review and track the status of my previous purchases.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/d9573f74-8446-474f-8fdd-c34064ea4745)
 
-- As a registered user I can seamlessly complete the checkout process so that I can efficiently purchase the items in my shopping cart.
+</details>
+
+<details>
+  
+<summary>*As a registered user I can seamlessly complete the checkout process so that I can efficiently purchase the items in my shopping cart.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8e9efe40-855a-4936-81a1-ec843dfd850c)
 
-- As a site user I can enter my delivery details so that I can complete my purchase and have the purchased delivered to the correct address.
+</details>
+
+<details>
+  
+<summary>*As a site user I can enter my delivery details so that I can complete my purchase and have the purchased delivered to the correct address.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/6044e368-ef3a-4731-9dc1-7cf870781713)
 
-- As a site user I can view my order summary details so that I can review an overview of my current purchase before finalizing the transaction.
+</details>
+
+<details>
+  
+<summary>*As a site user I can view my order summary details so that I can review an overview of my current purchase before finalizing the transaction.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/8dfa6b57-74cb-4e56-9cb0-ad7b32c3eaae)
 
-- As an admin I can manage some productivities for the website so that I can change prices, descriptions, images, and other criteria.
+</details>
+
+<details>
+  
+<summary>*As an admin I can manage some productivities for the website so that I can change prices, descriptions, images, and other criteria.*</summary>
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c9e0ea0b-7cbe-4413-a61e-456a0ad10fdd)
 
 </details>
 
-<details>
+## Future Implementation Features
 
-<summary>*I was unable to incorporate these user stories, so I designated them as "Won't Have" in my prioritization scheme and will be my future implementation features.*</summary>
+I was unable to incorporate these user stories, so I designated them as "Won't Have" in my prioritization scheme and will be my future implementation features.
 
 | USER STORY                                                                     | RESULTS |
 |--------------------------------------------------------------------------------|---------|
@@ -489,8 +590,6 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 | As a registered user I can leave a review exclusively for products I've purchased so that my feedback is authentic and based on personal experience | N/A |
 | As a registered user I can have an order tracking system so that I can easily monitor the status and location of my purchases | N/A |
 | As a site user I can have an option to apply discounts during checkout so that I can enjoy cost savings on my purchases | N/A |
-
-</details>
 
 # Manual Testing
 
