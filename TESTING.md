@@ -223,7 +223,9 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 # User Story Testing
 
-These are some of the user stories that I have implemented:
+<details>
+
+<summary>User Stories That I Have Implemented:</summary>
 
 - As a site user I can easily navigate and explore the home page which includes clear navigation links to different sections and visually appealing design elements so that it can enhance my overall experience and guide me to relevant areas of the website efficiently.
 
@@ -333,8 +335,11 @@ These are some of the user stories that I have implemented:
 
 ![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/c9e0ea0b-7cbe-4413-a61e-456a0ad10fdd)
 
+</details>
 
-*I was unable to incorporate these user stories, so I designated them as "Won't Have" in my prioritization scheme and will be my future implementation features.*
+<details>
+
+<summary>*I was unable to incorporate these user stories, so I designated them as "Won't Have" in my prioritization scheme and will be my future implementation features.*</summary>
 
 | USER STORY                                                                     | RESULTS |
 |--------------------------------------------------------------------------------|---------|
@@ -343,6 +348,7 @@ These are some of the user stories that I have implemented:
 | As a registered user I can have an order tracking system so that I can easily monitor the status and location of my purchases | N/A |
 | As a site user I can have an option to apply discounts during checkout so that I can enjoy cost savings on my purchases | N/A |
 
+</details>
 
 # Manual Testing
 
