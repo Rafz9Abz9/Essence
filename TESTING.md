@@ -231,6 +231,8 @@ All the CSS files were tested through the [W3C CSS Validator](https://jigsaw.w3.
 
 # Lighthouse
 
+- I used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
+
 **Mobile**
 
 <details>
