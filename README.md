@@ -4,6 +4,10 @@
 
 [Link To Live Site](https://e-ssence-33d6a66effe9.herokuapp.com/)
 
+[Gyazo GIF](https://gyazo.com/): A tool that allows you to capture a short video recording of your screen as a GIF. I used this just to show navigation of website and to ensure that every feature was working as it should.
+
+![7a8dbc2b0f1db805ce299f83326be5d6 (1)](https://github.com/Rafz9Abz9/Essence/assets/126483536/aa897caf-4c46-4158-b4d2-f6abe809d8eb)
+
 # Project Overview
 Essence is your go-to destination for top-quality self-care essentials. From women’s care and hair care to baby-care, skin care, and men’s care products, Essence has got you covered. The site’s mission is to simplify your self-care routine by offering a curated selection of products tailored to your needs. Whether you’re a woman, a parent, or a man focused on grooming, find what you need for a healthier, more confident lifestyle on Essence. Shop on the site for a convenient, reliable, and satisfying self-care experience. 
 
