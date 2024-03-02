@@ -1,6 +1,6 @@
 # Essence
 
-![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/fd972945-3b85-435d-888f-4ee0dc64ea7d)
+![image](https://github.com/Rafz9Abz9/Essence/assets/126483536/a2a29fbe-053b-4d6a-ad0f-563f74efebc7)
 
 [Link To Live Site](https://e-ssence-33d6a66effe9.herokuapp.com/)
 
@@ -703,13 +703,15 @@ Essence's Business Model follows a Business to Consumer (B2C) model. We directly
 - I've created the robots.txt file at the root-level. Inside, I've included the default settings:
 
 User-agent: *
+
 Disallow:
+
 Sitemap: https://e-ssence-33d6a66effe9.herokuapp.com/sitemap.xml
 
 ## Social Media Marketing
 
 A prototype Facebook business account was crafted, drawing inspiration from the resources offered by Code Institute. This enhances the potential to boost sales by seamlessly linking to the business website, providing users with convenient access. Leveraging Facebook's extensive user base further amplifies sales opportunities, making it an ideal platform for driving business growth.
-- To view this page, you can click the link below. I've also included an image of the page just in case if the facebook gets removed,
+- To view this page, you can click the link below. I've also included an image of the page just in case if the facebook business page gets removed,
 
 [**Facebook Business Page**](https://www.facebook.com/profile.php?id=61555157247407)
 
