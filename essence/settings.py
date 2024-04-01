@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'essence.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('HEROKU_POSTGRESQL_IVORY_URL'), conn_max_age=600, ssl_require=True)
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=600, ssl_require=True)
 }
 
 
