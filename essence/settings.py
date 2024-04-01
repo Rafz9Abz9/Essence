@@ -94,7 +94,7 @@ WSGI_APPLICATION = 'essence.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(config('DATABASE_URL'))
+    'default': dj_database_url.config(os.environ.get('HEROKU_POSTGRESQL_IVORY_URL'))
 }
 
 
