@@ -505,7 +505,7 @@ I used Lighthouse within the Chrome Developer Tools to test the performance, acc
 | User can log out of account       | Pass   |
 | User is notified of logging in to account | Pass |
 | User is notified of logging out of account| Pass |
-| User receives email verification email| Fail   |
+| User receives email verification email| Pass   |
 
 </details>
 
